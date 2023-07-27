@@ -8,7 +8,6 @@ protocol MainPresenting {
 final class MainPresenter {
     weak var viewController: MainViewControlling?
     private let coordinator: MainCoordinating?
-    private var dataModel: DataCep?
     
     init(coordinator: MainCoordinating?) {
         self.coordinator = coordinator
