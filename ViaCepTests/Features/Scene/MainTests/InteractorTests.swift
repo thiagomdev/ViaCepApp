@@ -1,0 +1,73 @@
+import XCTest
+@testable import ViaCep
+
+final class InteractorTests: XCTestCase {
+    typealias DataCepMock = DataCep
+    
+    func test_ShowCep_WhenTheServiceSearchAValidCep_ShouldReturnAValidCep() {
+        // Given
+        let (sut, presenterSpy, serviceSpy) = makeSut()
+        let data = DataCepMock.fixture(cep: "02349985")
+        serviceSpy.expexted = .success(data)
+        
+        // When
+        sut.showCep(data.cep)
+        
+        // Then
+        XCTAssertEqual(presenterSpy.wasCalled, true)
+        XCTAssertEqual(presenterSpy.howManyTimes, 1)
+        XCTAssertEqual(presenterSpy.expected, "02349985")
+    }
+    
+    func test_() {
+        // Given
+        let (sut, presenterSpy, _) = makeSut()
+        
+        // When
+        let expected = sut.clearText()
+
+        // Then
+        XCTAssertEqual(presenterSpy.expected, expected)
+    }
+    
+    private func makeSut() -> (
+        sut: MainInteractor,
+        presenterSpy: PresenterSpy,
+        serviceSpy: ServiceMock
+    ) {
+        
+        let serviceSpy = ServiceMock()
+        let presenterSpy = PresenterSpy()
+        let sut = MainInteractor(
+            presenter: presenterSpy,
+            service: serviceSpy
+        )
+        return (sut, presenterSpy, serviceSpy)
+    }
+}
+
+final class PresenterSpy: MainPresenting {
+    private(set) var expected: String?
+    private(set) var wasCalled: Bool =  false
+    private(set) var howManyTimes: Int = 0
+        
+    func presentCep(_ cep: ViaCep.DataCep) {
+        wasCalled = true
+        howManyTimes += 1
+        expected = cep.cep
+    }
+}
+
+final class ServiceMock: MainServicing {
+    var expexted: (Result<ViaCep.DataCep, Error>)?
+    
+    private(set) var wasCalled: Bool =  false
+    private(set) var howManyTimes: Int = 0
+    
+    func getCep(_ cep: String, callback: @escaping (Result<ViaCep.DataCep, Error>) -> Void) {
+        guard let expexted = expexted else { return }
+        wasCalled = true
+        howManyTimes += 1
+        callback(expexted)
+    }
+}
