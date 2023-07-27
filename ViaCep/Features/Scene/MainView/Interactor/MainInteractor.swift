@@ -8,7 +8,6 @@ protocol MainInteracting {
 final class MainInteractor {
     private let presenter: MainPresenting?
     private let service: MainServicing?
-    private var error: ((Error) -> Void)?
     
     init(presenter: MainPresenting, service: MainServicing) {
         self.presenter = presenter
@@ -23,7 +22,7 @@ extension MainInteractor: MainInteracting {
             case let .success(cep):
                 self?.presenter?.presentCep(cep)
             case let .failure(error):
-                self?.error?(error)
+                self?.presenter?.displayError(error.localizedDescription)
             }
         })
     }

@@ -2,6 +2,7 @@ import UIKit
 
 protocol MainViewControlling: AnyObject {
     func didShowCep(_ cep: DataCep)
+    func didShowError(_ message: String)
 }
 
 final class MainViewController: UIViewController {
@@ -65,10 +66,18 @@ final class MainViewController: UIViewController {
 
 extension MainViewController: MainViewControlling {
     func didShowCep(_ cep: DataCep) {
-        DispatchQueue.main.async {
-            self.logradouroLabel.text = "Logradouro: \(cep.logradouro)"
-            self.bairroLabel.text = "Bairro: \(cep.bairro)"
-            self.localidadeLabel.text = "Localidade: \(cep.localidade)"
+        DispatchQueue.main.async { [weak self] in
+            self?.logradouroLabel.text = "Logradouro: \(cep.logradouro)"
+            self?.bairroLabel.text = "Bairro: \(cep.bairro)"
+            self?.localidadeLabel.text = "Localidade: \(cep.localidade)"
+        }
+    }
+    
+    func didShowError(_ message: String) {
+        DispatchQueue.main.async { [weak self] in
+            let alert = UIAlertController(title: "ALERT ⚠️", message: message, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "FECHAR", style: .default))
+            self?.present(alert, animated: true)
         }
     }
 }

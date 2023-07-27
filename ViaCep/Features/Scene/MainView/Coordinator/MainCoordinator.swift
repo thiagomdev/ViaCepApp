@@ -1,7 +1,7 @@
 import Foundation
 
 enum MainAction {
-    case main
+    case showError(String)
 }
 
 protocol MainCoordinating {
@@ -16,8 +16,8 @@ final class MainCoordinator {
 extension MainCoordinator: MainCoordinating {
     func navigate(to destination: MainAction) {
         switch destination {
-        case .main:
-            break
+        case let .showError(message):
+            viewController?.didShowError(message)
         }
     }
 }
