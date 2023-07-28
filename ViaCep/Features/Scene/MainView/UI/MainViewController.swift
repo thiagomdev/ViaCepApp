@@ -1,14 +1,16 @@
 import UIKit
 
+// MARK: - MainViewControlling / Protocol
 protocol MainViewControlling: AnyObject {
     func didShowCep(_ cep: DataCep)
     func didShowError(_ message: String)
 }
 
 final class MainViewController: UIViewController {
-    
+    // MARK: - Properties
     private let interactor: MainInteracting
     
+    // MARK: - Components
     private lazy var stackViewContainer: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
@@ -40,11 +42,13 @@ final class MainViewController: UIViewController {
     private lazy var bairroLabel = makeLabel()
     private lazy var localidadeLabel = makeLabel()
 
+    // MARK: - Initializers
     init(interactor: MainInteracting) {
         self.interactor = interactor
         super.init(nibName: nil, bundle: nil)
     }
     
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         buildViews()
@@ -55,7 +59,10 @@ final class MainViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+}
+
+// MARK: - Selector Methods
+extension MainViewController {
     @objc
     private func didSearchCep() {
         guard let cep = inputedCepTextField.text else { return }
@@ -64,6 +71,7 @@ final class MainViewController: UIViewController {
     }
 }
 
+// MARK: - MainViewControlling / Protocol
 extension MainViewController: MainViewControlling {
     func didShowCep(_ cep: DataCep) {
         DispatchQueue.main.async { [weak self] in
@@ -82,6 +90,7 @@ extension MainViewController: MainViewControlling {
     }
 }
 
+// MARK: - MainViewController / ViewConfiguration
 extension MainViewController {
     private func buildViews() {
         stackViewContainer.addArrangedSubview(inputedCepTextField)
@@ -116,6 +125,7 @@ extension MainViewController {
     }
 }
 
+// MARK: - MainViewController / Created UILabel
 extension MainViewController {
     private func makeLabel() -> UILabel {
         let label = UILabel()
