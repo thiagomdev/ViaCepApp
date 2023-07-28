@@ -85,6 +85,11 @@ extension MainViewController: MainViewControlling {
         DispatchQueue.main.async { [weak self] in
             let alert = UIAlertController(title: "ALERT ⚠️", message: message, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "FECHAR", style: .default))
+            
+            self?.logradouroLabel.text = self?.interactor.clearText()
+            self?.bairroLabel.text = self?.interactor.clearText()
+            self?.localidadeLabel.text = self?.interactor.clearText()
+            
             self?.present(alert, animated: true)
         }
     }
@@ -116,7 +121,8 @@ extension MainViewController {
             stackViewContainer.trailingAnchor.constraint(
                 equalTo: view.safeAreaLayoutGuide.trailingAnchor,
                 constant: -16
-            )
+            ),
+            searchCepButton.heightAnchor.constraint(equalToConstant: 40)
         ])
     }
     
