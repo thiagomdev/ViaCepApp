@@ -8,9 +8,9 @@ final class InteractorTests: XCTestCase {
         // Given
         let (sut, presenterSpy, serviceSpy) = makeSut()
         let data = DataCepMock.fixture(cep: "02349985")
-        serviceSpy.expexted = .success(data)
         
         // When
+        serviceSpy.expexted = .success(data)
         sut.showCep(data.cep)
         
         // Then
@@ -19,7 +19,22 @@ final class InteractorTests: XCTestCase {
         XCTAssertEqual(presenterSpy.expected, "02349985")
     }
     
-    func test_() {
+    func test_Failure() {
+        // Given
+        let (sut, presenterSpy, serviceSpy) = makeSut()
+        let data = DataCepMock.fixture(cep: "02349985")
+        let error = NSError(domain: "", code: 0, userInfo: nil)
+
+        // When
+        serviceSpy.expexted = .failure(error)
+        sut.showCep(data.cep)
+        
+        // Then
+        XCTAssertEqual(presenterSpy.wasCalled, true)
+        XCTAssertEqual(presenterSpy.howManyTimes, 1)
+    }
+    
+    func test_ClearText_WhenNeedToClearText_ShouldReturnNilToClearAllOfThen() {
         // Given
         let (sut, presenterSpy, _) = makeSut()
         
@@ -47,7 +62,9 @@ final class InteractorTests: XCTestCase {
 }
 
 final class PresenterSpy: MainPresenting {
+    
     private(set) var expected: String?
+    private(set) var dataModelExpected: DataCep?
     private(set) var wasCalled: Bool =  false
     private(set) var howManyTimes: Int = 0
         
@@ -55,6 +72,18 @@ final class PresenterSpy: MainPresenting {
         wasCalled = true
         howManyTimes += 1
         expected = cep.cep
+    }
+    
+    func displayError(_ message: String) {
+        wasCalled = true
+        howManyTimes += 1
+        expected = message
+    }
+    
+    func displayInvalidCepAlertMessage(_ data: ViaCep.DataCep) {
+        wasCalled = true
+        howManyTimes += 1
+        dataModelExpected = data
     }
 }
 

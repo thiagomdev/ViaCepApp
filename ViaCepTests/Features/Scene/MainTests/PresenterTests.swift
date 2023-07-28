@@ -26,6 +26,7 @@ final class PresenterTests: XCTestCase {
 }
 
 final class ViewControllerSpy: MainViewControlling {
+
     private(set) var wasCalled: Bool = false
     private(set) var howManyTimes: Int = 0
     var expected: DataCep?
@@ -34,5 +35,13 @@ final class ViewControllerSpy: MainViewControlling {
         wasCalled = true
         howManyTimes += 1
         expected = cep
+    }
+    
+    func didShowError(_ message: String) {
+        
+    }
+    
+    func didDisplayInvalidCepMessage(_ message: String) {
+        
     }
 }

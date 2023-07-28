@@ -4,6 +4,7 @@ import UIKit
 protocol MainViewControlling: AnyObject {
     func didShowCep(_ cep: DataCep)
     func didShowError(_ message: String)
+    func didDisplayInvalidCepMessage(_ message: String)
 }
 
 final class MainViewController: UIViewController {
@@ -90,6 +91,14 @@ extension MainViewController: MainViewControlling {
             self?.bairroLabel.text = self?.interactor.clearText()
             self?.localidadeLabel.text = self?.interactor.clearText()
             
+            self?.present(alert, animated: true)
+        }
+    }
+    
+    func didDisplayInvalidCepMessage(_ message: String) {
+        DispatchQueue.main.async { [weak self] in
+            let alert = UIAlertController(title: "ALERT ⚠️", message: "Este CEP não existe.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "FECHAR", style: .default))
             self?.present(alert, animated: true)
         }
     }

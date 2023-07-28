@@ -3,6 +3,7 @@ import UIKit
 protocol MainPresenting {
     func presentCep(_ cep: DataCep)
     func displayError(_ message: String)
+    func displayInvalidCepAlertMessage(_ data: DataCep)
 }
 
 final class MainPresenter {
@@ -24,5 +25,11 @@ extension MainPresenter: MainPresenting {
     
     func displayError(_ message: String) {
         viewController?.didShowError(message)
+    }
+    
+    func displayInvalidCepAlertMessage(_ data: DataCep) {
+        if data.cep.count >= 8 {
+            viewController?.didDisplayInvalidCepMessage(data.cep)
+        }
     }
 }
