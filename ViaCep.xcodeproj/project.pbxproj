@@ -93,7 +93,6 @@
 		AA7B05782A7292F300A5CECE = {
 			isa = PBXGroup;
 			children = (
-				AA9FD4B12A72FFC400CA1773 /* ViaCep.xctestplan */,
 				AA7B05832A7292F300A5CECE /* ViaCep */,
 				AA7B05C92A72C39000A5CECE /* ViaCepTests */,
 				AA7B05822A7292F300A5CECE /* Products */,
@@ -249,6 +248,7 @@
 		AA7B05C92A72C39000A5CECE /* ViaCepTests */ = {
 			isa = PBXGroup;
 			children = (
+				AA9FD4B12A72FFC400CA1773 /* ViaCep.xctestplan */,
 				AA7B05D52A72F38200A5CECE /* Fixture */,
 				AA9FD4BD2A7326B900CA1773 /* Features */,
 			);
