@@ -35,8 +35,13 @@ final class PresenterTests: XCTestCase {
         XCTAssertEqual(viewControllerSpy.howManyTimes, 1)
         XCTAssertEqual(viewControllerSpy.errorMessage, data.cep)
     }
-    
-    private func makeSut() -> (sut: MainPresenter, viewControllerSpy: ViewControllerSpy) {
+}
+
+extension PresenterTests {
+    private func makeSut() -> (
+        sut: MainPresenter,
+        viewControllerSpy: ViewControllerSpy
+    ) {
         let coordinator = MainCoordinator()
         let viewControllerSpy = ViewControllerSpy()
         let sut = MainPresenter(coordinator: coordinator)

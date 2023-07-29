@@ -46,13 +46,14 @@ final class InteractorTests: XCTestCase {
         XCTAssertEqual(presenterSpy.howManyTimes, 1)
         XCTAssertEqual(presenterSpy.dataModelExpected, data)
     }
-    
+}
+
+extension InteractorTests {
     private func makeSut() -> (
         sut: MainInteractor,
         presenterSpy: InteractorSpy,
         serviceSpy: ServiceMock
     ) {
-        
         let serviceSpy = ServiceMock()
         let presenterSpy = InteractorSpy()
         let sut = MainInteractor(
