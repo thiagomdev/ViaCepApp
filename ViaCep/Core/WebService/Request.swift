@@ -30,7 +30,8 @@ extension Request {
                     URLQueryItem(
                         name: key,
                         value: value.addingPercentEncoding(
-                            withAllowedCharacters: .urlQueryAllowed))
+                            withAllowedCharacters: .urlPathAllowed)
+                    )
                 )
             }
             components.queryItems = queryItems
@@ -40,3 +41,19 @@ extension Request {
     }
 }
 
+public func prepareBody<T: Encodable>(
+    with payload: T,
+    strategy: JSONEncoder.KeyEncodingStrategy = .useDefaultKeys
+    ) -> Data? {
+        
+    let jsonEncoder = JSONEncoder()
+    jsonEncoder.outputFormatting = .prettyPrinted
+    jsonEncoder.keyEncodingStrategy = strategy
+    
+    do {
+        return try jsonEncoder.encode(payload)
+    } catch {
+        print("Failure to prepare card payload. \(error)")
+        return nil
+    }
+}

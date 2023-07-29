@@ -17,7 +17,6 @@ final class MainViewController: UIViewController {
         stack.axis = .vertical
         stack.spacing = 10
         stack.distribution = .fillProportionally
-        stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }()
     
@@ -25,7 +24,6 @@ final class MainViewController: UIViewController {
         let textField = UITextField()
         textField.placeholder = "Digite um cep válido"
         textField.borderStyle = .roundedRect
-        textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
     
@@ -118,7 +116,7 @@ extension MainViewController {
     }
     
     private func pin() {
-        NSLayoutConstraint.activate([
+        NSLayoutConstraint.didActivePin([
             stackViewContainer.topAnchor.constraint(
                 equalTo: view.safeAreaLayoutGuide.topAnchor,
                 constant: 16
@@ -146,7 +144,6 @@ extension MainViewController {
         let label = UILabel()
         label.textColor = .gray
         label.font = .boldSystemFont(ofSize: 16)
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }
 }

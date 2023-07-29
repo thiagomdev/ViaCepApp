@@ -2,6 +2,7 @@ import XCTest
 @testable import ViaCep
 
 final class PresenterTests: XCTestCase {
+    typealias DataCepMock = DataCep
     
     func test_PresentCep_WhenGetsAllOfInformationData_ShouldReturnDataCep() {
         // Given
@@ -16,6 +17,34 @@ final class PresenterTests: XCTestCase {
         XCTAssertEqual(viewControllerSpy.expected, .fixture())
     }
     
+    func test_didShowError() {
+        // Given
+        let (sut, viewControllerSpy) = makeSut()
+        let message: String = "Something was wrong..."
+        
+        // When
+        sut.displayError(message)
+        
+        // Then
+        XCTAssertEqual(viewControllerSpy.wasCalled, true)
+        XCTAssertEqual(viewControllerSpy.howManyTimes, 1)
+        XCTAssertEqual(viewControllerSpy.errorMessage, message)
+    }
+    
+    func test_DidDisplayInvalidCepMessage() {
+        // Given
+        let (sut, viewControllerSpy) = makeSut()
+        
+        // When
+        let data: DataCepMock = .fixture(cep: "01150011")
+        sut.displayInvalidCepAlertMessage(data)
+        
+        // Then
+        XCTAssertEqual(viewControllerSpy.wasCalled, true)
+        XCTAssertEqual(viewControllerSpy.howManyTimes, 1)
+        XCTAssertEqual(viewControllerSpy.errorMessage, data.cep)
+    }
+    
     private func makeSut() -> (sut: MainPresenter, viewControllerSpy: ViewControllerSpy) {
         let coordinator = MainCoordinator()
         let viewControllerSpy = ViewControllerSpy()
@@ -28,6 +57,7 @@ final class PresenterTests: XCTestCase {
 final class ViewControllerSpy: MainViewControlling {
 
     private(set) var wasCalled: Bool = false
+    private(set) var errorMessage: String?
     private(set) var howManyTimes: Int = 0
     var expected: DataCep?
     
@@ -38,10 +68,14 @@ final class ViewControllerSpy: MainViewControlling {
     }
     
     func didShowError(_ message: String) {
-        
+        wasCalled = true
+        howManyTimes += 1
+        errorMessage = message
     }
     
     func didDisplayInvalidCepMessage(_ message: String) {
-        
+        wasCalled = true
+        howManyTimes += 1
+        errorMessage = message
     }
 }

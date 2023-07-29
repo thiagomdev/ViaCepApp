@@ -45,6 +45,20 @@ final class InteractorTests: XCTestCase {
         XCTAssertEqual(presenterSpy.expected, expected)
     }
     
+    
+    func test_DisplayInvalidCep() {
+        // Given
+        let (sut, presenterSpy, _) = makeSut()
+        let data: DataCepMock = .fixture()
+        // When
+        sut.displayInvalidCep(data)
+
+        // Then
+        XCTAssertEqual(presenterSpy.wasCalled, true)
+        XCTAssertEqual(presenterSpy.howManyTimes, 1)
+        XCTAssertEqual(presenterSpy.dataModelExpected, data)
+    }
+    
     private func makeSut() -> (
         sut: MainInteractor,
         presenterSpy: PresenterSpy,
