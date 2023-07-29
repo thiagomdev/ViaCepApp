@@ -220,8 +220,8 @@
 		AA7B05B02A72998900A5CECE /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				AAF24B3C2A74D0FE00787C38 /* NSLayout+Extension */,
 				AA7B05B42A729BBD00A5CECE /* WebService */,
+				AAF24B3C2A74D0FE00787C38 /* NSLayout+Extension */,
 			);
 			path = Core;
 			sourceTree = "<group>";

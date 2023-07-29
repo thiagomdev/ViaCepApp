@@ -8,6 +8,7 @@ protocol MainViewControlling: AnyObject {
 }
 
 final class MainViewController: UIViewController {
+    fileprivate enum Layout { }
     // MARK: - Properties
     private let interactor: MainInteracting
     
@@ -82,21 +83,34 @@ extension MainViewController: MainViewControlling {
     
     func didShowError(_ message: String) {
         DispatchQueue.main.async { [weak self] in
-            let alert = UIAlertController(title: "ALERT ⚠️", message: message, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "FECHAR", style: .default))
+            let alert = UIAlertController(
+                title: "ALERT ⚠️",
+                message: message,
+                preferredStyle: .alert
+            )
+            alert.addAction(
+                UIAlertAction(
+                    title: "FECHAR",
+                    style: .default)
+            )
             
-            self?.logradouroLabel.text = self?.interactor.clearText()
-            self?.bairroLabel.text = self?.interactor.clearText()
-            self?.localidadeLabel.text = self?.interactor.clearText()
-            
+            self?.didClearText()
             self?.present(alert, animated: true)
         }
     }
     
     func didDisplayInvalidCepMessage(_ message: String) {
         DispatchQueue.main.async { [weak self] in
-            let alert = UIAlertController(title: "ALERT ⚠️", message: "Este CEP não existe.", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "FECHAR", style: .default))
+            let alert = UIAlertController(
+                title: "ALERT ⚠️",
+                message: "Este CEP não existe.",
+                preferredStyle: .alert
+            )
+            alert.addAction(
+                UIAlertAction(
+                    title: "FECHAR",
+                    style: .default)
+            )
             self?.present(alert, animated: true)
         }
     }
@@ -119,17 +133,19 @@ extension MainViewController {
         NSLayoutConstraint.didActivePin([
             stackViewContainer.topAnchor.constraint(
                 equalTo: view.safeAreaLayoutGuide.topAnchor,
-                constant: 16
+                constant: Layout.Size.constant
             ),
             stackViewContainer.leadingAnchor.constraint(
                 equalTo: view.safeAreaLayoutGuide.leadingAnchor,
-                constant: 16
+                constant: Layout.Size.constant
             ),
             stackViewContainer.trailingAnchor.constraint(
                 equalTo: view.safeAreaLayoutGuide.trailingAnchor,
-                constant: -16
+                constant: -Layout.Size.constant
             ),
-            searchCepButton.heightAnchor.constraint(equalToConstant: 40)
+            searchCepButton.heightAnchor.constraint(
+                equalToConstant: Layout.Size.height
+            )
         ])
     }
     
@@ -142,8 +158,22 @@ extension MainViewController {
 extension MainViewController {
     private func makeLabel() -> UILabel {
         let label = UILabel()
-        label.textColor = .gray
-        label.font = .boldSystemFont(ofSize: 16)
+        label.textColor = .darkGray
+        label.font = .boldSystemFont(ofSize: Layout.Size.constant)
         return label
+    }
+    
+    private func didClearText() {
+        logradouroLabel.text = interactor.clearText()
+        bairroLabel.text = interactor.clearText()
+        localidadeLabel.text = interactor.clearText()
+    }
+}
+
+// MARK: - MainViewController.Layout
+extension MainViewController.Layout {
+    enum Size {
+        static let constant: CGFloat = 16
+        static let height: CGFloat = 40
     }
 }
