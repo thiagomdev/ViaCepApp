@@ -72,7 +72,11 @@ final class Tasking<T: Codable>: Task {
                     }
                 }
             } else {
-                self?.callback?(.failure(NetworkError.responseError(data, httpResponse.statusCode)))
+                self?.callback?(
+                    .failure(
+                        NetworkError.responseError(
+                            data, httpResponse.statusCode))
+                )
             }
         })
                                           
