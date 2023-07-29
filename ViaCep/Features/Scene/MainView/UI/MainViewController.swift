@@ -16,7 +16,7 @@ final class MainViewController: UIViewController {
         let stack = UIStackView()
         stack.axis = .vertical
         stack.spacing = 10
-        stack.distribution = .fillProportionally
+        stack.distribution = .fill
         return stack
     }()
     

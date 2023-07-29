@@ -1,15 +1,5 @@
 import Foundation
 
-enum NetworkError: Error {
-    case responseError(Data?, Int)
-}
-
-struct EmptyResponse: Decodable {
-    init() {
-        
-    }
-}
-
 final class Tasking<T: Codable>: Task {
     let request: Request
     
@@ -85,5 +75,15 @@ final class Tasking<T: Codable>: Task {
     
     func cancel() {
         task?.cancel()
+    }
+}
+
+enum NetworkError: Error {
+    case responseError(Data?, Int)
+}
+
+struct EmptyResponse: Decodable {
+    init() {
+        
     }
 }
