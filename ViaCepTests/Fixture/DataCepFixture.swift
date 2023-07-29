@@ -2,10 +2,10 @@
 
 extension DataCep {
     static func fixture(
-        cep: String = "",
-        logradouro: String = "",
-        bairro: String = "",
-        localidade: String = ""
+        cep: String = "01150011",
+        logradouro: String = "Praça Marechal Deodoro",
+        bairro: String = "Santa Cecília",
+        localidade: String = "São Paulo"
     ) -> DataCep {
         
         DataCep(

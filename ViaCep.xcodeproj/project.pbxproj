@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AA760A752A73F5BC007E718A /* ViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA760A742A73F5BC007E718A /* ViewControllerTests.swift */; };
 		AA7B05852A7292F300A5CECE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7B05842A7292F300A5CECE /* AppDelegate.swift */; };
 		AA7B05872A7292F300A5CECE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7B05862A7292F300A5CECE /* SceneDelegate.swift */; };
 		AA7B05892A7292F300A5CECE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7B05882A7292F300A5CECE /* MainViewController.swift */; };
@@ -28,6 +27,9 @@
 		AA7B05D72A72F39400A5CECE /* DataCepFixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7B05D62A72F39400A5CECE /* DataCepFixture.swift */; };
 		AA9FD4B42A73046000CA1773 /* PresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9FD4B32A73046000CA1773 /* PresenterTests.swift */; };
 		AAF24B3E2A74D12A00787C38 /* NSLayout+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF24B3D2A74D12A00787C38 /* NSLayout+Extensions.swift */; };
+		AAF24B412A74E5A200787C38 /* InteractorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF24B402A74E5A200787C38 /* InteractorSpy.swift */; };
+		AAF24B442A74E60100787C38 /* ServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF24B432A74E60100787C38 /* ServiceMock.swift */; };
+		AAF24B462A74E68A00787C38 /* ViewControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF24B452A74E68A00787C38 /* ViewControllerSpy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +43,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		AA760A742A73F5BC007E718A /* ViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTests.swift; sourceTree = "<group>"; };
 		AA7B05812A7292F300A5CECE /* ViaCep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ViaCep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA7B05842A7292F300A5CECE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA7B05862A7292F300A5CECE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +67,9 @@
 		AA9FD4B12A72FFC400CA1773 /* ViaCep.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = ViaCep.xctestplan; sourceTree = "<group>"; };
 		AA9FD4B32A73046000CA1773 /* PresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterTests.swift; sourceTree = "<group>"; };
 		AAF24B3D2A74D12A00787C38 /* NSLayout+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayout+Extensions.swift"; sourceTree = "<group>"; };
+		AAF24B402A74E5A200787C38 /* InteractorSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractorSpy.swift; sourceTree = "<group>"; };
+		AAF24B432A74E60100787C38 /* ServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceMock.swift; sourceTree = "<group>"; };
+		AAF24B452A74E68A00787C38 /* ViewControllerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerSpy.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -270,6 +274,8 @@
 		AA9FD4BE2A7326C600CA1773 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				AAF24B3F2A74E59100787C38 /* Spies */,
+				AAF24B422A74E5E900787C38 /* Mockies */,
 				AA9FD4BF2A7326CB00CA1773 /* MainTests */,
 			);
 			path = Scene;
@@ -280,7 +286,6 @@
 			children = (
 				AA7B05D32A72C3C600A5CECE /* InteractorTests.swift */,
 				AA9FD4B32A73046000CA1773 /* PresenterTests.swift */,
-				AA760A742A73F5BC007E718A /* ViewControllerTests.swift */,
 			);
 			path = MainTests;
 			sourceTree = "<group>";
@@ -291,6 +296,23 @@
 				AAF24B3D2A74D12A00787C38 /* NSLayout+Extensions.swift */,
 			);
 			path = "NSLayout+Extension";
+			sourceTree = "<group>";
+		};
+		AAF24B3F2A74E59100787C38 /* Spies */ = {
+			isa = PBXGroup;
+			children = (
+				AAF24B402A74E5A200787C38 /* InteractorSpy.swift */,
+				AAF24B452A74E68A00787C38 /* ViewControllerSpy.swift */,
+			);
+			path = Spies;
+			sourceTree = "<group>";
+		};
+		AAF24B422A74E5E900787C38 /* Mockies */ = {
+			isa = PBXGroup;
+			children = (
+				AAF24B432A74E60100787C38 /* ServiceMock.swift */,
+			);
+			path = Mockies;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -416,10 +438,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAF24B412A74E5A200787C38 /* InteractorSpy.swift in Sources */,
 				AA7B05D72A72F39400A5CECE /* DataCepFixture.swift in Sources */,
 				AA7B05D42A72C3C600A5CECE /* InteractorTests.swift in Sources */,
-				AA760A752A73F5BC007E718A /* ViewControllerTests.swift in Sources */,
+				AAF24B442A74E60100787C38 /* ServiceMock.swift in Sources */,
 				AA9FD4B42A73046000CA1773 /* PresenterTests.swift in Sources */,
+				AAF24B462A74E68A00787C38 /* ViewControllerSpy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
