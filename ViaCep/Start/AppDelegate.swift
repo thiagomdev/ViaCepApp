@@ -1,12 +1,10 @@
 import UIKit
+import UserNotifications
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
-
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        startNotifications()
         return true
     }
 
@@ -24,6 +22,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
-
+    private func scheduleNotifications() {
+        let content = UNMutableNotificationContent()
+        content.title = "Bem vindo ao Via Cep App."
+        content.subtitle = "App para buscar cep."
+        content.body = "Este App você pode buscar por algum cep e ver em qual endereço que ele te devolve."
+        content.sound = .default
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        let identifier = UUID().uuidString
+        let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
+        
+        UNUserNotificationCenter.current().add(request) { error in
+            if let error = error {
+                print(error)
+            } else {
+                
+            }
+        }
+    }
+    
+    private func startNotifications() {
+        UNUserNotificationCenter.current().requestAuthorization(
+            options: [.alert, .sound, .badge]) { [weak self] granded, error in
+            if granded {
+                self?.scheduleNotifications()
+                print("Permissão concedida...")
+            } else {
+                print("Permissão negada...")
+            }
+        }
+        UNUserNotificationCenter.current().delegate = self
+    }
 }
 

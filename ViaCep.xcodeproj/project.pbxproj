@@ -159,9 +159,7 @@
 		AA7B059C2A72937200A5CECE /* MainView */ = {
 			isa = PBXGroup;
 			children = (
-				AA7B05C32A72C22700A5CECE /* Coordinator */,
 				AA7B05A02A7293E400A5CECE /* Domain */,
-				AA7B05A52A7294D900A5CECE /* Factory */,
 				AA7B05A42A72949600A5CECE /* Interactor */,
 				AA7B059E2A7293DE00A5CECE /* Presenter */,
 				AA7B059F2A7293E100A5CECE /* Service */,
@@ -223,8 +221,10 @@
 		AA7B05B02A72998900A5CECE /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				AA7B05B42A729BBD00A5CECE /* WebService */,
+				AA7B05C32A72C22700A5CECE /* Coordinator */,
+				AA7B05A52A7294D900A5CECE /* Factory */,
 				AAF24B3C2A74D0FE00787C38 /* NSLayout+Extension */,
+				AA7B05B42A729BBD00A5CECE /* WebService */,
 			);
 			path = Core;
 			sourceTree = "<group>";
