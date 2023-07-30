@@ -64,20 +64,14 @@ final class MainViewController: UIViewController {
 extension MainViewController {
     @objc
     private func didSearchCep() {
-        guard let cep = inputedCepTextField.text else { return }
-        interactor.showCep(cep)
-        inputedCepTextField.text = interactor.clearText()
+        searchCep()
     }
 }
 
 // MARK: - MainViewControlling / Protocol
 extension MainViewController: MainViewControlling {
     func didShowCep(_ cep: DataCep) {
-        DispatchQueue.main.async { [weak self] in
-            self?.logradouroLabel.text = "Logradouro: \(cep.logradouro)"
-            self?.bairroLabel.text = "Bairro: \(cep.bairro)"
-            self?.localidadeLabel.text = "Localidade: \(cep.localidade)"
-        }
+        didDisplayCep(cep)
     }
     
     func didShowError(_ message: String) {
@@ -112,6 +106,36 @@ extension MainViewController: MainViewControlling {
             )
             self?.present(alert, animated: true)
         }
+    }
+}
+
+// MARK: - MainViewController
+extension MainViewController {
+    private func didClearText() {
+        logradouroLabel.text = interactor.clearText()
+        bairroLabel.text = interactor.clearText()
+        localidadeLabel.text = interactor.clearText()
+    }
+    
+    private func didDisplayCep(_ cep: DataCep) {
+        DispatchQueue.main.async { [weak self] in
+            self?.logradouroLabel.text = "Logradouro: \(cep.logradouro)"
+            self?.bairroLabel.text = "Bairro: \(cep.bairro)"
+            self?.localidadeLabel.text = "Localidade: \(cep.localidade)"
+        }
+    }
+    
+    private func searchCep() {
+        guard let cep = inputedCepTextField.text else { return }
+        interactor.showCep(cep)
+        inputedCepTextField.text = interactor.clearText()
+    }
+    
+    private func makeLabel() -> UILabel {
+        let label = UILabel()
+        label.textColor = .darkGray
+        label.font = .boldSystemFont(ofSize: Layout.Size.constant)
+        return label
     }
 }
 
@@ -150,21 +174,5 @@ extension MainViewController {
     
     func extraConfig() {
         view.backgroundColor = .systemBackground
-    }
-}
-
-// MARK: - MainViewController / Created UILabel
-extension MainViewController {
-    private func makeLabel() -> UILabel {
-        let label = UILabel()
-        label.textColor = .darkGray
-        label.font = .boldSystemFont(ofSize: Layout.Size.constant)
-        return label
-    }
-    
-    private func didClearText() {
-        logradouroLabel.text = interactor.clearText()
-        bairroLabel.text = interactor.clearText()
-        localidadeLabel.text = interactor.clearText()
     }
 }
