@@ -30,6 +30,7 @@
 		AAF24B412A74E5A200787C38 /* InteractorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF24B402A74E5A200787C38 /* InteractorSpy.swift */; };
 		AAF24B442A74E60100787C38 /* ServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF24B432A74E60100787C38 /* ServiceMock.swift */; };
 		AAF24B462A74E68A00787C38 /* ViewControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF24B452A74E68A00787C38 /* ViewControllerSpy.swift */; };
+		AAF24B592A75DED300787C38 /* LayoutDimentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF24B582A75DED300787C38 /* LayoutDimentions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		AAF24B402A74E5A200787C38 /* InteractorSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractorSpy.swift; sourceTree = "<group>"; };
 		AAF24B432A74E60100787C38 /* ServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceMock.swift; sourceTree = "<group>"; };
 		AAF24B452A74E68A00787C38 /* ViewControllerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerSpy.swift; sourceTree = "<group>"; };
+		AAF24B582A75DED300787C38 /* LayoutDimentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutDimentions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				AA7B05882A7292F300A5CECE /* MainViewController.swift */,
+				AAF24B582A75DED300787C38 /* LayoutDimentions.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -421,6 +424,7 @@
 				AA7B05C12A72C22000A5CECE /* MainCoordinator.swift in Sources */,
 				AA7B05BA2A729C7000A5CECE /* Request.swift in Sources */,
 				AA7B05B82A729C5A00A5CECE /* Networking.swift in Sources */,
+				AAF24B592A75DED300787C38 /* LayoutDimentions.swift in Sources */,
 				AA7B05AD2A72978800A5CECE /* MainFactory.swift in Sources */,
 				AA7B05B62A729BCF00A5CECE /* HttpMethod.swift in Sources */,
 				AA7B05A92A72963E00A5CECE /* MainPresenter.swift in Sources */,

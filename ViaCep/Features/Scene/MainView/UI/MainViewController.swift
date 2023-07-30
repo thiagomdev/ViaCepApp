@@ -8,7 +8,7 @@ protocol MainViewControlling: AnyObject {
 }
 
 final class MainViewController: UIViewController {
-    fileprivate enum Layout { }
+    public enum Layout { }
     // MARK: - Properties
     private let interactor: MainInteracting
     
@@ -167,13 +167,5 @@ extension MainViewController {
         logradouroLabel.text = interactor.clearText()
         bairroLabel.text = interactor.clearText()
         localidadeLabel.text = interactor.clearText()
-    }
-}
-
-// MARK: - MainViewController.Layout
-extension MainViewController.Layout {
-    enum Size {
-        static let constant: CGFloat = 16
-        static let height: CGFloat = 40
     }
 }
