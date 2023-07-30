@@ -33,7 +33,6 @@ final class MainViewController: UIViewController {
         button.setTitle("Buscar Cep", for: .normal)
         button.backgroundColor = .lightGray
         button.layer.cornerRadius = 8
-        button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(didSearchCep), for: .touchUpInside)
         return button
     }()
