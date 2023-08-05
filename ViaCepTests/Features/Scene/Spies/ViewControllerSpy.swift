@@ -2,27 +2,23 @@ import Foundation
 @testable import ViaCep
 
 final class ViewControllerSpy: MainViewControlling {
-
-    private(set) var wasCalled: Bool = false
-    private(set) var errorMessage: String?
-    private(set) var howManyTimes: Int = 0
-    var expected: DataCep?
+    enum Messages: Equatable {
+        case didShowCep(_ cep: ViaCep.DataCep)
+        case didShowError(_ message: String)
+        case didDisplayInvalidCepMessage(_ message: String)
+    }
     
+    private(set) var messages: [Messages] = []
+
     func didShowCep(_ cep: ViaCep.DataCep) {
-        wasCalled = true
-        howManyTimes += 1
-        expected = cep
+        messages.append(.didShowCep(cep))
     }
     
     func didShowError(_ message: String) {
-        wasCalled = true
-        howManyTimes += 1
-        errorMessage = message
+        messages.append(.didShowError(message))
     }
     
     func didDisplayInvalidCepMessage(_ message: String) {
-        wasCalled = true
-        howManyTimes += 1
-        errorMessage = message
+        messages.append(.didDisplayInvalidCepMessage(message))
     }
 }
