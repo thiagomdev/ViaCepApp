@@ -2,30 +2,27 @@ import XCTest
 @testable import ViaCep
 
 final class InteractorTests: XCTestCase {
-    typealias DataCepMock = DataCep
+    typealias Mock = DataCep
     
     func test_ShowCep_WhenTheServiceSearchAValidCep_ShouldReturnAValidCep() {
         let (sut, presenterSpy, serviceSpy) = makeSut()
-        let data = DataCepMock.fixture()
+        let data = Mock.dummy()
         
         serviceSpy.expexted = .success(data)
         sut.showCep(data.cep)
-        
-        XCTAssertEqual(presenterSpy.wasCalled, true)
-        XCTAssertEqual(presenterSpy.howManyTimes, 1)
-        XCTAssertEqual(presenterSpy.expected, "01150011")
+
+        XCTAssertEqual(presenterSpy.messages, [.presentCep(data)])
     }
     
     func test_Failure() {
         let (sut, presenterSpy, serviceSpy) = makeSut()
-        let data = DataCepMock.fixture()
+        let data = Mock.dummy()
         let error = NSError(domain: "", code: 0, userInfo: nil)
 
         serviceSpy.expexted = .failure(error)
         sut.showCep(data.cep)
-        
-        XCTAssertEqual(presenterSpy.wasCalled, true)
-        XCTAssertEqual(presenterSpy.howManyTimes, 1)
+
+        XCTAssertEqual(presenterSpy.messages, [.displayError(error.localizedDescription)])
     }
     
     func test_ClearText_WhenNeedToClearText_ShouldReturnNilToClearAllOfThen() {
@@ -38,13 +35,11 @@ final class InteractorTests: XCTestCase {
     
     func test_DisplayInvalidCep() {
         let (sut, presenterSpy, _) = makeSut()
-        let data: DataCepMock = .fixture()
+        let data: Mock = .dummy()
         
         sut.displayInvalidCep(data)
-
-        XCTAssertEqual(presenterSpy.wasCalled, true)
-        XCTAssertEqual(presenterSpy.howManyTimes, 1)
-        XCTAssertEqual(presenterSpy.dataModelExpected, data)
+        
+        XCTAssertEqual(presenterSpy.messages, [.displayInvalidCepAlertMessage(data)])
     }
 }
 
