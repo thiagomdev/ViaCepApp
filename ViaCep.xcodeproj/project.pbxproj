@@ -30,7 +30,7 @@
 		AAF24B412A74E5A200787C38 /* InteractorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF24B402A74E5A200787C38 /* InteractorSpy.swift */; };
 		AAF24B442A74E60100787C38 /* ServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF24B432A74E60100787C38 /* ServiceMock.swift */; };
 		AAF24B462A74E68A00787C38 /* ViewControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF24B452A74E68A00787C38 /* ViewControllerSpy.swift */; };
-		AAF24B592A75DED300787C38 /* LayoutDimentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF24B582A75DED300787C38 /* LayoutDimentions.swift */; };
+		AAFC119A2A7C914500F9128C /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFC11992A7C914500F9128C /* Cache.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,7 +71,7 @@
 		AAF24B402A74E5A200787C38 /* InteractorSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractorSpy.swift; sourceTree = "<group>"; };
 		AAF24B432A74E60100787C38 /* ServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceMock.swift; sourceTree = "<group>"; };
 		AAF24B452A74E68A00787C38 /* ViewControllerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerSpy.swift; sourceTree = "<group>"; };
-		AAF24B582A75DED300787C38 /* LayoutDimentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutDimentions.swift; sourceTree = "<group>"; };
+		AAFC11992A7C914500F9128C /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +97,7 @@
 			children = (
 				AA7B05832A7292F300A5CECE /* ViaCep */,
 				AA7B05C92A72C39000A5CECE /* ViaCepTests */,
+				AA9FD4B12A72FFC400CA1773 /* ViaCep.xctestplan */,
 				AA7B05822A7292F300A5CECE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -113,8 +114,8 @@
 		AA7B05832A7292F300A5CECE /* ViaCep */ = {
 			isa = PBXGroup;
 			children = (
-				AA7B05B02A72998900A5CECE /* Core */,
 				AA7B059A2A72930B00A5CECE /* Start */,
+				AA7B05B02A72998900A5CECE /* Core */,
 				AA7B05992A72930800A5CECE /* Features */,
 				AA7B05982A72930500A5CECE /* SupportingFiles */,
 			);
@@ -172,7 +173,6 @@
 			isa = PBXGroup;
 			children = (
 				AA7B05882A7292F300A5CECE /* MainViewController.swift */,
-				AAF24B582A75DED300787C38 /* LayoutDimentions.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -221,6 +221,7 @@
 		AA7B05B02A72998900A5CECE /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				AAFC11982A7C913800F9128C /* Cache */,
 				AA7B05C32A72C22700A5CECE /* Coordinator */,
 				AA7B05A52A7294D900A5CECE /* Factory */,
 				AAF24B3C2A74D0FE00787C38 /* NSLayout+Extension */,
@@ -251,7 +252,6 @@
 		AA7B05C92A72C39000A5CECE /* ViaCepTests */ = {
 			isa = PBXGroup;
 			children = (
-				AA9FD4B12A72FFC400CA1773 /* ViaCep.xctestplan */,
 				AA7B05D52A72F38200A5CECE /* Fixture */,
 				AA9FD4BD2A7326B900CA1773 /* Features */,
 			);
@@ -277,9 +277,9 @@
 		AA9FD4BE2A7326C600CA1773 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				AA9FD4BF2A7326CB00CA1773 /* MainTests */,
 				AAF24B3F2A74E59100787C38 /* Spies */,
 				AAF24B422A74E5E900787C38 /* Mockies */,
-				AA9FD4BF2A7326CB00CA1773 /* MainTests */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -316,6 +316,14 @@
 				AAF24B432A74E60100787C38 /* ServiceMock.swift */,
 			);
 			path = Mockies;
+			sourceTree = "<group>";
+		};
+		AAFC11982A7C913800F9128C /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				AAFC11992A7C914500F9128C /* Cache.swift */,
+			);
+			path = Cache;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -423,8 +431,8 @@
 				AA7B05892A7292F300A5CECE /* MainViewController.swift in Sources */,
 				AA7B05C12A72C22000A5CECE /* MainCoordinator.swift in Sources */,
 				AA7B05BA2A729C7000A5CECE /* Request.swift in Sources */,
+				AAFC119A2A7C914500F9128C /* Cache.swift in Sources */,
 				AA7B05B82A729C5A00A5CECE /* Networking.swift in Sources */,
-				AAF24B592A75DED300787C38 /* LayoutDimentions.swift in Sources */,
 				AA7B05AD2A72978800A5CECE /* MainFactory.swift in Sources */,
 				AA7B05B62A729BCF00A5CECE /* HttpMethod.swift in Sources */,
 				AA7B05A92A72963E00A5CECE /* MainPresenter.swift in Sources */,
@@ -602,6 +610,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -630,6 +639,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

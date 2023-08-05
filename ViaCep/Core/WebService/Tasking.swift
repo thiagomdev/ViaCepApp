@@ -32,7 +32,6 @@ final class Tasking<T: Codable>: Task {
         print("DEBUG: Body -> \(self.request.body ?? Data())")
         
         task = URLSession.shared.dataTask(with: request, completionHandler: { [weak self] data, response, error in
-            
             if let data = data {
                 if let json = try? JSONSerialization.jsonObject(with: data),
                    let printData = try? JSONSerialization.data(withJSONObject: json, options: .prettyPrinted),
