@@ -7,11 +7,9 @@ final class PresenterTests: XCTestCase {
     func test_PresentCep_WhenGetsAllOfInformationData_ShouldReturnDataCep() {
         let (sut, viewControllerSpy) = makeSut()
         
-        sut.presentCep(.fixture())
+        sut.presentCep(.dummy())
         
-        XCTAssertEqual(viewControllerSpy.wasCalled, true)
-        XCTAssertEqual(viewControllerSpy.howManyTimes, 1)
-        XCTAssertEqual(viewControllerSpy.expected, .fixture())
+        XCTAssertEqual(viewControllerSpy.messages, [.didShowCep(.dummy())])
     }
     
     func test_didShowError() {
@@ -20,20 +18,16 @@ final class PresenterTests: XCTestCase {
         
         sut.displayError(message)
         
-        XCTAssertEqual(viewControllerSpy.wasCalled, true)
-        XCTAssertEqual(viewControllerSpy.howManyTimes, 1)
-        XCTAssertEqual(viewControllerSpy.errorMessage, message)
+        XCTAssertEqual(viewControllerSpy.messages, [.didShowError(message)])
     }
     
     func test_DidDisplayInvalidCepMessage() {
         let (sut, viewControllerSpy) = makeSut()
         
-        let data: DataCepMock = .fixture()
+        let data: DataCepMock = .dummy()
         sut.displayInvalidCepAlertMessage(data)
         
-        XCTAssertEqual(viewControllerSpy.wasCalled, true)
-        XCTAssertEqual(viewControllerSpy.howManyTimes, 1)
-        XCTAssertEqual(viewControllerSpy.errorMessage, data.cep)
+        XCTAssertEqual(viewControllerSpy.messages, [.didDisplayInvalidCepMessage(data.cep)])
     }
 }
 
