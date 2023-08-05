@@ -10,18 +10,15 @@ final class InteractorSpy: MainPresenting {
     
     private(set) var messages: [Messages] = []
     private(set) var expected: String?
-    private(set) var dataModelExpected: DataCep?
         
     func presentCep(_ cep: ViaCep.DataCep) {
         messages.append(.presentCep(cep))
     }
     
-    private(set) var displayErrorIsCalled: Bool = false
     func displayError(_ message: String) {
         messages.append(.displayError(message))
     }
     
-    private(set) var displayInvalidCepAlertMessageIsCalled: Bool = false
     func displayInvalidCepAlertMessage(_ data: ViaCep.DataCep) {
         messages.append(.displayInvalidCepAlertMessage(data))
     }
