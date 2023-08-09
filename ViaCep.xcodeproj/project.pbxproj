@@ -25,11 +25,15 @@
 		AA7B05C12A72C22000A5CECE /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7B05BF2A72C21F00A5CECE /* MainCoordinator.swift */; };
 		AA7B05D42A72C3C600A5CECE /* InteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7B05D32A72C3C600A5CECE /* InteractorTests.swift */; };
 		AA7B05D72A72F39400A5CECE /* DataCepFixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7B05D62A72F39400A5CECE /* DataCepFixture.swift */; };
+		AA809B122A82E18C000F506D /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA809B112A82E18C000F506D /* NetworkError.swift */; };
+		AA809B142A82E1AE000F506D /* EmptyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA809B132A82E1AE000F506D /* EmptyResponse.swift */; };
 		AA9FD4B42A73046000CA1773 /* PresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9FD4B32A73046000CA1773 /* PresenterTests.swift */; };
+		AAA1A6252A7F284B00BE95A8 /* InteractorTests2.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA1A6242A7F284B00BE95A8 /* InteractorTests2.swift */; };
 		AAF24B3E2A74D12A00787C38 /* NSLayout+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF24B3D2A74D12A00787C38 /* NSLayout+Extensions.swift */; };
 		AAF24B412A74E5A200787C38 /* InteractorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF24B402A74E5A200787C38 /* InteractorSpy.swift */; };
 		AAF24B442A74E60100787C38 /* ServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF24B432A74E60100787C38 /* ServiceMock.swift */; };
 		AAF24B462A74E68A00787C38 /* ViewControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF24B452A74E68A00787C38 /* ViewControllerSpy.swift */; };
+		AAF5392A2A7F07CB002BB959 /* ServiceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF539292A7F07CB002BB959 /* ServiceStub.swift */; };
 		AAFC119A2A7C914500F9128C /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFC11992A7C914500F9128C /* Cache.swift */; };
 /* End PBXBuildFile section */
 
@@ -65,12 +69,16 @@
 		AA7B05C82A72C39000A5CECE /* ViaCepTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ViaCepTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA7B05D32A72C3C600A5CECE /* InteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractorTests.swift; sourceTree = "<group>"; };
 		AA7B05D62A72F39400A5CECE /* DataCepFixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCepFixture.swift; sourceTree = "<group>"; };
+		AA809B112A82E18C000F506D /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		AA809B132A82E1AE000F506D /* EmptyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyResponse.swift; sourceTree = "<group>"; };
 		AA9FD4B12A72FFC400CA1773 /* ViaCep.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = ViaCep.xctestplan; sourceTree = "<group>"; };
 		AA9FD4B32A73046000CA1773 /* PresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterTests.swift; sourceTree = "<group>"; };
+		AAA1A6242A7F284B00BE95A8 /* InteractorTests2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractorTests2.swift; sourceTree = "<group>"; };
 		AAF24B3D2A74D12A00787C38 /* NSLayout+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayout+Extensions.swift"; sourceTree = "<group>"; };
 		AAF24B402A74E5A200787C38 /* InteractorSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractorSpy.swift; sourceTree = "<group>"; };
 		AAF24B432A74E60100787C38 /* ServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceMock.swift; sourceTree = "<group>"; };
 		AAF24B452A74E68A00787C38 /* ViewControllerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerSpy.swift; sourceTree = "<group>"; };
+		AAF539292A7F07CB002BB959 /* ServiceStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceStub.swift; sourceTree = "<group>"; };
 		AAFC11992A7C914500F9128C /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -237,6 +245,8 @@
 				AA7B05B72A729C5A00A5CECE /* Networking.swift */,
 				AA7B05B92A729C7000A5CECE /* Request.swift */,
 				AA7B05BB2A729C7E00A5CECE /* Tasking.swift */,
+				AA809B112A82E18C000F506D /* NetworkError.swift */,
+				AA809B132A82E1AE000F506D /* EmptyResponse.swift */,
 			);
 			path = WebService;
 			sourceTree = "<group>";
@@ -277,6 +287,7 @@
 		AA9FD4BE2A7326C600CA1773 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				AAF539282A7F07B3002BB959 /* Stub */,
 				AA9FD4BF2A7326CB00CA1773 /* MainTests */,
 				AAF24B3F2A74E59100787C38 /* Spies */,
 				AAF24B422A74E5E900787C38 /* Mockies */,
@@ -289,6 +300,7 @@
 			children = (
 				AA7B05D32A72C3C600A5CECE /* InteractorTests.swift */,
 				AA9FD4B32A73046000CA1773 /* PresenterTests.swift */,
+				AAA1A6242A7F284B00BE95A8 /* InteractorTests2.swift */,
 			);
 			path = MainTests;
 			sourceTree = "<group>";
@@ -316,6 +328,14 @@
 				AAF24B432A74E60100787C38 /* ServiceMock.swift */,
 			);
 			path = Mockies;
+			sourceTree = "<group>";
+		};
+		AAF539282A7F07B3002BB959 /* Stub */ = {
+			isa = PBXGroup;
+			children = (
+				AAF539292A7F07CB002BB959 /* ServiceStub.swift */,
+			);
+			path = Stub;
 			sourceTree = "<group>";
 		};
 		AAFC11982A7C913800F9128C /* Cache */ = {
@@ -427,6 +447,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA809B122A82E18C000F506D /* NetworkError.swift in Sources */,
 				AAF24B3E2A74D12A00787C38 /* NSLayout+Extensions.swift in Sources */,
 				AA7B05892A7292F300A5CECE /* MainViewController.swift in Sources */,
 				AA7B05C12A72C22000A5CECE /* MainCoordinator.swift in Sources */,
@@ -438,6 +459,7 @@
 				AA7B05A92A72963E00A5CECE /* MainPresenter.swift in Sources */,
 				AA7B05BE2A729E9600A5CECE /* MainRequest.swift in Sources */,
 				AA7B05852A7292F300A5CECE /* AppDelegate.swift in Sources */,
+				AA809B142A82E1AE000F506D /* EmptyResponse.swift in Sources */,
 				AA7B05A22A72941000A5CECE /* DataCep.swift in Sources */,
 				AA7B05AF2A72988400A5CECE /* MainService.swift in Sources */,
 				AA7B05BC2A729C7E00A5CECE /* Tasking.swift in Sources */,
@@ -450,6 +472,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAF5392A2A7F07CB002BB959 /* ServiceStub.swift in Sources */,
+				AAA1A6252A7F284B00BE95A8 /* InteractorTests2.swift in Sources */,
 				AAF24B412A74E5A200787C38 /* InteractorSpy.swift in Sources */,
 				AA7B05D72A72F39400A5CECE /* DataCepFixture.swift in Sources */,
 				AA7B05D42A72C3C600A5CECE /* InteractorTests.swift in Sources */,
@@ -600,9 +624,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = L923PSABUA;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ViaCep/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -618,6 +642,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.thiagomonteiro.ViaCep;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -629,9 +654,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = L923PSABUA;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ViaCep/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -647,6 +672,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.thiagomonteiro.ViaCep;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

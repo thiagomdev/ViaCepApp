@@ -2,14 +2,14 @@ import XCTest
 @testable import ViaCep
 
 final class PresenterTests: XCTestCase {
-    typealias DataCepMock = DataCep
+    private let dataObject: DataCep = .fixture()
     
     func test_PresentCep_WhenGetsAllOfInformationData_ShouldReturnDataCep() {
         let (sut, viewControllerSpy) = makeSut()
         
-        sut.presentCep(.dummy())
+        sut.presentCep(.fixture())
         
-        XCTAssertEqual(viewControllerSpy.messages, [.didShowCep(.dummy())])
+        XCTAssertEqual(viewControllerSpy.messages, [.didShowCep(.fixture())])
     }
     
     func test_didShowError() {
@@ -24,10 +24,9 @@ final class PresenterTests: XCTestCase {
     func test_DidDisplayInvalidCepMessage() {
         let (sut, viewControllerSpy) = makeSut()
         
-        let data: DataCepMock = .dummy()
-        sut.displayInvalidCepAlertMessage(data)
+        sut.displayInvalidCepAlertMessage(dataObject)
         
-        XCTAssertEqual(viewControllerSpy.messages, [.didDisplayInvalidCepMessage(data.cep)])
+        XCTAssertEqual(viewControllerSpy.messages, [.didDisplayInvalidCepMessage(dataObject.cep)])
     }
 }
 

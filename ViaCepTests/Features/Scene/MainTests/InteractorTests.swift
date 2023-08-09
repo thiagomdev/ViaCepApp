@@ -2,44 +2,57 @@ import XCTest
 @testable import ViaCep
 
 final class InteractorTests: XCTestCase {
-    typealias Mock = DataCep
+    private let dataObject: DataCep = .fixture()
     
     func test_ShowCep_WhenTheServiceSearchAValidCep_ShouldReturnAValidCep() {
+        // Given - Arrange
         let (sut, presenterSpy, serviceSpy) = makeSut()
-        let data = Mock.dummy()
+        serviceSpy.expexted = .success(.fixture())
         
-        serviceSpy.expexted = .success(data)
-        sut.showCep(data.cep)
+        // When - Act
+        sut.showCep(dataObject.cep)
 
-        XCTAssertEqual(presenterSpy.messages, [.presentCep(data)])
+        // Then - Assert
+        XCTAssertEqual(serviceSpy.getCepWasCalled, true)
+        XCTAssertEqual(serviceSpy.getCepCounter, 1)
+        XCTAssertEqual(presenterSpy.messages, [.presentCep(dataObject)])
     }
-    
+ 
     func test_Failure() {
+        // Given - Arrange
         let (sut, presenterSpy, serviceSpy) = makeSut()
-        let data = Mock.dummy()
         let error = NSError(domain: "", code: 0, userInfo: nil)
 
+        // When - Act
         serviceSpy.expexted = .failure(error)
-        sut.showCep(data.cep)
+        sut.showCep(dataObject.cep)
 
+        // Then - Assert
+        XCTAssertEqual(serviceSpy.getCepWasCalled, true)
+        XCTAssertEqual(serviceSpy.getCepCounter, 1)
         XCTAssertEqual(presenterSpy.messages, [.displayError(error.localizedDescription)])
     }
     
     func test_ClearText_WhenNeedToClearText_ShouldReturnNilToClearAllOfThen() {
+        // Given - Arrange
         let (sut, presenterSpy, _) = makeSut()
         
+        // When - Act
         let expected = sut.clearText()
 
+        // Then - Assert
         XCTAssertEqual(presenterSpy.expected, expected)
     }
     
     func test_DisplayInvalidCep() {
+        // Given - Arrange
         let (sut, presenterSpy, _) = makeSut()
-        let data: Mock = .dummy()
         
-        sut.displayInvalidCep(data)
+        // When - Act
+        sut.displayInvalidCep(dataObject)
         
-        XCTAssertEqual(presenterSpy.messages, [.displayInvalidCepAlertMessage(data)])
+        // Then - Assert
+        XCTAssertEqual(presenterSpy.messages, [.displayInvalidCepAlertMessage(dataObject)])
     }
 }
 

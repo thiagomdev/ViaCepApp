@@ -76,13 +76,3 @@ final class Tasking<T: Codable>: Task {
         task?.cancel()
     }
 }
-
-enum NetworkError: Error {
-    case responseError(Data?, Int)
-}
-
-struct EmptyResponse: Decodable {
-    init() {
-        
-    }
-}
