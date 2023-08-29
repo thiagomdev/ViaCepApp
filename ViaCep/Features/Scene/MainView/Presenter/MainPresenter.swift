@@ -20,11 +20,11 @@ final class MainPresenter {
 // MARK: - MainPresenting / Protocol
 extension MainPresenter: MainPresenting {
     func presentCep(_ cep: DataCep) {
-        viewController?.didShowCep(cep)
+        viewController?.didPresentCep(cep)
     }
     
     func displayError(_ message: String) {
-        viewController?.didShowError(message)
+        viewController?.didShowErrorMessage(message)
     }
     
     func displayInvalidCepAlertMessage(_ data: DataCep) {

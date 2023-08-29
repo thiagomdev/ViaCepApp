@@ -1,7 +1,7 @@
 import Foundation
 
 protocol MainServicing {
-    func getCep(_ cep: String, callback: @escaping (Result<DataCep, Error>) -> Void)
+    func fetchDataCep(_ cep: String, callback: @escaping (Result<DataCep, Error>) -> Void)
 }
 
 final class MainService {
@@ -19,7 +19,7 @@ final class MainService {
 
 // MARK: - MainServicingProtocol
 extension MainService: MainServicing {
-    func getCep(_ cep: String, callback: @escaping (Result<DataCep, Error>) -> Void) {
+    func fetchDataCep(_ cep: String, callback: @escaping (Result<DataCep, Error>) -> Void) {
         task = networking.execute(request: MainAPIRequest.cep(cep), responseType: DataCep.self, callback: { [weak self] result in
             guard let _ = self else { return }
             switch result {
@@ -32,5 +32,3 @@ extension MainService: MainServicing {
         task?.resume()
     }
 }
-
-

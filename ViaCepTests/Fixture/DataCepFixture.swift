@@ -1,7 +1,7 @@
 @testable import ViaCep
 
 extension DataCep {
-    static func fixture(
+    static func dummy(
         cep: String = "01150011",
         logradouro: String = "Praça Marechal Deodoro",
         bairro: String = "Santa Cecília",

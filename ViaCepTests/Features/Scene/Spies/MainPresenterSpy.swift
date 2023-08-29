@@ -1,7 +1,7 @@
 import Foundation
 @testable import ViaCep
 
-final class InteractorSpy: MainPresenting {
+final class MainPresenterSpy: MainPresenting {
     enum Messages: Equatable {
         case presentCep(_ cep: ViaCep.DataCep)
         case displayError(_ message: String)

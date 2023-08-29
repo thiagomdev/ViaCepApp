@@ -1,7 +1,7 @@
 import Foundation
 @testable import ViaCep
 
-final class ViewControllerSpy: MainViewControlling {
+final class MainViewControllerSpy: MainViewControlling {
     enum Messages: Equatable {
         case didShowCep(_ cep: ViaCep.DataCep)
         case didShowError(_ message: String)
@@ -10,11 +10,11 @@ final class ViewControllerSpy: MainViewControlling {
     
     private(set) var messages: [Messages] = []
 
-    func didShowCep(_ cep: ViaCep.DataCep) {
+    func didPresentCep(_ cep: ViaCep.DataCep) {
         messages.append(.didShowCep(cep))
     }
     
-    func didShowError(_ message: String) {
+    func didShowErrorMessage(_ message: String) {
         messages.append(.didShowError(message))
     }
     

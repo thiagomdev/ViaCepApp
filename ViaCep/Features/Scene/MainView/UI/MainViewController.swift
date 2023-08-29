@@ -2,8 +2,8 @@ import UIKit
 
 // MARK: - MainViewControlling / Protocol
 protocol MainViewControlling: AnyObject {
-    func didShowCep(_ cep: DataCep)
-    func didShowError(_ message: String)
+    func didPresentCep(_ cep: DataCep)
+    func didShowErrorMessage(_ message: String)
     func didDisplayInvalidCepMessage(_ message: String)
 }
 
@@ -70,11 +70,11 @@ extension MainViewController {
 
 // MARK: - MainViewControlling / Protocol
 extension MainViewController: MainViewControlling {
-    func didShowCep(_ cep: DataCep) {
+    func didPresentCep(_ cep: DataCep) {
         didDisplayCep(cep)
     }
     
-    func didShowError(_ message: String) {
+    func didShowErrorMessage(_ message: String) {
         DispatchQueue.main.async { [weak self] in
             let alert = UIAlertController(
                 title: "ALERT ⚠️",
@@ -127,7 +127,7 @@ extension MainViewController {
     
     private func searchCep() {
         guard let cep = inputedCepTextField.text else { return }
-        interactor.showCep(cep)
+        interactor.displayCep(cep)
         inputedCepTextField.text = interactor.clearText()
     }
     

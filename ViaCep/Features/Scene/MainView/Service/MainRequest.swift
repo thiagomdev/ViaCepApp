@@ -16,4 +16,3 @@ enum MainAPIRequest: Request {
     var body: Data? { nil }
     var parameters: [String : String]? { nil }
 }
-

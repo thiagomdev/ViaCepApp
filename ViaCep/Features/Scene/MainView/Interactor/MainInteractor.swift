@@ -1,7 +1,7 @@
 import Foundation
 // MARK: - MainInteracting / Protocol
 protocol MainInteracting {
-    func showCep(_ cep: String)
+    func displayCep(_ cep: String)
     func clearText() -> String?
     func displayInvalidCep(_ data: DataCep)
 }
@@ -20,8 +20,8 @@ final class MainInteractor {
 
 // MARK: - MainInteracting / Protocol
 extension MainInteractor: MainInteracting {
-    func showCep(_ cep: String) {
-        service?.getCep(cep, callback: { [weak self] result in
+    func displayCep(_ cep: String) {
+        service?.fetchDataCep(cep, callback: { [weak self] result in
             switch result {
             case let .success(cep):
                 self?.presenter?.presentCep(cep)

@@ -8,7 +8,6 @@ protocol MainCoordinating {
     func navigate(to destination: MainAction)
 }
 
-
 final class MainCoordinator {
     weak var viewController: MainViewControlling?
 }
