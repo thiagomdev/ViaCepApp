@@ -21,14 +21,14 @@ final class MainInteractor {
 // MARK: - MainInteracting / Protocol
 extension MainInteractor: MainInteracting {
     func displayCep(_ cep: String) {
-        service?.fetchDataCep(cep, callback: { [weak self] result in
+        service?.fetchDataCep(cep) { [weak self] result in
             switch result {
             case let .success(cep):
                 self?.presenter?.presentCep(cep)
             case let .failure(error):
                 self?.presenter?.displayError(error.localizedDescription)
             }
-        })
+        }
     }
     
     func clearText() -> String? {

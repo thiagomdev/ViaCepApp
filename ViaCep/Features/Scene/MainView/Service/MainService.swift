@@ -20,7 +20,10 @@ final class MainService {
 // MARK: - MainServicingProtocol
 extension MainService: MainServicing {
     func fetchDataCep(_ cep: String, callback: @escaping (Result<DataCep, Error>) -> Void) {
-        task = networking.execute(request: MainAPIRequest.cep(cep), responseType: DataCep.self, callback: { [weak self] result in
+        task = networking.execute(
+            request: MainAPIRequest.cep(cep),
+            responseType: DataCep.self,
+            callback: { [weak self] result in
             guard let _ = self else { return }
             switch result {
             case let .success(model):

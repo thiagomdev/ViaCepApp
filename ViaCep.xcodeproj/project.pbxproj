@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA5178A22AB1E04E00E3CFCA /* NetworkingLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5178A12AB1E04E00E3CFCA /* NetworkingLogger.swift */; };
 		AA7B05852A7292F300A5CECE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7B05842A7292F300A5CECE /* AppDelegate.swift */; };
 		AA7B05872A7292F300A5CECE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7B05862A7292F300A5CECE /* SceneDelegate.swift */; };
 		AA7B05892A7292F300A5CECE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7B05882A7292F300A5CECE /* MainViewController.swift */; };
@@ -27,6 +28,8 @@
 		AA7B05D72A72F39400A5CECE /* DataCepFixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7B05D62A72F39400A5CECE /* DataCepFixture.swift */; };
 		AA809B122A82E18C000F506D /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA809B112A82E18C000F506D /* NetworkError.swift */; };
 		AA809B142A82E1AE000F506D /* EmptyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA809B132A82E1AE000F506D /* EmptyResponse.swift */; };
+		AA86F47F2AA0F59A0019D39C /* ViewCepCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AA86F47D2AA0F59A0019D39C /* ViewCepCoreData.xcdatamodeld */; };
+		AA86F4862AA0F7480019D39C /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA86F4852AA0F7480019D39C /* CoreDataStack.swift */; };
 		AA9FD4B42A73046000CA1773 /* MainPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9FD4B32A73046000CA1773 /* MainPresenterTests.swift */; };
 		AADB45912A85A61E004152B1 /* CoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADB45902A85A61E004152B1 /* CoordinatorTests.swift */; };
 		AADE465B2A8C5E7A00422476 /* MainViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADE465A2A8C5E7A00422476 /* MainViewControllerTests.swift */; };
@@ -35,7 +38,6 @@
 		AAF24B442A74E60100787C38 /* ServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF24B432A74E60100787C38 /* ServiceMock.swift */; };
 		AAF24B462A74E68A00787C38 /* MainViewControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF24B452A74E68A00787C38 /* MainViewControllerSpy.swift */; };
 		AAF5392A2A7F07CB002BB959 /* ServiceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF539292A7F07CB002BB959 /* ServiceStub.swift */; };
-		AAFC119A2A7C914500F9128C /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFC11992A7C914500F9128C /* Cache.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AA5178A12AB1E04E00E3CFCA /* NetworkingLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingLogger.swift; sourceTree = "<group>"; };
 		AA7B05812A7292F300A5CECE /* ViaCep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ViaCep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA7B05842A7292F300A5CECE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA7B05862A7292F300A5CECE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +75,8 @@
 		AA7B05D62A72F39400A5CECE /* DataCepFixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCepFixture.swift; sourceTree = "<group>"; };
 		AA809B112A82E18C000F506D /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		AA809B132A82E1AE000F506D /* EmptyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyResponse.swift; sourceTree = "<group>"; };
+		AA86F47E2AA0F59A0019D39C /* ViewCepCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ViewCepCoreData.xcdatamodel; sourceTree = "<group>"; };
+		AA86F4852AA0F7480019D39C /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		AA9FD4B12A72FFC400CA1773 /* ViaCep.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = ViaCep.xctestplan; sourceTree = "<group>"; };
 		AA9FD4B32A73046000CA1773 /* MainPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenterTests.swift; sourceTree = "<group>"; };
 		AADB45902A85A61E004152B1 /* CoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorTests.swift; sourceTree = "<group>"; };
@@ -81,7 +86,6 @@
 		AAF24B432A74E60100787C38 /* ServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceMock.swift; sourceTree = "<group>"; };
 		AAF24B452A74E68A00787C38 /* MainViewControllerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerSpy.swift; sourceTree = "<group>"; };
 		AAF539292A7F07CB002BB959 /* ServiceStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceStub.swift; sourceTree = "<group>"; };
-		AAFC11992A7C914500F9128C /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA5178A02AB1DF1100E3CFCA /* RequestLogger */ = {
+			isa = PBXGroup;
+			children = (
+				AA5178A12AB1E04E00E3CFCA /* NetworkingLogger.swift */,
+			);
+			path = RequestLogger;
+			sourceTree = "<group>";
+		};
 		AA7B05782A7292F300A5CECE = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +147,7 @@
 		AA7B05982A72930500A5CECE /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				AA86F47D2AA0F59A0019D39C /* ViewCepCoreData.xcdatamodeld */,
 				AA7B058D2A7292F500A5CECE /* Assets.xcassets */,
 				AA7B058F2A7292F500A5CECE /* LaunchScreen.storyboard */,
 				AA7B05922A7292F500A5CECE /* Info.plist */,
@@ -231,7 +244,8 @@
 		AA7B05B02A72998900A5CECE /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				AAFC11982A7C913800F9128C /* Cache */,
+				AA5178A02AB1DF1100E3CFCA /* RequestLogger */,
+				AA86F4802AA0F5FF0019D39C /* CoreData */,
 				AA7B05C32A72C22700A5CECE /* Coordinator */,
 				AA7B05A52A7294D900A5CECE /* Factory */,
 				AAF24B3C2A74D0FE00787C38 /* NSLayout+Extension */,
@@ -276,6 +290,14 @@
 				AA7B05D62A72F39400A5CECE /* DataCepFixture.swift */,
 			);
 			path = Fixture;
+			sourceTree = "<group>";
+		};
+		AA86F4802AA0F5FF0019D39C /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				AA86F4852AA0F7480019D39C /* CoreDataStack.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		AA9FD4BD2A7326B900CA1773 /* Features */ = {
@@ -339,14 +361,6 @@
 				AAF539292A7F07CB002BB959 /* ServiceStub.swift */,
 			);
 			path = Stub;
-			sourceTree = "<group>";
-		};
-		AAFC11982A7C913800F9128C /* Cache */ = {
-			isa = PBXGroup;
-			children = (
-				AAFC11992A7C914500F9128C /* Cache.swift */,
-			);
-			path = Cache;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -455,15 +469,17 @@
 				AA7B05892A7292F300A5CECE /* MainViewController.swift in Sources */,
 				AA7B05C12A72C22000A5CECE /* MainCoordinator.swift in Sources */,
 				AA7B05BA2A729C7000A5CECE /* Request.swift in Sources */,
-				AAFC119A2A7C914500F9128C /* Cache.swift in Sources */,
 				AA7B05B82A729C5A00A5CECE /* Networking.swift in Sources */,
 				AA7B05AD2A72978800A5CECE /* MainFactory.swift in Sources */,
+				AA5178A22AB1E04E00E3CFCA /* NetworkingLogger.swift in Sources */,
 				AA7B05B62A729BCF00A5CECE /* HttpMethod.swift in Sources */,
 				AA7B05A92A72963E00A5CECE /* MainPresenter.swift in Sources */,
 				AA7B05BE2A729E9600A5CECE /* MainRequest.swift in Sources */,
 				AA7B05852A7292F300A5CECE /* AppDelegate.swift in Sources */,
 				AA809B142A82E1AE000F506D /* EmptyResponse.swift in Sources */,
 				AA7B05A22A72941000A5CECE /* DataCep.swift in Sources */,
+				AA86F47F2AA0F59A0019D39C /* ViewCepCoreData.xcdatamodeld in Sources */,
+				AA86F4862AA0F7480019D39C /* CoreDataStack.swift in Sources */,
 				AA7B05AF2A72988400A5CECE /* MainService.swift in Sources */,
 				AA7B05BC2A729C7E00A5CECE /* Tasking.swift in Sources */,
 				AA7B05AB2A7296E300A5CECE /* MainInteractor.swift in Sources */,
@@ -753,6 +769,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		AA86F47D2AA0F59A0019D39C /* ViewCepCoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AA86F47E2AA0F59A0019D39C /* ViewCepCoreData.xcdatamodel */,
+			);
+			currentVersion = AA86F47E2AA0F59A0019D39C /* ViewCepCoreData.xcdatamodel */;
+			name = ViewCepCoreData.xcdatamodeld;
+			path = ../../ViewCepCoreData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = AA7B05792A7292F300A5CECE /* Project object */;
 }

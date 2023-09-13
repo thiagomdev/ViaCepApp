@@ -53,7 +53,7 @@ public func prepareBody<T: Encodable>(
     do {
         return try jsonEncoder.encode(payload)
     } catch {
-        print("Failure to prepare card payload. \(error)")
+        NetworkingLogger.logError(error: error, url: nil)
         return nil
     }
 }

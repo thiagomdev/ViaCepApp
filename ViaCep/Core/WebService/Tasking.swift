@@ -23,30 +23,17 @@ final class Tasking<T: Codable>: Task {
         
         var request = URLRequest(url: url)
         request.allHTTPHeaderFields = self.request.headers
-        print("DEBUG: Headers -> \(self.request.headers ?? [:])")
-        
         request.httpMethod = self.request.method.description
-        print("DEBUG: Method -> \(self.request.method.description)")
-        
         request.httpBody = self.request.body
-        print("DEBUG: Body -> \(self.request.body ?? Data())")
         
         task = URLSession.shared.dataTask(with: request, completionHandler: { [weak self] data, response, error in
-            if let data = data {
-                if let json = try? JSONSerialization.jsonObject(with: data),
-                   let printData = try? JSONSerialization.data(withJSONObject: json, options: .prettyPrinted),
-                   let text = String(data: printData, encoding: .utf8)  {
-                    print("DEBUG: Text -> \(text)")
-                }
-            }
-            
+            NetworkingLogger.log(request: request, response: response, data: data, error: error)
             if let error = error {
                 self?.callback?(.failure(error))
                 return
             }
             
             guard let httpResponse = response as? HTTPURLResponse else { return }
-            print("DEBUD: Status code -> \(httpResponse.statusCode)")
             
             if (200..<300).contains(httpResponse.statusCode), let data = data {
                 if self?.responseType is EmptyResponse.Type, let decoded = EmptyResponse() as? T {
