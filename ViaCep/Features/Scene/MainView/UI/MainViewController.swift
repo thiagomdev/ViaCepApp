@@ -21,7 +21,7 @@ final class MainViewController: UIViewController {
         return stack
     }()
     
-    private lazy var inputedCepTextField: UITextField = {
+     lazy var inputedCepTextField: UITextField = { //deixei sem private para testar o erro
         let textField = UITextField()
         textField.placeholder = "Digite um cep válido"
         textField.borderStyle = .roundedRect
@@ -125,7 +125,7 @@ extension MainViewController {
         }
     }
     
-    private func searchCep() {
+     func searchCep() { //tirei o private p testar o erro tb
         guard let cep = inputedCepTextField.text else { return }
         interactor.displayCep(cep)
         inputedCepTextField.text = interactor.clearText()

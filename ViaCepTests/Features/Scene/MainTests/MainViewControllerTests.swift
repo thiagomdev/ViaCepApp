@@ -2,14 +2,35 @@ import XCTest
 @testable import ViaCep
 
 final class MainViewControllerTests: XCTestCase {
-    func test_() {
+    
+    func test_SearchCep_CallsDisplayCepOnInteractor() {
         let (sut, interactorSpy, _) = makeSut()
-        let dataObject = DataCep.dummy()
+        let dataCep = DataCep.dummy()
+        let cep = dataCep.cep
         
-        sut.didPresentCep(dataObject)
-        
-        XCTAssertEqual(interactorSpy.displayCepExpected, dataObject.cep)
+        sut.inputedCepTextField.text = cep
+        sut.searchCep()
+
+        XCTAssertEqual(interactorSpy.displayCepExpected, cep)
     }
+    
+//    func test_SearchCep_CallsDisplayCepOnInteractor() { //achando o erro
+//        let (sut, interactorSpy, _) = makeSut()
+//        let cep = "01150011"
+//        
+//        sut.inputedCepTextField.text = cep
+//        sut.searchCep()
+//        XCTAssertEqual(interactorSpy.displayCepExpected, cep)
+//    }
+    
+//    func test_() {
+//        let (sut, interactorSpy, _) = makeSut()
+//        let dataObject = DataCep.dummy()
+//        
+//        sut.didPresentCep(dataObject)
+//        
+//        XCTAssertEqual(interactorSpy.displayCepExpected, dataObject.cep) //returning nil
+//    }
 }
 
 final class InteractorSpy: MainInteracting {
