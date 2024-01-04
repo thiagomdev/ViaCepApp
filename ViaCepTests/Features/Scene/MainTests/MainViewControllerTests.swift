@@ -13,24 +13,6 @@ final class MainViewControllerTests: XCTestCase {
 
         XCTAssertEqual(interactorSpy.displayCepExpected, cep)
     }
-    
-//    func test_SearchCep_CallsDisplayCepOnInteractor() { //achando o erro
-//        let (sut, interactorSpy, _) = makeSut()
-//        let cep = "01150011"
-//        
-//        sut.inputedCepTextField.text = cep
-//        sut.searchCep()
-//        XCTAssertEqual(interactorSpy.displayCepExpected, cep)
-//    }
-    
-//    func test_() {
-//        let (sut, interactorSpy, _) = makeSut()
-//        let dataObject = DataCep.dummy()
-//        
-//        sut.didPresentCep(dataObject)
-//        
-//        XCTAssertEqual(interactorSpy.displayCepExpected, dataObject.cep) //returning nil
-//    }
 }
 
 final class InteractorSpy: MainInteracting {

@@ -2,7 +2,7 @@ import XCTest
 @testable import ViaCep
 
 final class MainPresenterTests: XCTestCase {
-    func test_PresentCep_WhenGetsAllOfInformationData_ShouldReturnDataCep() {
+    func test_presentCep_whenGetsAllOfInformationData_shouldReturnDataCep() {
         let dataObject: DataCep = .dummy()
         let (sut, viewControllerSpy) = makeSut()
         
@@ -20,7 +20,7 @@ final class MainPresenterTests: XCTestCase {
         XCTAssertEqual(viewControllerSpy.messages, [.didShowError(message)])
     }
     
-    func test_DidDisplayInvalidCepMessage() {
+    func test_didDisplayInvalidCepMessage() {
         let dataObject: DataCep = .dummy()
         let (sut, viewControllerSpy) = makeSut()
         
