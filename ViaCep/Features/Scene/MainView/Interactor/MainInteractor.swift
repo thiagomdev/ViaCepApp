@@ -1,5 +1,5 @@
 import Foundation
-// MARK: - MainInteracting / Protocol
+
 protocol MainInteracting {
     func displayCep(_ cep: String)
     func clearText() -> String?
@@ -7,18 +7,15 @@ protocol MainInteracting {
 }
 
 final class MainInteractor {
-    // MARK: - Properties
     private let presenter: MainPresenting?
     private let service: MainServicing?
     
-    // MARK: - Initializers
     init(presenter: MainPresenting, service: MainServicing) {
         self.presenter = presenter
         self.service = service
     }
 }
 
-// MARK: - MainInteracting / Protocol
 extension MainInteractor: MainInteracting {
     func displayCep(_ cep: String) {
         service?.fetchDataCep(cep) { [weak self] result in
