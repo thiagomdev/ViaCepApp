@@ -5,9 +5,9 @@ final class MainInteractorTests: XCTestCase {
     func test_showCep_whenTheServiceSearchAValidCep_shouldReturnAValidCep() {
         let dataObject: DataCep = .dummy()
         let (sut, doubles) = makeSut()
+        doubles.serviceSpy.expexted = .success(dataObject)
         
         sut.displayCep(dataObject.cep)
-        doubles.serviceSpy.expexted.first?(.success(dataObject))
         
         XCTAssertEqual(doubles.presenterSpy.messages, [.presentCep(dataObject)])
     }
@@ -16,9 +16,9 @@ final class MainInteractorTests: XCTestCase {
         let dataObject: DataCep = .dummy()
         let (sut, doubles) = makeSut()
         let error = NSError(domain: "", code: 0, userInfo: nil)
-
+        doubles.serviceSpy.expexted = .failure(error)
+        
         sut.displayCep(dataObject.cep)
-        doubles.serviceSpy.expexted.first?(.failure(error))
         
         XCTAssertEqual(doubles.presenterSpy.messages, [.displayError(error.localizedDescription)])
     }
@@ -42,7 +42,7 @@ final class MainInteractorTests: XCTestCase {
 }
 
 extension MainInteractorTests {
-    typealias Doubles = (
+    private typealias Doubles = (
         presenterSpy: MainPresenterSpy,
         serviceSpy: ServiceMock
     )

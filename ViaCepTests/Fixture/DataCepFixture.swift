@@ -6,9 +6,9 @@ extension DataCep {
         logradouro: String = "Praça Marechal Deodoro",
         bairro: String = "Santa Cecília",
         localidade: String = "São Paulo"
-    ) -> DataCep {
+    ) -> Self {
         
-        DataCep(
+        .init(
             cep: cep,
             logradouro: logradouro,
             bairro: bairro,

@@ -3,27 +3,31 @@ import XCTest
 
 final class MainViewControllerTests: XCTestCase {
     func test_searchCep_callsDisplayCepOnInteractor() {
-        let (sut, interactorSpy, _) = makeSut()
+        let (sut, doubles) = makeSut()
         let dataCep = DataCep.dummy()
         let cep = dataCep.cep
         
         sut.inputedCepTextField.text = cep
         sut.searchCep()
 
-        XCTAssertEqual(interactorSpy.displayCepExpected, [cep])
+        XCTAssertEqual(doubles.interactorSpy.displayCepExpected, [cep])
     }
 }
 
 extension MainViewControllerTests {
-    private func makeSut() -> (
-        sut: MainViewController,
+    private typealias Doubles = (
         interactorSpy: InteractorSpy,
         serviceMock: ServiceMock
+    )
+    
+    private func makeSut() -> (
+        sut: MainViewController,
+        doubles: Doubles
     ) {
         let interactorSpy = InteractorSpy()
         let serviceMock = ServiceMock()
         let sut = MainViewController(interactor: interactorSpy)
-        return (sut, interactorSpy, serviceMock)
+        return (sut, (interactorSpy, serviceMock))
     }
     
     private class InteractorSpy: MainInteracting {
