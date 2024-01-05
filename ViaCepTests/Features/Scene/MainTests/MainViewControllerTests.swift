@@ -10,7 +10,7 @@ final class MainViewControllerTests: XCTestCase {
         sut.inputedCepTextField.text = cep
         sut.searchCep()
 
-        XCTAssertEqual(interactorSpy.displayCepExpected, cep)
+        XCTAssertEqual(interactorSpy.displayCepExpected, [cep])
     }
 }
 
@@ -27,12 +27,12 @@ extension MainViewControllerTests {
     }
     
     private class InteractorSpy: MainInteracting {
-        private(set) var displayCepExpected: String?
+        private(set) var displayCepExpected: [String] = []
         private(set) var clearTextCep: String?
-        private(set) var displayInvalidCepExpected: DataCep?
+        private(set) var displayInvalidCepExpected: [DataCep] = []
         
         func displayCep(_ cep: String) {
-            displayCepExpected = cep
+            displayCepExpected.append(cep)
         }
         
         func clearText() -> String? {
@@ -40,7 +40,7 @@ extension MainViewControllerTests {
         }
         
         func displayInvalidCep(_ data: ViaCep.DataCep) {
-            displayInvalidCepExpected = data
+            displayInvalidCepExpected.append(data)
         }
     }
 }
