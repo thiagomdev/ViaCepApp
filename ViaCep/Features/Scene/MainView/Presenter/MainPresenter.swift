@@ -4,6 +4,8 @@ protocol MainPresenting {
     func presentCep(_ cep: DataCep)
     func displayError(_ message: String)
     func displayInvalidCepAlertMessage(_ data: DataCep)
+    
+    func creatingUser(from email: String, password: String)
 }
 
 final class MainPresenter {
@@ -28,5 +30,9 @@ extension MainPresenter: MainPresenting {
         if data.cep.count >= 8 {
             viewController?.didDisplayInvalidCepMessage(data.cep)
         }
+    }
+    
+    func creatingUser(from email: String, password: String) {
+        viewController?.didCreateUser(from: email, password: password)
     }
 }
