@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2A5C694A568B12D9582ABABC /* Pods_ViaCep.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E741D9304B1209B3F8498D2 /* Pods_ViaCep.framework */; };
-		665232E9A2CF96DC74051FE7 /* Pods_ViaCepTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFA5D08F2C384B4F660486C0 /* Pods_ViaCepTests.framework */; };
 		AA5178A22AB1E04E00E3CFCA /* NetworkingLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5178A12AB1E04E00E3CFCA /* NetworkingLogger.swift */; };
 		AA77D4A62B4B5EB30024315B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA77D4A52B4B5EB30024315B /* GoogleService-Info.plist */; };
 		AA7B05852A7292F300A5CECE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7B05842A7292F300A5CECE /* AppDelegate.swift */; };
@@ -31,6 +29,7 @@
 		AA7B05D72A72F39400A5CECE /* DataCepFixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7B05D62A72F39400A5CECE /* DataCepFixture.swift */; };
 		AA809B122A82E18C000F506D /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA809B112A82E18C000F506D /* NetworkError.swift */; };
 		AA809B142A82E1AE000F506D /* EmptyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA809B132A82E1AE000F506D /* EmptyResponse.swift */; };
+		AA86695D2B4B635100496C00 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = AA86695C2B4B635100496C00 /* FirebaseAuth */; };
 		AA86F47F2AA0F59A0019D39C /* ViewCepCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AA86F47D2AA0F59A0019D39C /* ViewCepCoreData.xcdatamodeld */; };
 		AA86F4862AA0F7480019D39C /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA86F4852AA0F7480019D39C /* CoreDataStack.swift */; };
 		AA9FD4B42A73046000CA1773 /* MainPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9FD4B32A73046000CA1773 /* MainPresenterTests.swift */; };
@@ -53,9 +52,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1E85D55DFCD68946FC1603D8 /* Pods-ViaCepTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViaCepTests.debug.xcconfig"; path = "Target Support Files/Pods-ViaCepTests/Pods-ViaCepTests.debug.xcconfig"; sourceTree = "<group>"; };
-		31E54389D82937FCFE5AD8B2 /* Pods-ViaCep.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViaCep.release.xcconfig"; path = "Target Support Files/Pods-ViaCep/Pods-ViaCep.release.xcconfig"; sourceTree = "<group>"; };
-		9E741D9304B1209B3F8498D2 /* Pods_ViaCep.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ViaCep.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA5178A12AB1E04E00E3CFCA /* NetworkingLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingLogger.swift; sourceTree = "<group>"; };
 		AA77D4A52B4B5EB30024315B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AA7B05812A7292F300A5CECE /* ViaCep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ViaCep.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,9 +87,6 @@
 		AAF24B432A74E60100787C38 /* ServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceMock.swift; sourceTree = "<group>"; };
 		AAF24B452A74E68A00787C38 /* MainViewControllerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerSpy.swift; sourceTree = "<group>"; };
 		AAF539292A7F07CB002BB959 /* ServiceStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceStub.swift; sourceTree = "<group>"; };
-		AE521D1434FFABF249AB30B4 /* Pods-ViaCep.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViaCep.debug.xcconfig"; path = "Target Support Files/Pods-ViaCep/Pods-ViaCep.debug.xcconfig"; sourceTree = "<group>"; };
-		AFA5D08F2C384B4F660486C0 /* Pods_ViaCepTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ViaCepTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B9C646E6DCE28999479BBCEC /* Pods-ViaCepTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViaCepTests.release.xcconfig"; path = "Target Support Files/Pods-ViaCepTests/Pods-ViaCepTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A5C694A568B12D9582ABABC /* Pods_ViaCep.framework in Frameworks */,
+				AA86695D2B4B635100496C00 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,7 +102,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				665232E9A2CF96DC74051FE7 /* Pods_ViaCepTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,10 +111,6 @@
 		6A3ED688D73B34E2BA13F09D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				AE521D1434FFABF249AB30B4 /* Pods-ViaCep.debug.xcconfig */,
-				31E54389D82937FCFE5AD8B2 /* Pods-ViaCep.release.xcconfig */,
-				1E85D55DFCD68946FC1603D8 /* Pods-ViaCepTests.debug.xcconfig */,
-				B9C646E6DCE28999479BBCEC /* Pods-ViaCepTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -142,7 +130,6 @@
 				AA7B05C92A72C39000A5CECE /* ViaCepTests */,
 				AA7B05822A7292F300A5CECE /* Products */,
 				6A3ED688D73B34E2BA13F09D /* Pods */,
-				F514F218621FBB04DA6740AD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -386,15 +373,6 @@
 			path = Stub;
 			sourceTree = "<group>";
 		};
-		F514F218621FBB04DA6740AD /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				9E741D9304B1209B3F8498D2 /* Pods_ViaCep.framework */,
-				AFA5D08F2C384B4F660486C0 /* Pods_ViaCepTests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -402,7 +380,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AA7B05952A7292F500A5CECE /* Build configuration list for PBXNativeTarget "ViaCep" */;
 			buildPhases = (
-				B9A2E0ECEDB94C12ACDCC1C1 /* [CP] Check Pods Manifest.lock */,
 				AA7B057D2A7292F300A5CECE /* Sources */,
 				AA7B057E2A7292F300A5CECE /* Frameworks */,
 				AA7B057F2A7292F300A5CECE /* Resources */,
@@ -412,6 +389,9 @@
 			dependencies = (
 			);
 			name = ViaCep;
+			packageProductDependencies = (
+				AA86695C2B4B635100496C00 /* FirebaseAuth */,
+			);
 			productName = ViaCep;
 			productReference = AA7B05812A7292F300A5CECE /* ViaCep.app */;
 			productType = "com.apple.product-type.application";
@@ -420,11 +400,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AA7B05CE2A72C39000A5CECE /* Build configuration list for PBXNativeTarget "ViaCepTests" */;
 			buildPhases = (
-				03E02F97DC99239EAE209F40 /* [CP] Check Pods Manifest.lock */,
 				AA7B05C42A72C39000A5CECE /* Sources */,
 				AA7B05C52A72C39000A5CECE /* Frameworks */,
 				AA7B05C62A72C39000A5CECE /* Resources */,
-				8AFC623DB228F5ADF952B092 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -465,6 +443,9 @@
 				Base,
 			);
 			mainGroup = AA7B05782A7292F300A5CECE;
+			packageReferences = (
+				AA86695B2B4B635100496C00 /* XCRemoteSwiftPackageReference "firebase-ios-sdk.git" */,
+			);
 			productRefGroup = AA7B05822A7292F300A5CECE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -494,70 +475,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		03E02F97DC99239EAE209F40 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ViaCepTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8AFC623DB228F5ADF952B092 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ViaCepTests/Pods-ViaCepTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ViaCepTests/Pods-ViaCepTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ViaCepTests/Pods-ViaCepTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B9A2E0ECEDB94C12ACDCC1C1 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ViaCep-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AA7B057D2A7292F300A5CECE /* Sources */ = {
@@ -740,7 +657,6 @@
 		};
 		AA7B05962A7292F500A5CECE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AE521D1434FFABF249AB30B4 /* Pods-ViaCep.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -771,7 +687,6 @@
 		};
 		AA7B05972A7292F500A5CECE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 31E54389D82937FCFE5AD8B2 /* Pods-ViaCep.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -802,7 +717,6 @@
 		};
 		AA7B05CF2A72C39000A5CECE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1E85D55DFCD68946FC1603D8 /* Pods-ViaCepTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
@@ -823,7 +737,6 @@
 		};
 		AA7B05D02A72C39000A5CECE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B9C646E6DCE28999479BBCEC /* Pods-ViaCepTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
@@ -872,6 +785,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AA86695B2B4B635100496C00 /* XCRemoteSwiftPackageReference "firebase-ios-sdk.git" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AA86695C2B4B635100496C00 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AA86695B2B4B635100496C00 /* XCRemoteSwiftPackageReference "firebase-ios-sdk.git" */;
+			productName = FirebaseAuth;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		AA86F47D2AA0F59A0019D39C /* ViewCepCoreData.xcdatamodeld */ = {
