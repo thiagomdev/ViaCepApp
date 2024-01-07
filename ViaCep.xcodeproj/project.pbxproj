@@ -108,13 +108,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6A3ED688D73B34E2BA13F09D /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		AA5178A02AB1DF1100E3CFCA /* RequestLogger */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,7 +122,6 @@
 				AA7B05832A7292F300A5CECE /* ViaCep */,
 				AA7B05C92A72C39000A5CECE /* ViaCepTests */,
 				AA7B05822A7292F300A5CECE /* Products */,
-				6A3ED688D73B34E2BA13F09D /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -444,7 +436,7 @@
 			);
 			mainGroup = AA7B05782A7292F300A5CECE;
 			packageReferences = (
-				AA86695B2B4B635100496C00 /* XCRemoteSwiftPackageReference "firebase-ios-sdk.git" */,
+				AA86695B2B4B635100496C00 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = AA7B05822A7292F300A5CECE /* Products */;
 			projectDirPath = "";
@@ -787,7 +779,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		AA86695B2B4B635100496C00 /* XCRemoteSwiftPackageReference "firebase-ios-sdk.git" */ = {
+		AA86695B2B4B635100496C00 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
 			requirement = {
@@ -800,7 +792,7 @@
 /* Begin XCSwiftPackageProductDependency section */
 		AA86695C2B4B635100496C00 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = AA86695B2B4B635100496C00 /* XCRemoteSwiftPackageReference "firebase-ios-sdk.git" */;
+			package = AA86695B2B4B635100496C00 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
 		};
 /* End XCSwiftPackageProductDependency section */
