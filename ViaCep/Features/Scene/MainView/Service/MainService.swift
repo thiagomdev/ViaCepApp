@@ -5,11 +5,9 @@ protocol MainServicing {
 }
 
 final class MainService {
-    // MARK: - Properties
     private var task: Task?
     private let networking: NetworkingProtocol
     
-    // MARK: - Initializers
     init(
         networking: NetworkingProtocol = Networking()
     ) {
@@ -17,7 +15,6 @@ final class MainService {
     }
 }
 
-// MARK: - MainServicingProtocol
 extension MainService: MainServicing {
     func fetchDataCep(_ cep: String, callback: @escaping (Result<DataCep, Error>) -> Void) {
         task = networking.execute(

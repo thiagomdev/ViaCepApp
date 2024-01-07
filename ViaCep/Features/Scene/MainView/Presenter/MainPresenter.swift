@@ -1,5 +1,5 @@
 import UIKit
-// MARK: - MainPresenting / Protocol
+
 protocol MainPresenting {
     func presentCep(_ cep: DataCep)
     func displayError(_ message: String)
@@ -7,17 +7,14 @@ protocol MainPresenting {
 }
 
 final class MainPresenter {
-    // MARK: - Properties
     weak var viewController: MainViewControlling?
     private let coordinator: MainCoordinating?
     
-    // MARK: - Initializers
     init(coordinator: MainCoordinating?) {
         self.coordinator = coordinator
     }
 }
 
-// MARK: - MainPresenting / Protocol
 extension MainPresenter: MainPresenting {
     func presentCep(_ cep: DataCep) {
         viewController?.didPresentCep(cep)

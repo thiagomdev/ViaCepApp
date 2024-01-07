@@ -1,6 +1,5 @@
 import UIKit
 
-// MARK: - MainViewControlling / Protocol
 protocol MainViewControlling: AnyObject {
     func didPresentCep(_ cep: DataCep)
     func didShowErrorMessage(_ message: String)
@@ -9,10 +8,8 @@ protocol MainViewControlling: AnyObject {
 
 final class MainViewController: UIViewController {
     public enum Layout { }
-    // MARK: - Properties
     private let interactor: MainInteracting
     
-    // MARK: - Components
     private lazy var stackViewContainer: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
@@ -21,7 +18,7 @@ final class MainViewController: UIViewController {
         return stack
     }()
     
-     lazy var inputedCepTextField: UITextField = { //deixei sem private para testar o erro
+     lazy var inputedCepTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Digite um cep válido"
         textField.borderStyle = .roundedRect
@@ -41,13 +38,11 @@ final class MainViewController: UIViewController {
     private lazy var bairroLabel = makeLabel()
     private lazy var localidadeLabel = makeLabel()
 
-    // MARK: - Initializers
     init(interactor: MainInteracting) {
         self.interactor = interactor
         super.init(nibName: nil, bundle: nil)
     }
     
-    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         buildViews()
@@ -60,7 +55,6 @@ final class MainViewController: UIViewController {
     }
 }
 
-// MARK: - Selector Methods
 extension MainViewController {
     @objc
     private func didSearchCep() {
@@ -68,7 +62,6 @@ extension MainViewController {
     }
 }
 
-// MARK: - MainViewControlling / Protocol
 extension MainViewController: MainViewControlling {
     func didPresentCep(_ cep: DataCep) {
         didDisplayCep(cep)
@@ -109,7 +102,6 @@ extension MainViewController: MainViewControlling {
     }
 }
 
-// MARK: - MainViewController
 extension MainViewController {
     private func didClearText() {
         logradouroLabel.text = interactor.clearText()
@@ -139,7 +131,6 @@ extension MainViewController {
     }
 }
 
-// MARK: - MainViewController / ViewConfiguration
 extension MainViewController {
     private func buildViews() {
         stackViewContainer.addArrangedSubview(inputedCepTextField)

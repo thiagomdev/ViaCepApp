@@ -31,7 +31,6 @@
 		AA86F47F2AA0F59A0019D39C /* ViewCepCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AA86F47D2AA0F59A0019D39C /* ViewCepCoreData.xcdatamodeld */; };
 		AA86F4862AA0F7480019D39C /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA86F4852AA0F7480019D39C /* CoreDataStack.swift */; };
 		AA9FD4B42A73046000CA1773 /* MainPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9FD4B32A73046000CA1773 /* MainPresenterTests.swift */; };
-		AADB45912A85A61E004152B1 /* CoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADB45902A85A61E004152B1 /* CoordinatorTests.swift */; };
 		AADE465B2A8C5E7A00422476 /* MainViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADE465A2A8C5E7A00422476 /* MainViewControllerTests.swift */; };
 		AAF24B3E2A74D12A00787C38 /* NSLayout+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF24B3D2A74D12A00787C38 /* NSLayout+Extensions.swift */; };
 		AAF24B412A74E5A200787C38 /* MainPresenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF24B402A74E5A200787C38 /* MainPresenterSpy.swift */; };
@@ -79,7 +78,6 @@
 		AA86F4852AA0F7480019D39C /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		AA9FD4B12A72FFC400CA1773 /* ViaCep.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = ViaCep.xctestplan; sourceTree = "<group>"; };
 		AA9FD4B32A73046000CA1773 /* MainPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenterTests.swift; sourceTree = "<group>"; };
-		AADB45902A85A61E004152B1 /* CoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorTests.swift; sourceTree = "<group>"; };
 		AADE465A2A8C5E7A00422476 /* MainViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerTests.swift; sourceTree = "<group>"; };
 		AAF24B3D2A74D12A00787C38 /* NSLayout+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayout+Extensions.swift"; sourceTree = "<group>"; };
 		AAF24B402A74E5A200787C38 /* MainPresenterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenterSpy.swift; sourceTree = "<group>"; };
@@ -342,7 +340,6 @@
 			children = (
 				AAF24B402A74E5A200787C38 /* MainPresenterSpy.swift */,
 				AAF24B452A74E68A00787C38 /* MainViewControllerSpy.swift */,
-				AADB45902A85A61E004152B1 /* CoordinatorTests.swift */,
 			);
 			path = Spies;
 			sourceTree = "<group>";
@@ -495,7 +492,6 @@
 				AAF24B412A74E5A200787C38 /* MainPresenterSpy.swift in Sources */,
 				AA7B05D72A72F39400A5CECE /* DataCepFixture.swift in Sources */,
 				AA7B05D42A72C3C600A5CECE /* MainInteractorTests.swift in Sources */,
-				AADB45912A85A61E004152B1 /* CoordinatorTests.swift in Sources */,
 				AAF24B442A74E60100787C38 /* ServiceMock.swift in Sources */,
 				AA9FD4B42A73046000CA1773 /* MainPresenterTests.swift in Sources */,
 				AAF24B462A74E68A00787C38 /* MainViewControllerSpy.swift in Sources */,
