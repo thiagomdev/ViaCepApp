@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A5C694A568B12D9582ABABC /* Pods_ViaCep.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E741D9304B1209B3F8498D2 /* Pods_ViaCep.framework */; };
+		665232E9A2CF96DC74051FE7 /* Pods_ViaCepTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFA5D08F2C384B4F660486C0 /* Pods_ViaCepTests.framework */; };
 		AA5178A22AB1E04E00E3CFCA /* NetworkingLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5178A12AB1E04E00E3CFCA /* NetworkingLogger.swift */; };
+		AA77D4A62B4B5EB30024315B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA77D4A52B4B5EB30024315B /* GoogleService-Info.plist */; };
 		AA7B05852A7292F300A5CECE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7B05842A7292F300A5CECE /* AppDelegate.swift */; };
 		AA7B05872A7292F300A5CECE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7B05862A7292F300A5CECE /* SceneDelegate.swift */; };
 		AA7B05892A7292F300A5CECE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7B05882A7292F300A5CECE /* MainViewController.swift */; };
@@ -50,7 +53,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1E85D55DFCD68946FC1603D8 /* Pods-ViaCepTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViaCepTests.debug.xcconfig"; path = "Target Support Files/Pods-ViaCepTests/Pods-ViaCepTests.debug.xcconfig"; sourceTree = "<group>"; };
+		31E54389D82937FCFE5AD8B2 /* Pods-ViaCep.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViaCep.release.xcconfig"; path = "Target Support Files/Pods-ViaCep/Pods-ViaCep.release.xcconfig"; sourceTree = "<group>"; };
+		9E741D9304B1209B3F8498D2 /* Pods_ViaCep.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ViaCep.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA5178A12AB1E04E00E3CFCA /* NetworkingLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingLogger.swift; sourceTree = "<group>"; };
+		AA77D4A52B4B5EB30024315B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AA7B05812A7292F300A5CECE /* ViaCep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ViaCep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA7B05842A7292F300A5CECE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA7B05862A7292F300A5CECE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +91,9 @@
 		AAF24B432A74E60100787C38 /* ServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceMock.swift; sourceTree = "<group>"; };
 		AAF24B452A74E68A00787C38 /* MainViewControllerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerSpy.swift; sourceTree = "<group>"; };
 		AAF539292A7F07CB002BB959 /* ServiceStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceStub.swift; sourceTree = "<group>"; };
+		AE521D1434FFABF249AB30B4 /* Pods-ViaCep.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViaCep.debug.xcconfig"; path = "Target Support Files/Pods-ViaCep/Pods-ViaCep.debug.xcconfig"; sourceTree = "<group>"; };
+		AFA5D08F2C384B4F660486C0 /* Pods_ViaCepTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ViaCepTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9C646E6DCE28999479BBCEC /* Pods-ViaCepTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViaCepTests.release.xcconfig"; path = "Target Support Files/Pods-ViaCepTests/Pods-ViaCepTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A5C694A568B12D9582ABABC /* Pods_ViaCep.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,12 +109,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				665232E9A2CF96DC74051FE7 /* Pods_ViaCepTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6A3ED688D73B34E2BA13F09D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AE521D1434FFABF249AB30B4 /* Pods-ViaCep.debug.xcconfig */,
+				31E54389D82937FCFE5AD8B2 /* Pods-ViaCep.release.xcconfig */,
+				1E85D55DFCD68946FC1603D8 /* Pods-ViaCepTests.debug.xcconfig */,
+				B9C646E6DCE28999479BBCEC /* Pods-ViaCepTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		AA5178A02AB1DF1100E3CFCA /* RequestLogger */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,8 +140,9 @@
 			children = (
 				AA7B05832A7292F300A5CECE /* ViaCep */,
 				AA7B05C92A72C39000A5CECE /* ViaCepTests */,
-				AA9FD4B12A72FFC400CA1773 /* ViaCep.xctestplan */,
 				AA7B05822A7292F300A5CECE /* Products */,
+				6A3ED688D73B34E2BA13F09D /* Pods */,
+				F514F218621FBB04DA6740AD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -146,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				AA86F47D2AA0F59A0019D39C /* ViewCepCoreData.xcdatamodeld */,
+				AA77D4A52B4B5EB30024315B /* GoogleService-Info.plist */,
 				AA7B058D2A7292F500A5CECE /* Assets.xcassets */,
 				AA7B058F2A7292F500A5CECE /* LaunchScreen.storyboard */,
 				AA7B05922A7292F500A5CECE /* Info.plist */,
@@ -276,6 +301,7 @@
 		AA7B05C92A72C39000A5CECE /* ViaCepTests */ = {
 			isa = PBXGroup;
 			children = (
+				AA9FD4B12A72FFC400CA1773 /* ViaCep.xctestplan */,
 				AA7B05D52A72F38200A5CECE /* Fixture */,
 				AA9FD4BD2A7326B900CA1773 /* Features */,
 			);
@@ -309,10 +335,10 @@
 		AA9FD4BE2A7326C600CA1773 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				AAF539282A7F07B3002BB959 /* Stub */,
-				AA9FD4BF2A7326CB00CA1773 /* MainTests */,
 				AAF24B3F2A74E59100787C38 /* Spies */,
+				AAF539282A7F07B3002BB959 /* Stub */,
 				AAF24B422A74E5E900787C38 /* Mockies */,
+				AA9FD4BF2A7326CB00CA1773 /* MainTests */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -360,6 +386,15 @@
 			path = Stub;
 			sourceTree = "<group>";
 		};
+		F514F218621FBB04DA6740AD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9E741D9304B1209B3F8498D2 /* Pods_ViaCep.framework */,
+				AFA5D08F2C384B4F660486C0 /* Pods_ViaCepTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -367,6 +402,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AA7B05952A7292F500A5CECE /* Build configuration list for PBXNativeTarget "ViaCep" */;
 			buildPhases = (
+				B9A2E0ECEDB94C12ACDCC1C1 /* [CP] Check Pods Manifest.lock */,
 				AA7B057D2A7292F300A5CECE /* Sources */,
 				AA7B057E2A7292F300A5CECE /* Frameworks */,
 				AA7B057F2A7292F300A5CECE /* Resources */,
@@ -384,9 +420,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AA7B05CE2A72C39000A5CECE /* Build configuration list for PBXNativeTarget "ViaCepTests" */;
 			buildPhases = (
+				03E02F97DC99239EAE209F40 /* [CP] Check Pods Manifest.lock */,
 				AA7B05C42A72C39000A5CECE /* Sources */,
 				AA7B05C52A72C39000A5CECE /* Frameworks */,
 				AA7B05C62A72C39000A5CECE /* Resources */,
+				8AFC623DB228F5ADF952B092 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -444,6 +482,7 @@
 			files = (
 				AA7B05912A7292F500A5CECE /* LaunchScreen.storyboard in Resources */,
 				AA7B058E2A7292F500A5CECE /* Assets.xcassets in Resources */,
+				AA77D4A62B4B5EB30024315B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,6 +494,70 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		03E02F97DC99239EAE209F40 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ViaCepTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8AFC623DB228F5ADF952B092 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ViaCepTests/Pods-ViaCepTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ViaCepTests/Pods-ViaCepTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ViaCepTests/Pods-ViaCepTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B9A2E0ECEDB94C12ACDCC1C1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ViaCep-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AA7B057D2A7292F300A5CECE /* Sources */ = {
@@ -637,6 +740,7 @@
 		};
 		AA7B05962A7292F500A5CECE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE521D1434FFABF249AB30B4 /* Pods-ViaCep.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -667,6 +771,7 @@
 		};
 		AA7B05972A7292F500A5CECE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 31E54389D82937FCFE5AD8B2 /* Pods-ViaCep.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -697,6 +802,7 @@
 		};
 		AA7B05CF2A72C39000A5CECE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E85D55DFCD68946FC1603D8 /* Pods-ViaCepTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
@@ -717,6 +823,7 @@
 		};
 		AA7B05D02A72C39000A5CECE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B9C646E6DCE28999479BBCEC /* Pods-ViaCepTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
