@@ -39,6 +39,7 @@
 		AAF24B442A74E60100787C38 /* ServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF24B432A74E60100787C38 /* ServiceMock.swift */; };
 		AAF24B462A74E68A00787C38 /* MainViewControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF24B452A74E68A00787C38 /* MainViewControllerSpy.swift */; };
 		AAF5392A2A7F07CB002BB959 /* ServiceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF539292A7F07CB002BB959 /* ServiceStub.swift */; };
+		AAFDDE332B4B736C009D031D /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = AAFDDE322B4B736C009D031D /* FirebaseAuth */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAFDDE332B4B736C009D031D /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,6 +124,7 @@
 				AA7B05832A7292F300A5CECE /* ViaCep */,
 				AA7B05C92A72C39000A5CECE /* ViaCepTests */,
 				AA7B05822A7292F300A5CECE /* Products */,
+				AAFDDE312B4B736C009D031D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -365,6 +368,13 @@
 			path = Stub;
 			sourceTree = "<group>";
 		};
+		AAFDDE312B4B736C009D031D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -402,6 +412,9 @@
 				AA7B05CD2A72C39000A5CECE /* PBXTargetDependency */,
 			);
 			name = ViaCepTests;
+			packageProductDependencies = (
+				AAFDDE322B4B736C009D031D /* FirebaseAuth */,
+			);
 			productName = ViaCepTests;
 			productReference = AA7B05C82A72C39000A5CECE /* ViaCepTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -795,6 +808,11 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		AA86695C2B4B635100496C00 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AA86695B2B4B635100496C00 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		AAFDDE322B4B736C009D031D /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = AA86695B2B4B635100496C00 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;

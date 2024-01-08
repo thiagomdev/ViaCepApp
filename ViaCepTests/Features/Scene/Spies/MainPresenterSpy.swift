@@ -22,4 +22,8 @@ final class MainPresenterSpy: MainPresenting {
     func displayInvalidCepAlertMessage(_ data: ViaCep.DataCep) {
         messages.append(.displayInvalidCepAlertMessage(data))
     }
+    
+    func creatingUser(from email: String, password: String) {
+        
+    }
 }

@@ -21,4 +21,8 @@ final class MainViewControllerSpy: MainViewControlling {
     func didDisplayInvalidCepMessage(_ message: String) {
         messages.append(.didDisplayInvalidCepMessage(message))
     }
+    
+    func didCreateUser(from email: String, password: String) {
+        
+    }
 }

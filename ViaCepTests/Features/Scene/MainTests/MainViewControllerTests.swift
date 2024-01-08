@@ -46,5 +46,9 @@ extension MainViewControllerTests {
         func displayInvalidCep(_ data: ViaCep.DataCep) {
             displayInvalidCepExpected.append(data)
         }
+        
+        func createUser(from email: String, password: String) {
+            
+        }
     }
 }
