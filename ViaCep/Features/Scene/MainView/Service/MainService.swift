@@ -16,7 +16,10 @@ final class MainService {
 }
 
 extension MainService: MainServicing {
-    func fetchDataCep(_ cep: String, callback: @escaping (Result<DataCep, Error>) -> Void) {
+    func fetchDataCep(
+        _ cep: String,
+        callback: @escaping (Result<DataCep, Error>) -> Void
+    ) {
         task = networking.execute(
             request: MainAPIRequest.cep(cep),
             responseType: DataCep.self,
