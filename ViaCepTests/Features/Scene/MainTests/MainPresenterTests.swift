@@ -8,6 +8,7 @@ final class MainPresenterTests: XCTestCase {
         
         sut.presentCep(dataObject)
         
+        XCTAssertTrue(viewControllerSpy.didPresentCepCalled)
         XCTAssertEqual(viewControllerSpy.messages, [.didShowCep(dataObject)])
     }
     
@@ -17,6 +18,7 @@ final class MainPresenterTests: XCTestCase {
         
         sut.displayError(message)
         
+        XCTAssertTrue(viewControllerSpy.didShowErrorCalled)
         XCTAssertEqual(viewControllerSpy.messages, [.didShowError(message)])
     }
     
@@ -26,6 +28,7 @@ final class MainPresenterTests: XCTestCase {
         
         sut.displayInvalidCepAlertMessage(dataObject)
         
+        XCTAssertTrue(viewControllerSpy.didDisplayInvalidCepMessageCalled)
         XCTAssertEqual(viewControllerSpy.messages, [.didDisplayInvalidCepMessage(dataObject.cep)])
     }
 }

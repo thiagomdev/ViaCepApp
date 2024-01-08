@@ -49,14 +49,11 @@ final class MainServiceTests: XCTestCase {
 
 final class MainServiceSpy: MainServicing {
     var shouldBeExpected: (Result<DataCep, Error>)?
-    private(set) var fetchDataCepCalled: Bool = false
-    private(set) var fetchDataCepCounting: Int = 0
+
     func fetchDataCep(
         _ cep: String,
         callback: @escaping (Result<DataCep, Error>) -> Void
     ) {
-        fetchDataCepCalled = true
-        fetchDataCepCounting += 1
         if let shouldBeExpected {
             callback(shouldBeExpected)
         }

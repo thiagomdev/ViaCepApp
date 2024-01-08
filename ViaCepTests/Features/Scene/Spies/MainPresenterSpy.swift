@@ -10,8 +10,12 @@ final class MainPresenterSpy: MainPresenting {
     
     private(set) var messages: [Messages] = []
     private(set) var expected: String?
-        
+    
+    private(set) var presentCepCalled: Bool = false
+    private(set) var displayInvalidCepAlertMessageCalled: Bool = false
+    
     func presentCep(_ cep: ViaCep.DataCep) {
+        presentCepCalled = true
         messages.append(.presentCep(cep))
     }
     
@@ -20,6 +24,7 @@ final class MainPresenterSpy: MainPresenting {
     }
     
     func displayInvalidCepAlertMessage(_ data: ViaCep.DataCep) {
+        displayInvalidCepAlertMessageCalled = true
         messages.append(.displayInvalidCepAlertMessage(data))
     }
     

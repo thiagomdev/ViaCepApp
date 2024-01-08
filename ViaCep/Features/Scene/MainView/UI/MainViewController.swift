@@ -71,6 +71,7 @@ extension MainViewController: MainViewControlling {
     
     func didShowErrorMessage(_ message: String) {
         DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
             let alert = UIAlertController(
                 title: "ALERT ⚠️",
                 message: message,
@@ -82,8 +83,8 @@ extension MainViewController: MainViewControlling {
                     style: .default)
             )
             
-            self?.didClearText()
-            self?.present(alert, animated: true)
+            didClearText()
+            present(alert, animated: true)
         }
     }
     
@@ -105,7 +106,7 @@ extension MainViewController: MainViewControlling {
 }
 
 extension MainViewController {
-    private func didClearText() {
+    func didClearText() {
         logradouroLabel.text = interactor.clearText()
         bairroLabel.text = interactor.clearText()
         localidadeLabel.text = interactor.clearText()
@@ -120,9 +121,10 @@ extension MainViewController {
     }
     
      func searchCep() {
-        guard let cep = inputedCepTextField.text else { return }
-        interactor.displayCep(cep)
-        inputedCepTextField.text = interactor.clearText()
+         if let cep = inputedCepTextField.text {
+             interactor.displayCep(cep)
+             inputedCepTextField.text = interactor.clearText()
+         }
     }
     
     private func makeLabel() -> UILabel {

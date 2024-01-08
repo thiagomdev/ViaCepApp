@@ -9,16 +9,22 @@ final class MainViewControllerSpy: MainViewControlling {
     }
     
     private(set) var messages: [Messages] = []
-
+    private(set) var didPresentCepCalled: Bool = false
+    private(set) var didShowErrorCalled: Bool = false
+    private(set) var didDisplayInvalidCepMessageCalled: Bool = false
+    
     func didPresentCep(_ cep: ViaCep.DataCep) {
+        didPresentCepCalled = true
         messages.append(.didShowCep(cep))
     }
     
     func didShowErrorMessage(_ message: String) {
+        didShowErrorCalled = true
         messages.append(.didShowError(message))
     }
     
     func didDisplayInvalidCepMessage(_ message: String) {
+        didDisplayInvalidCepMessageCalled = true
         messages.append(.didDisplayInvalidCepMessage(message))
     }
     

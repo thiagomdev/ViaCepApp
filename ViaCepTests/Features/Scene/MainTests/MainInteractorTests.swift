@@ -9,6 +9,7 @@ final class MainInteractorTests: XCTestCase {
         
         sut.displayCep(dataObject.cep)
         
+        XCTAssertTrue(doubles.presenterSpy.presentCepCalled)
         XCTAssertEqual(doubles.presenterSpy.messages, [.presentCep(dataObject)])
     }
  
@@ -20,6 +21,7 @@ final class MainInteractorTests: XCTestCase {
         
         sut.displayCep(dataObject.cep)
         
+        XCTAssertFalse(doubles.presenterSpy.presentCepCalled)
         XCTAssertEqual(doubles.presenterSpy.messages, [.displayError(error.localizedDescription)])
     }
     
@@ -37,6 +39,7 @@ final class MainInteractorTests: XCTestCase {
         
         sut.displayInvalidCep(dataObject)
         
+        XCTAssertTrue(doubles.presenterSpy.displayInvalidCepAlertMessageCalled)
         XCTAssertEqual(doubles.presenterSpy.messages, [.displayInvalidCepAlertMessage(dataObject)])
     }
 }

@@ -12,6 +12,15 @@ final class MainViewControllerTests: XCTestCase {
 
         XCTAssertEqual(doubles.interactorSpy.displayCepExpected, [cep])
     }
+    
+    func test_didClearText() {
+        let (sut, doubles) = makeSut()
+        
+        sut.didClearText()
+        
+        XCTAssertTrue(doubles.interactorSpy.clearTextCepCalled)
+        XCTAssertNil(doubles.interactorSpy.clearTextCep)
+    }
 }
 
 extension MainViewControllerTests {
@@ -34,12 +43,14 @@ extension MainViewControllerTests {
         private(set) var displayCepExpected: [String] = []
         private(set) var clearTextCep: String?
         private(set) var displayInvalidCepExpected: [DataCep] = []
+        private(set) var clearTextCepCalled: Bool = false
         
         func displayCep(_ cep: String) {
             displayCepExpected.append(cep)
         }
         
         func clearText() -> String? {
+            clearTextCepCalled = true
             return clearTextCep
         }
         
@@ -48,7 +59,7 @@ extension MainViewControllerTests {
         }
         
         func createUser(from email: String, password: String) {
-            
+            // Apenas um test para logar com Firebase.
         }
     }
 }

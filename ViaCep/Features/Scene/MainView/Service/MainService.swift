@@ -23,7 +23,8 @@ extension MainService: MainServicing {
         task = networking.execute(
             request: MainAPIRequest.cep(cep),
             responseType: DataCep.self,
-            callback: { result in
+            callback: { [weak self] result in
+                guard let _ = self else { return }
             switch result {
             case let .success(model):
                 callback(.success(model))
