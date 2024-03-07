@@ -4,8 +4,8 @@ import XCTest
 final class MainServiceTests: XCTestCase {
     func test_fetchDataCep() {
         let (sut, serviceSpy, _) = makeSut()
-        let dataObject: DataCep = .dummy(cep: "01226-010")
-        serviceSpy.shouldBeExpected = .success(.dummy(cep: "01226-010"))
+        let dataObject: DataCep = .fixture(cep: "01226-010")
+        serviceSpy.shouldBeExpected = .success(.fixture(cep: "01226-010"))
         let expectation = XCTestExpectation(description: "https://viacep.com.br/ws/01226-010/json/")
         
         struct Response: AutoEquatable {
@@ -24,15 +24,17 @@ final class MainServiceTests: XCTestCase {
             }
         }
         wait(for: [expectation], timeout: 10.0)
+        trackForMemoryLeaks(for: sut)
+        trackForMemoryLeaks(for: serviceSpy)
     }
     
     func test_failure() {
         let (sut, serviceSpy, _) = makeSut()
-        let dataObject: DataCep = .dummy(cep: "11111-111")
+        let dataObject: DataCep = .fixture(cep: "11111-111")
+        let expectation = XCTestExpectation(description: "https://viacep.com.br/ws/11111-111/json/")
         let failure: NSError = .init(domain: "Test", code: 404)
         serviceSpy.shouldBeExpected = .failure(failure)
-        let expectation = XCTestExpectation(description: "https://viacep.com.br/ws/11111-111/json/")
-        
+      
         sut.fetchDataCep(dataObject.cep) { result in
             switch result {
             case .success:
@@ -43,9 +45,10 @@ final class MainServiceTests: XCTestCase {
             }
         }
         wait(for: [expectation], timeout: 10.0)
+        trackForMemoryLeaks(for: sut)
+        trackForMemoryLeaks(for: serviceSpy)
     }
 }
-
 
 final class MainServiceSpy: MainServicing {
     var shouldBeExpected: (Result<DataCep, Error>)?
@@ -76,6 +79,19 @@ extension MainServiceTests {
         let serviceSpy = MainServiceSpy()
         let sut = MainService(networking: networkingSpy)
         return (sut, serviceSpy, networkingSpy)
+    }
+    
+    private func trackForMemoryLeaks(for
+        instance: AnyObject,
+        file: StaticString = #file,
+        line: UInt = #line
+    ) {
+        addTeardownBlock { [weak instance] in
+            XCTAssertNil(
+                instance,
+                "Instance should have been deallocated. Potential memory leak."
+            )
+        }
     }
 }
 

@@ -4,8 +4,6 @@ protocol MainViewControlling: AnyObject {
     func didPresentCep(_ cep: DataCep)
     func didShowErrorMessage(_ message: String)
     func didDisplayInvalidCepMessage(_ message: String)
-    
-    func didCreateUser(from email: String, password: String)
 }
 
 final class MainViewController: UIViewController {
@@ -132,10 +130,6 @@ extension MainViewController {
         label.textColor = .darkGray
         label.font = .boldSystemFont(ofSize: Layout.Size.constant)
         return label
-    }
-    
-    func didCreateUser(from email: String, password: String) {
-        interactor.createUser(from: email, password: password)
     }
 }
 

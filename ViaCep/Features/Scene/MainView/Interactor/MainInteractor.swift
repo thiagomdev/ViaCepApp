@@ -1,20 +1,19 @@
 import Foundation
-import Firebase
 
 protocol MainInteracting {
     func displayCep(_ cep: String)
     func clearText() -> String?
     func displayInvalidCep(_ data: DataCep)
-    
-    func createUser(from email: String, password: String)
 }
 
 final class MainInteractor {
     private let presenter: MainPresenting?
     private let service: MainServicing?
-    private var auth: Auth? = .auth()
     
-    init(presenter: MainPresenting, service: MainServicing) {
+    init(
+        presenter: MainPresenting,
+        service: MainServicing
+    ) {
         self.presenter = presenter
         self.service = service
     }
@@ -38,15 +37,5 @@ extension MainInteractor: MainInteracting {
     
     func displayInvalidCep(_ data: DataCep) {
         presenter?.displayInvalidCepAlertMessage(data)
-    }
-    
-    func createUser(from email: String, password: String) {
-        auth?.createUser(withEmail: email, password: password, completion: { result, error in
-            if error != nil {
-                
-            } else {
-                self.presenter?.creatingUser(from: email, password: password)
-            }
-        })
     }
 }
