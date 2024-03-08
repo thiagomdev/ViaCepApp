@@ -1,6 +1,6 @@
 import Foundation
 
-struct DataCep: Codable, Equatable {
+struct DataCep: Codable, Hashable {
     var cep: String
     var logradouro: String
     var bairro: String

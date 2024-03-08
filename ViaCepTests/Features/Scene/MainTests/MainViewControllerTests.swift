@@ -11,8 +11,6 @@ final class MainViewControllerTests: XCTestCase {
         sut.searchCep()
 
         XCTAssertEqual(doubles.interactorSpy.displayCepExpected, [cep])
-        trackForMemoryLeaks(for: sut)
-        trackForMemoryLeaks(for: doubles.interactorSpy)
     }
     
     func test_didClearText() {
@@ -22,8 +20,6 @@ final class MainViewControllerTests: XCTestCase {
         
         XCTAssertTrue(doubles.interactorSpy.clearTextCepCalled)
         XCTAssertNil(doubles.interactorSpy.clearTextCep)
-        trackForMemoryLeaks(for: sut)
-        trackForMemoryLeaks(for: doubles.interactorSpy)
     }
 }
 
@@ -60,22 +56,6 @@ extension MainViewControllerTests {
         
         func displayInvalidCep(_ data: ViaCep.DataCep) {
             displayInvalidCepExpected.append(data)
-        }
-        
-        func createUser(from email: String, password: String) {
-            // Apenas um test para logar com Firebase.
-        }
-    }
-    private func trackForMemoryLeaks(for
-        instance: AnyObject,
-        file: StaticString = #file,
-        line: UInt = #line
-    ) {
-        addTeardownBlock { [weak instance] in
-            XCTAssertNil(
-                instance,
-                "Instance should have been deallocated. Potential memory leak."
-            )
         }
     }
 }

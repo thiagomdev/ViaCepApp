@@ -6,11 +6,12 @@ final class MainServiceTests: XCTestCase {
         switch getFetchDataResult() {
         case let .success(dataObject):
             XCTAssertNotNil(dataObject)
-            XCTAssertEqual(dataObject.cep, "01150-011")
+            XCTAssertEqual(dataObject.cep, "01226-010")
             XCTAssertFalse(dataObject.cep.isEmpty)
             
         case let .failure(error):
             XCTFail("Expected successful data result but, got an \(error) instead.")
+            
         default:
             XCTFail("Expected successful but, got no result instead.")
         }
@@ -36,9 +37,12 @@ extension MainServiceTests {
         let (sut, serviceSpy, _) = makeSut()
         trackForMemoryLeaks(to: sut, file: file, line: line)
         
-        let exp = expectation(description: "Wait for a completion loading.")
+        let exp = expectation(
+            description: "Wait for a completion loading."
+        )
+        
+        let data: DataCep = .fixture(cep: "01226-010")
         var expected = serviceSpy.shouldBeExpected
-        let data: DataCep = .fixture()
         
         sut.fetchDataCep(data.cep) { result in
             expected = result

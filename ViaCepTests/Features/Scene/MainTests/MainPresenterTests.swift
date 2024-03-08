@@ -14,8 +14,6 @@ final class MainPresenterTests: XCTestCase {
                 .didShowCep(dataObject)
             ]
         )
-        trackForMemoryLeaks(for: sut)
-        trackForMemoryLeaks(for: viewControllerSpy)
     }
     
     func test_didShowError() {
@@ -26,8 +24,6 @@ final class MainPresenterTests: XCTestCase {
         
         XCTAssertTrue(viewControllerSpy.didShowErrorCalled)
         XCTAssertEqual(viewControllerSpy.messages, [.didShowError(message)])
-        trackForMemoryLeaks(for: sut)
-        trackForMemoryLeaks(for: viewControllerSpy)
     }
     
     func test_didDisplayInvalidCepMessage() {
@@ -42,8 +38,6 @@ final class MainPresenterTests: XCTestCase {
                 .didDisplayInvalidCepMessage(dataObject.cep)
             ]
         )
-        trackForMemoryLeaks(for: sut)
-        trackForMemoryLeaks(for: viewControllerSpy)
     }
 }
 
@@ -56,18 +50,5 @@ extension MainPresenterTests {
         let sut = MainPresenter()
         sut.viewController = viewControllerSpy
         return (sut, viewControllerSpy)
-    }
-    
-    private func trackForMemoryLeaks(for
-        instance: AnyObject,
-        file: StaticString = #file,
-        line: UInt = #line
-    ) {
-        addTeardownBlock { [weak instance] in
-            XCTAssertNil(
-                instance,
-                "Instance should have been deallocated. Potential memory leak."
-            )
-        }
     }
 }

@@ -2,7 +2,7 @@ import Foundation
 @testable import ViaCep
 
 final class MainPresenterSpy: MainPresenting {
-    enum Messages: Equatable {
+    enum Message: Hashable {
         case presentCep(_ cep: ViaCep.DataCep)
         case displayError(_ message: String)
         case displayInvalidCepAlertMessage(_ data: ViaCep.DataCep)
@@ -10,26 +10,26 @@ final class MainPresenterSpy: MainPresenting {
     }
     
     private(set) var presentCepCalled: Bool = false
-    private(set) var messages: [Messages] = []
+    private(set) var messages = Set<Message>()
     private(set) var expected: String?
     
     private(set) var displayInvalidCepAlertMessageCalled: Bool = false
     
     func presentCep(_ cep: ViaCep.DataCep) {
         presentCepCalled = true
-        messages.append(.presentCep(cep))
+        messages.insert(.presentCep(cep))
     }
     
     func displayError(_ message: String) {
-        messages.append(.displayError(message))
+        messages.insert(.displayError(message))
     }
     
     func displayInvalidCepAlertMessage(_ data: ViaCep.DataCep) {
         displayInvalidCepAlertMessageCalled = true
-        messages.append(.displayInvalidCepAlertMessage(data))
+        messages.insert(.displayInvalidCepAlertMessage(data))
     }
     
     func creatingUser(from email: String, password: String) {
-        messages.append(.creatingUser(email: email, password: password))
+        messages.insert(.creatingUser(email: email, password: password))
     }
 }

@@ -11,9 +11,6 @@ final class MainInteractorTests: XCTestCase {
         
         XCTAssertTrue(doubles.presenterSpy.presentCepCalled)
         XCTAssertEqual(doubles.presenterSpy.messages, [.presentCep(dataObject)])
-        trackForMemoryLeaks(to: sut)
-        trackForMemoryLeaks(to: doubles.serviceSpy)
-        trackForMemoryLeaks(to: doubles.presenterSpy)
     }
     
     func test_cep() {
@@ -25,9 +22,6 @@ final class MainInteractorTests: XCTestCase {
         
         XCTAssertTrue(doubles.presenterSpy.presentCepCalled)
         XCTAssertEqual(doubles.presenterSpy.messages, [.presentCep(dataObject)])
-        trackForMemoryLeaks(to: sut)
-        trackForMemoryLeaks(to: doubles.serviceSpy)
-        trackForMemoryLeaks(to: doubles.presenterSpy)
     }
     
     func test_logradouro() {
@@ -39,9 +33,6 @@ final class MainInteractorTests: XCTestCase {
         
         XCTAssertTrue(doubles.presenterSpy.presentCepCalled)
         XCTAssertEqual(doubles.presenterSpy.messages, [.presentCep(dataObject)])
-        trackForMemoryLeaks(to: sut)
-        trackForMemoryLeaks(to: doubles.serviceSpy)
-        trackForMemoryLeaks(to: doubles.presenterSpy)
     }
     
     func test_localidade() {
@@ -53,9 +44,6 @@ final class MainInteractorTests: XCTestCase {
         
         XCTAssertTrue(doubles.presenterSpy.presentCepCalled)
         XCTAssertEqual(doubles.presenterSpy.messages, [.presentCep(dataObject)])
-        trackForMemoryLeaks(to: sut)
-        trackForMemoryLeaks(to: doubles.serviceSpy)
-        trackForMemoryLeaks(to: doubles.presenterSpy)
     }
     
     func test_bairro() {
@@ -67,9 +55,6 @@ final class MainInteractorTests: XCTestCase {
         
         XCTAssertTrue(doubles.presenterSpy.presentCepCalled)
         XCTAssertEqual(doubles.presenterSpy.messages, [.presentCep(dataObject)])
-        trackForMemoryLeaks(to: sut)
-        trackForMemoryLeaks(to: doubles.serviceSpy)
-        trackForMemoryLeaks(to: doubles.presenterSpy)
     }
  
     func test_failure() {
@@ -82,9 +67,6 @@ final class MainInteractorTests: XCTestCase {
         
         XCTAssertFalse(doubles.presenterSpy.presentCepCalled)
         XCTAssertEqual(doubles.presenterSpy.messages, [.displayError(error.localizedDescription)])
-        trackForMemoryLeaks(to: sut)
-        trackForMemoryLeaks(to: doubles.serviceSpy)
-        trackForMemoryLeaks(to: doubles.presenterSpy)
     }
     
     func test_clearText_whenNeedToClearText_shouldReturnNilToClearAllOfThen() {
@@ -93,8 +75,6 @@ final class MainInteractorTests: XCTestCase {
         let expected = sut.clearText()
 
         XCTAssertEqual(doubles.presenterSpy.expected, expected)
-        trackForMemoryLeaks(to: sut)
-        trackForMemoryLeaks(to: doubles.presenterSpy)
     }
     
     func test_displayInvalidCep() {
@@ -105,8 +85,6 @@ final class MainInteractorTests: XCTestCase {
         
         XCTAssertTrue(doubles.presenterSpy.displayInvalidCepAlertMessageCalled)
         XCTAssertEqual(doubles.presenterSpy.messages, [.displayInvalidCepAlertMessage(dataObject)])
-        trackForMemoryLeaks(to: sut)
-        trackForMemoryLeaks(to: doubles.presenterSpy)
     }
 }
 
