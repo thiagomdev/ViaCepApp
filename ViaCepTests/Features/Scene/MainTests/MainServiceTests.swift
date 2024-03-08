@@ -11,7 +11,6 @@ final class MainServiceTests: XCTestCase {
             
         case let .failure(error):
             XCTFail("Expected successful data result but, got an \(error) instead.")
-            
         default:
             XCTFail("Expected successful but, got no result instead.")
         }

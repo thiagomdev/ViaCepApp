@@ -1,7 +1,10 @@
 import Foundation
 
 protocol MainServicing {
-    func fetchDataCep(_ cep: String, callback: @escaping (Result<DataCep, Error>) -> Void)
+    func fetchDataCep(
+        _ cep: String,
+        callback: @escaping (Result<DataCep, Error>) -> Void
+    )
 }
 
 final class MainService {

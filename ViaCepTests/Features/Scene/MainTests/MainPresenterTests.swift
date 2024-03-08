@@ -42,13 +42,18 @@ final class MainPresenterTests: XCTestCase {
 }
 
 extension MainPresenterTests {
-    private func makeSut() -> (
+    private func makeSut(
+        file: StaticString = #file,
+        line: UInt = #line
+    ) -> (
         sut: MainPresenter,
         viewControllerSpy: MainViewControllerSpy
     ) {
         let viewControllerSpy = MainViewControllerSpy()
         let sut = MainPresenter()
         sut.viewController = viewControllerSpy
+        trackForMemoryLeaks(to: sut)
+        trackForMemoryLeaks(to: viewControllerSpy)
         return (sut, viewControllerSpy)
     }
 }

@@ -94,7 +94,10 @@ extension MainInteractorTests {
         serviceSpy: ServiceMock
     )
 
-    private func makeSut() -> (
+    private func makeSut(
+        file: StaticString = #file,
+        line: UInt = #line
+    ) -> (
         sut: MainInteractor,
         doubles: Doubles
     ) {
@@ -104,6 +107,9 @@ extension MainInteractorTests {
             presenter: presenterSpy,
             service: serviceSpy
         )
+        trackForMemoryLeaks(to: sut)
+        trackForMemoryLeaks(to: presenterSpy)
+        trackForMemoryLeaks(to: serviceSpy)
         return (sut, (presenterSpy, serviceSpy))
     }
 }

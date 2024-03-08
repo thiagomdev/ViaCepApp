@@ -29,13 +29,19 @@ extension MainViewControllerTests {
         serviceMock: ServiceMock
     )
     
-    private func makeSut() -> (
+    private func makeSut(
+        file: StaticString = #file,
+        line: UInt = #line
+    ) -> (
         sut: MainViewController,
         doubles: Doubles
     ) {
         let interactorSpy = InteractorSpy()
         let serviceMock = ServiceMock()
         let sut = MainViewController(interactor: interactorSpy)
+        trackForMemoryLeaks(to: sut)
+        trackForMemoryLeaks(to: interactorSpy)
+        trackForMemoryLeaks(to: serviceMock)
         return (sut, (interactorSpy, serviceMock))
     }
     
