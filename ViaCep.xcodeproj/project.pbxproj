@@ -28,6 +28,9 @@
 		AA809B122A82E18C000F506D /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA809B112A82E18C000F506D /* NetworkError.swift */; };
 		AA809B142A82E1AE000F506D /* EmptyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA809B132A82E1AE000F506D /* EmptyResponse.swift */; };
 		AA9FD4B42A73046000CA1773 /* MainPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9FD4B32A73046000CA1773 /* MainPresenterTests.swift */; };
+		AAA286C42B9ABEE00007EC2F /* XCTestCase+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA286C32B9ABEE00007EC2F /* XCTestCase+Extension.swift */; };
+		AAA286C62B9AC9600007EC2F /* NetworkingSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA286C52B9AC9600007EC2F /* NetworkingSpy.swift */; };
+		AAA286C82B9AC98C0007EC2F /* MainServiceSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA286C72B9AC98C0007EC2F /* MainServiceSpy.swift */; };
 		AADE465B2A8C5E7A00422476 /* MainViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADE465A2A8C5E7A00422476 /* MainViewControllerTests.swift */; };
 		AAF24B3E2A74D12A00787C38 /* NSLayout+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF24B3D2A74D12A00787C38 /* NSLayout+Extensions.swift */; };
 		AAF24B412A74E5A200787C38 /* MainPresenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF24B402A74E5A200787C38 /* MainPresenterSpy.swift */; };
@@ -73,6 +76,9 @@
 		AA809B132A82E1AE000F506D /* EmptyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyResponse.swift; sourceTree = "<group>"; };
 		AA9FD4B12A72FFC400CA1773 /* ViaCep.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = ViaCep.xctestplan; sourceTree = "<group>"; };
 		AA9FD4B32A73046000CA1773 /* MainPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenterTests.swift; sourceTree = "<group>"; };
+		AAA286C32B9ABEE00007EC2F /* XCTestCase+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extension.swift"; sourceTree = "<group>"; };
+		AAA286C52B9AC9600007EC2F /* NetworkingSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingSpy.swift; sourceTree = "<group>"; };
+		AAA286C72B9AC98C0007EC2F /* MainServiceSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainServiceSpy.swift; sourceTree = "<group>"; };
 		AADE465A2A8C5E7A00422476 /* MainViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerTests.swift; sourceTree = "<group>"; };
 		AAF24B3D2A74D12A00787C38 /* NSLayout+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayout+Extensions.swift"; sourceTree = "<group>"; };
 		AAF24B402A74E5A200787C38 /* MainPresenterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenterSpy.swift; sourceTree = "<group>"; };
@@ -114,7 +120,6 @@
 				AA7B05832A7292F300A5CECE /* ViaCep */,
 				AA7B05C92A72C39000A5CECE /* ViaCepTests */,
 				AA7B05822A7292F300A5CECE /* Products */,
-				AAFDDE312B4B736C009D031D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -176,6 +181,7 @@
 		AA7B059C2A72937200A5CECE /* MainView */ = {
 			isa = PBXGroup;
 			children = (
+				AA7B05A52A7294D900A5CECE /* Factory */,
 				AA7B05A02A7293E400A5CECE /* Domain */,
 				AA7B05A42A72949600A5CECE /* Interactor */,
 				AA7B059E2A7293DE00A5CECE /* Presenter */,
@@ -238,7 +244,6 @@
 			isa = PBXGroup;
 			children = (
 				AA5178A02AB1DF1100E3CFCA /* RequestLogger */,
-				AA7B05A52A7294D900A5CECE /* Factory */,
 				AAF24B3C2A74D0FE00787C38 /* NSLayout+Extension */,
 				AA7B05B42A729BBD00A5CECE /* WebService */,
 			);
@@ -287,10 +292,11 @@
 		AA9FD4BE2A7326C600CA1773 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				AAA286C22B9ABECB0007EC2F /* Extension */,
+				AA9FD4BF2A7326CB00CA1773 /* MainTests */,
 				AAF24B3F2A74E59100787C38 /* Spies */,
 				AAF539282A7F07B3002BB959 /* Stub */,
 				AAF24B422A74E5E900787C38 /* Mockies */,
-				AA9FD4BF2A7326CB00CA1773 /* MainTests */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -306,6 +312,14 @@
 			path = MainTests;
 			sourceTree = "<group>";
 		};
+		AAA286C22B9ABECB0007EC2F /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				AAA286C32B9ABEE00007EC2F /* XCTestCase+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		AAF24B3C2A74D0FE00787C38 /* NSLayout+Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -319,6 +333,8 @@
 			children = (
 				AAF24B402A74E5A200787C38 /* MainPresenterSpy.swift */,
 				AAF24B452A74E68A00787C38 /* MainViewControllerSpy.swift */,
+				AAA286C52B9AC9600007EC2F /* NetworkingSpy.swift */,
+				AAA286C72B9AC98C0007EC2F /* MainServiceSpy.swift */,
 			);
 			path = Spies;
 			sourceTree = "<group>";
@@ -337,13 +353,6 @@
 				AAF539292A7F07CB002BB959 /* ServiceStub.swift */,
 			);
 			path = Stub;
-			sourceTree = "<group>";
-		};
-		AAFDDE312B4B736C009D031D /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -478,9 +487,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAF5392A2A7F07CB002BB959 /* ServiceStub.swift in Sources */,
+				AAA286C82B9AC98C0007EC2F /* MainServiceSpy.swift in Sources */,
+				AAA286C62B9AC9600007EC2F /* NetworkingSpy.swift in Sources */,
 				AAF24B412A74E5A200787C38 /* MainPresenterSpy.swift in Sources */,
 				AA7B05D72A72F39400A5CECE /* DataCepFixture.swift in Sources */,
 				AA7B05D42A72C3C600A5CECE /* MainInteractorTests.swift in Sources */,
+				AAA286C42B9ABEE00007EC2F /* XCTestCase+Extension.swift in Sources */,
 				AAF24B442A74E60100787C38 /* ServiceMock.swift in Sources */,
 				AA9FD4B42A73046000CA1773 /* MainPresenterTests.swift in Sources */,
 				AAF24B462A74E68A00787C38 /* MainViewControllerSpy.swift in Sources */,

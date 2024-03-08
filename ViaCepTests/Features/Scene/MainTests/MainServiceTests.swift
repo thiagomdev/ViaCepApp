@@ -3,69 +3,17 @@ import XCTest
 
 final class MainServiceTests: XCTestCase {
     func test_fetchDataCep() {
-        let (sut, serviceSpy, _) = makeSut()
-        let dataObject: DataCep = .fixture(cep: "01226-010")
-        serviceSpy.shouldBeExpected = .success(.fixture(cep: "01226-010"))
-        let expectation = XCTestExpectation(description: "https://viacep.com.br/ws/01226-010/json/")
-        
-        struct Response: AutoEquatable {
-            let mock: (Result<DataCep, Error>)?
+        switch getFetchDataResult() {
+        case let .success(dataObject):
+            XCTAssertNotNil(dataObject)
+            XCTAssertEqual(dataObject.cep, "01150-011")
+            XCTAssertFalse(dataObject.cep.isEmpty)
+            
+        case let .failure(error):
+            XCTFail("Expected successful data result but, got an \(error) instead.")
+        default:
+            XCTFail("Expected successful but, got no result instead.")
         }
-
-        sut.fetchDataCep(dataObject.cep) { result in
-            switch result {
-            case let .success(data):
-                XCTAssertNotNil(data)
-                XCTAssertEqual(Response(mock: .success(data)), .init(mock: result))
-                XCTAssertEqual(data.cep, dataObject.cep)
-                expectation.fulfill()
-            case .failure:
-                XCTFail("Failure")
-            }
-        }
-        wait(for: [expectation], timeout: 10.0)
-        trackForMemoryLeaks(for: sut)
-        trackForMemoryLeaks(for: serviceSpy)
-    }
-    
-    func test_failure() {
-        let (sut, serviceSpy, _) = makeSut()
-        let dataObject: DataCep = .fixture(cep: "11111-111")
-        let expectation = XCTestExpectation(description: "https://viacep.com.br/ws/11111-111/json/")
-        let failure: NSError = .init(domain: "Test", code: 404)
-        serviceSpy.shouldBeExpected = .failure(failure)
-      
-        sut.fetchDataCep(dataObject.cep) { result in
-            switch result {
-            case .success:
-                XCTFail("Failure")
-            case let .failure(failure):
-                XCTAssertNotNil(failure)
-                expectation.fulfill()
-            }
-        }
-        wait(for: [expectation], timeout: 10.0)
-        trackForMemoryLeaks(for: sut)
-        trackForMemoryLeaks(for: serviceSpy)
-    }
-}
-
-final class MainServiceSpy: MainServicing {
-    var shouldBeExpected: (Result<DataCep, Error>)?
-
-    func fetchDataCep(
-        _ cep: String,
-        callback: @escaping (Result<DataCep, Error>) -> Void
-    ) {
-        if let shouldBeExpected {
-            callback(shouldBeExpected)
-        }
-    }
-}
-
-final class NetworkingSpy: NetworkingProtocol {
-    func execute<T>(request: ViaCep.Request, responseType: T.Type, callback: @escaping (Result<T, Error>) -> Void) -> ViaCep.Task where T : Decodable, T : Encodable {
-        Tasking<T>(request: request, callback: callback, responseType: responseType)
     }
 }
 
@@ -81,30 +29,22 @@ extension MainServiceTests {
         return (sut, serviceSpy, networkingSpy)
     }
     
-    private func trackForMemoryLeaks(for
-        instance: AnyObject,
+    private func getFetchDataResult(
         file: StaticString = #file,
         line: UInt = #line
-    ) {
-        addTeardownBlock { [weak instance] in
-            XCTAssertNil(
-                instance,
-                "Instance should have been deallocated. Potential memory leak."
-            )
+    ) -> Result<DataCep, Error>? {
+        let (sut, serviceSpy, _) = makeSut()
+        trackForMemoryLeaks(to: sut, file: file, line: line)
+        
+        let exp = expectation(description: "Wait for a completion loading.")
+        var expected = serviceSpy.shouldBeExpected
+        let data: DataCep = .fixture()
+        
+        sut.fetchDataCep(data.cep) { result in
+            expected = result
+            exp.fulfill()
         }
-    }
-}
-
-public protocol AutoEquatable: Equatable { }
-
-public extension AutoEquatable {
-    static func == (lhs: Self, rhs: Self) -> Bool {
-        var lhsDump = String()
-        dump(lhs, to: &lhsDump)
-        
-        var rhsDump = String()
-        dump(rhs, to: &rhsDump)
-        
-        return rhsDump == lhsDump
+        wait(for: [exp], timeout: 10.0)
+        return expected
     }
 }

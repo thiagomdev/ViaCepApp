@@ -135,13 +135,15 @@ extension MainViewController {
 
 extension MainViewController {
     private func buildViews() {
-        stackViewContainer.addArrangedSubview(inputedCepTextField)
-        stackViewContainer.addArrangedSubview(searchCepButton)
-        
-        stackViewContainer.addArrangedSubview(logradouroLabel)
-        stackViewContainer.addArrangedSubview(bairroLabel)
-        stackViewContainer.addArrangedSubview(localidadeLabel)
-        
+        [inputedCepTextField,
+         searchCepButton,
+         logradouroLabel,
+         bairroLabel,
+         localidadeLabel
+        ].forEach { subViews in
+            stackViewContainer.addArrangedSubview(subViews)
+        }
+        stackViewContainer.setCustomSpacing(30, after: searchCepButton)
         view.addSubview(stackViewContainer)
     }
     
