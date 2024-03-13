@@ -96,6 +96,7 @@ final class MainInteractorTests: XCTestCase {
         sut.displayInvalidCep(dataObject)
         
         XCTAssertTrue(doubles.presenterSpy.displayInvalidCepAlertMessageCalled)
+        XCTAssertEqual(doubles.presenterSpy.displayInvalidCepAlertMessageCounting, 1)
         XCTAssertEqual(doubles.presenterSpy.messages, [
             .displayInvalidCepAlertMessage(dataObject)]
         )
