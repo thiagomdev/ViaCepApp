@@ -3,7 +3,7 @@ import XCTest
 
 final class MainServiceTests: XCTestCase {
     func test_fetchDataCep() {
-        switch getFetchDataResult() {
+        switch fetchDataCep {
         case let .success(dataObject):
             XCTAssertNotNil(dataObject)
             
@@ -39,12 +39,9 @@ extension MainServiceTests {
         return (sut, serviceSpy, networkingSpy)
     }
     
-    private func getFetchDataResult(
-        file: StaticString = #file,
-        line: UInt = #line
-    ) -> Result<DataCep, Error>? {
+    private var fetchDataCep: Result<DataCep, Error>? {
         let (sut, serviceSpy, _) = makeSut()
-        trackForMemoryLeaks(to: sut, file: file, line: line)
+        trackForMemoryLeaks(to: sut)
         
         let exp = expectation(
             description: "Wait for a completion loading."
