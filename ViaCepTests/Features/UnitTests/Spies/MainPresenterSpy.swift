@@ -14,7 +14,7 @@ final class MainPresenterSpy: MainPresenting {
     private(set) var expected: String?
     
     private(set) var displayInvalidCepAlertMessageCalled: Bool = false
-    
+    private(set) var displayInvalidCepAlertMessageCounting: Int = 0
     func presentCep(_ cep: ViaCep.DataCep) {
         presentCepCalled = true
         messages.insert(.presentCep(cep))
@@ -26,6 +26,7 @@ final class MainPresenterSpy: MainPresenting {
     
     func displayInvalidCepAlertMessage(_ data: ViaCep.DataCep) {
         displayInvalidCepAlertMessageCalled = true
+        displayInvalidCepAlertMessageCounting += 1
         messages.insert(.displayInvalidCepAlertMessage(data))
     }
     

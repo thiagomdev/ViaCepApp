@@ -45,6 +45,17 @@
                ReferencedContainer = "container:ViaCep.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "AA1364882BA14E0900368B9F"
+               BuildableName = "ViaCepUITests.xctest"
+               BlueprintName = "ViaCepUITests"
+               ReferencedContainer = "container:ViaCep.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
