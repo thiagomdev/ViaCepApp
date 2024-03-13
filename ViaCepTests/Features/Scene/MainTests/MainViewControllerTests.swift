@@ -9,8 +9,10 @@ final class MainViewControllerTests: XCTestCase {
         
         sut.inputedCepTextField.text = cep
         sut.searchCep()
-
-        XCTAssertEqual(doubles.interactorSpy.displayCepExpected, [cep])
+        XCTAssertEqual(
+            doubles.interactorSpy.messages, [
+                .displayCep(cep: cep)]
+        )
     }
     
     func test_didClearText() {
@@ -18,8 +20,21 @@ final class MainViewControllerTests: XCTestCase {
         
         sut.didClearText()
         
-        XCTAssertTrue(doubles.interactorSpy.clearTextCepCalled)
+        XCTAssertEqual(doubles.interactorSpy.messages, [.clearText])
         XCTAssertNil(doubles.interactorSpy.clearTextCep)
+    }
+    
+    func test_didDisplayInvalidCepMessage() {
+        let (sut, doubles) = makeSut()
+        let dataCep = DataCep.fixture()
+        let cep = dataCep.cep
+        
+        sut.didDisplayInvalidCepMessage(cep)
+        
+        XCTAssertEqual(
+            doubles.interactorSpy.messages, [
+                .displayInvalidCep(data: .fixture(cep: "01150-011"))]
+        )
     }
 }
 
@@ -45,23 +60,27 @@ extension MainViewControllerTests {
         return (sut, (interactorSpy, serviceMock))
     }
     
+    enum Message: Hashable {
+        case displayCep(cep: String)
+        case clearText
+        case displayInvalidCep(data: ViaCep.DataCep)
+    }
+    
     private class InteractorSpy: MainInteracting {
-        private(set) var displayCepExpected: [String] = []
         private(set) var clearTextCep: String?
-        private(set) var displayInvalidCepExpected: [DataCep] = []
-        private(set) var clearTextCepCalled: Bool = false
+        private(set) var messages = Set<Message>()
         
         func displayCep(_ cep: String) {
-            displayCepExpected.append(cep)
+            messages.insert(.displayCep(cep: cep))
         }
         
         func clearText() -> String? {
-            clearTextCepCalled = true
+            messages.insert(.clearText)
             return clearTextCep
         }
         
         func displayInvalidCep(_ data: ViaCep.DataCep) {
-            displayInvalidCepExpected.append(data)
+            messages.insert(.displayInvalidCep(data: data))
         }
     }
 }
