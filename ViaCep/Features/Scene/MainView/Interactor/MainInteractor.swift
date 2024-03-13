@@ -26,7 +26,9 @@ extension MainInteractor: MainInteracting {
             case let .success(cep):
                 self?.presenter?.presentCep(cep)
             case let .failure(error):
-                self?.presenter?.displayError(error.localizedDescription)
+                self?.presenter?.displayError(
+                    error.localizedDescription
+                )
             }
         }
     }
