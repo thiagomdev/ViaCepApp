@@ -33,7 +33,8 @@ final class MainViewControllerTests: XCTestCase {
         
         XCTAssertEqual(
             doubles.interactorSpy.messages, [
-                .displayInvalidCep(data: .fixture(cep: "01150-011"))]
+                .displayInvalidCep(data: .fixture(cep: "01150-011"))
+            ]
         )
     }
 }

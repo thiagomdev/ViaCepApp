@@ -10,7 +10,9 @@ final class MainInteractorTests: XCTestCase {
         sut.displayCep(dataObject.cep)
         
         XCTAssertTrue(doubles.presenterSpy.presentCepCalled)
-        XCTAssertEqual(doubles.presenterSpy.messages, [.presentCep(dataObject)])
+        XCTAssertEqual(doubles.presenterSpy.messages, [
+            .presentCep(dataObject)]
+        )
     }
     
     func test_cep() {
@@ -21,7 +23,9 @@ final class MainInteractorTests: XCTestCase {
         sut.displayCep(dataObject.cep)
         
         XCTAssertTrue(doubles.presenterSpy.presentCepCalled)
-        XCTAssertEqual(doubles.presenterSpy.messages, [.presentCep(dataObject)])
+        XCTAssertEqual(doubles.presenterSpy.messages, [
+            .presentCep(dataObject)]
+        )
     }
     
     func test_logradouro() {
@@ -32,7 +36,9 @@ final class MainInteractorTests: XCTestCase {
         sut.displayCep(dataObject.logradouro)
         
         XCTAssertTrue(doubles.presenterSpy.presentCepCalled)
-        XCTAssertEqual(doubles.presenterSpy.messages, [.presentCep(dataObject)])
+        XCTAssertEqual(doubles.presenterSpy.messages, [
+            .presentCep(dataObject)]
+        )
     }
     
     func test_localidade() {
@@ -43,7 +49,9 @@ final class MainInteractorTests: XCTestCase {
         sut.displayCep(dataObject.localidade)
         
         XCTAssertTrue(doubles.presenterSpy.presentCepCalled)
-        XCTAssertEqual(doubles.presenterSpy.messages, [.presentCep(dataObject)])
+        XCTAssertEqual(doubles.presenterSpy.messages, [
+            .presentCep(dataObject)]
+        )
     }
     
     func test_bairro() {
@@ -54,7 +62,9 @@ final class MainInteractorTests: XCTestCase {
         sut.displayCep(dataObject.bairro)
         
         XCTAssertTrue(doubles.presenterSpy.presentCepCalled)
-        XCTAssertEqual(doubles.presenterSpy.messages, [.presentCep(dataObject)])
+        XCTAssertEqual(doubles.presenterSpy.messages, [
+            .presentCep(dataObject)]
+        )
     }
  
     func test_failure() {
@@ -66,7 +76,9 @@ final class MainInteractorTests: XCTestCase {
         sut.displayCep(dataObject.cep)
         
         XCTAssertFalse(doubles.presenterSpy.presentCepCalled)
-        XCTAssertEqual(doubles.presenterSpy.messages, [.displayError(error.localizedDescription)])
+        XCTAssertEqual(doubles.presenterSpy.messages, [
+            .displayError(error.localizedDescription)]
+        )
     }
     
     func test_clearText_whenNeedToClearText_shouldReturnNilToClearAllOfThen() {
@@ -84,7 +96,9 @@ final class MainInteractorTests: XCTestCase {
         sut.displayInvalidCep(dataObject)
         
         XCTAssertTrue(doubles.presenterSpy.displayInvalidCepAlertMessageCalled)
-        XCTAssertEqual(doubles.presenterSpy.messages, [.displayInvalidCepAlertMessage(dataObject)])
+        XCTAssertEqual(doubles.presenterSpy.messages, [
+            .displayInvalidCepAlertMessage(dataObject)]
+        )
     }
 }
 
