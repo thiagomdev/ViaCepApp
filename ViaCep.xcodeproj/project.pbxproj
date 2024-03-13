@@ -293,10 +293,10 @@
 			isa = PBXGroup;
 			children = (
 				AAA286C22B9ABECB0007EC2F /* Extension */,
-				AA9FD4BF2A7326CB00CA1773 /* MainTests */,
 				AAF24B3F2A74E59100787C38 /* Spies */,
 				AAF539282A7F07B3002BB959 /* Stub */,
 				AAF24B422A74E5E900787C38 /* Mockies */,
+				AA9FD4BF2A7326CB00CA1773 /* MainTests */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
