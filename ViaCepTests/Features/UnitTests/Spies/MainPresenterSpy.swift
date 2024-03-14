@@ -6,15 +6,15 @@ final class MainPresenterSpy: MainPresenting {
         case presentCep(_ cep: ViaCep.DataCep)
         case displayError(_ message: String)
         case displayInvalidCepAlertMessage(_ data: ViaCep.DataCep)
-        case creatingUser(email: String, password: String)
     }
     
-    private(set) var presentCepCalled: Bool = false
     private(set) var messages = Set<Message>()
+    private(set) var presentCepCalled: Bool = false
     private(set) var expected: String?
     
     private(set) var displayInvalidCepAlertMessageCalled: Bool = false
     private(set) var displayInvalidCepAlertMessageCounting: Int = 0
+    
     func presentCep(_ cep: ViaCep.DataCep) {
         presentCepCalled = true
         messages.insert(.presentCep(cep))
@@ -28,9 +28,5 @@ final class MainPresenterSpy: MainPresenting {
         displayInvalidCepAlertMessageCalled = true
         displayInvalidCepAlertMessageCounting += 1
         messages.insert(.displayInvalidCepAlertMessage(data))
-    }
-    
-    func creatingUser(from email: String, password: String) {
-        messages.insert(.creatingUser(email: email, password: password))
     }
 }

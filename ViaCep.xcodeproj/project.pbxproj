@@ -272,7 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				AA5178A02AB1DF1100E3CFCA /* RequestLogger */,
-				AAF24B3C2A74D0FE00787C38 /* NSLayout+Extension */,
+				AAF24B3C2A74D0FE00787C38 /* NSLayout */,
 				AA7B05B42A729BBD00A5CECE /* WebService */,
 			);
 			path = Core;
@@ -332,9 +332,9 @@
 		AA9FD4BF2A7326CB00CA1773 /* MainTests */ = {
 			isa = PBXGroup;
 			children = (
+				AAFDDE342B4B7539009D031D /* MainServiceTests.swift */,
 				AA7B05D32A72C3C600A5CECE /* MainInteractorTests.swift */,
 				AA9FD4B32A73046000CA1773 /* MainPresenterTests.swift */,
-				AAFDDE342B4B7539009D031D /* MainServiceTests.swift */,
 			);
 			path = MainTests;
 			sourceTree = "<group>";
@@ -347,12 +347,12 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		AAF24B3C2A74D0FE00787C38 /* NSLayout+Extension */ = {
+		AAF24B3C2A74D0FE00787C38 /* NSLayout */ = {
 			isa = PBXGroup;
 			children = (
 				AAF24B3D2A74D12A00787C38 /* NSLayout+Extensions.swift */,
 			);
-			path = "NSLayout+Extension";
+			path = NSLayout;
 			sourceTree = "<group>";
 		};
 		AAF24B3F2A74E59100787C38 /* Spies */ = {

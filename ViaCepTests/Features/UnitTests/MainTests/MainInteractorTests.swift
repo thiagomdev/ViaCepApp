@@ -9,64 +9,16 @@ final class MainInteractorTests: XCTestCase {
         
         sut.displayCep(dataObject.cep)
         
+        XCTAssertNotNil(dataObject)
         XCTAssertTrue(doubles.presenterSpy.presentCepCalled)
-        XCTAssertEqual(doubles.presenterSpy.messages, [
-            .presentCep(dataObject)]
-        )
+        XCTAssertEqual(doubles.presenterSpy.messages, [.presentCep(dataObject)])
+        
+        XCTAssertEqual(dataObject.cep, "01150011")
+        XCTAssertEqual(dataObject.logradouro, "Praça Marechal Deodoro")
+        XCTAssertEqual(dataObject.localidade, "São Paulo")
+        XCTAssertEqual(dataObject.bairro, "Santa Cecília")
     }
     
-    func test_cep() {
-        let dataObject: DataCep = .fixture(cep: "01150011")
-        let (sut, doubles) = makeSut()
-        doubles.serviceSpy.expexted = .success(dataObject)
-        
-        sut.displayCep(dataObject.cep)
-        
-        XCTAssertTrue(doubles.presenterSpy.presentCepCalled)
-        XCTAssertEqual(doubles.presenterSpy.messages, [
-            .presentCep(dataObject)]
-        )
-    }
-    
-    func test_logradouro() {
-        let dataObject: DataCep = .fixture(logradouro: "Alguma rua - teste")
-        let (sut, doubles) = makeSut()
-        doubles.serviceSpy.expexted = .success(dataObject)
-        
-        sut.displayCep(dataObject.logradouro)
-        
-        XCTAssertTrue(doubles.presenterSpy.presentCepCalled)
-        XCTAssertEqual(doubles.presenterSpy.messages, [
-            .presentCep(dataObject)]
-        )
-    }
-    
-    func test_localidade() {
-        let dataObject: DataCep = .fixture(localidade: "Teste")
-        let (sut, doubles) = makeSut()
-        doubles.serviceSpy.expexted = .success(dataObject)
-        
-        sut.displayCep(dataObject.localidade)
-        
-        XCTAssertTrue(doubles.presenterSpy.presentCepCalled)
-        XCTAssertEqual(doubles.presenterSpy.messages, [
-            .presentCep(dataObject)]
-        )
-    }
-    
-    func test_bairro() {
-        let dataObject: DataCep = .fixture(bairro: "Teste - Testing")
-        let (sut, doubles) = makeSut()
-        doubles.serviceSpy.expexted = .success(dataObject)
-        
-        sut.displayCep(dataObject.bairro)
-        
-        XCTAssertTrue(doubles.presenterSpy.presentCepCalled)
-        XCTAssertEqual(doubles.presenterSpy.messages, [
-            .presentCep(dataObject)]
-        )
-    }
- 
     func test_failure() {
         let dataObject: DataCep = .fixture()
         let (sut, doubles) = makeSut()
@@ -75,6 +27,7 @@ final class MainInteractorTests: XCTestCase {
         
         sut.displayCep(dataObject.cep)
         
+        XCTAssertNotNil(dataObject)
         XCTAssertFalse(doubles.presenterSpy.presentCepCalled)
         XCTAssertEqual(doubles.presenterSpy.messages, [
             .displayError(error.localizedDescription)]
@@ -95,6 +48,7 @@ final class MainInteractorTests: XCTestCase {
         
         sut.displayInvalidCep(dataObject)
         
+        XCTAssertNotNil(dataObject)
         XCTAssertTrue(doubles.presenterSpy.displayInvalidCepAlertMessageCalled)
         XCTAssertEqual(doubles.presenterSpy.displayInvalidCepAlertMessageCounting, 1)
         XCTAssertEqual(doubles.presenterSpy.messages, [

@@ -26,8 +26,15 @@ final class Tasking<T: Codable>: Task {
         request.httpMethod = self.request.method.description
         request.httpBody = self.request.body
         
-        task = URLSession.shared.dataTask(with: request, completionHandler: { [weak self] data, response, error in
-            NetworkingLogger.log(request: request, response: response, data: data, error: error)
+        task = URLSession.shared.dataTask(
+            with: request,
+            completionHandler: { [weak self] data, response, error in
+            NetworkingLogger.log(
+                request: request,
+                response: response,
+                data: data,
+                error: error
+            )
             if let error = error {
                 self?.callback?(.failure(error))
                 return
