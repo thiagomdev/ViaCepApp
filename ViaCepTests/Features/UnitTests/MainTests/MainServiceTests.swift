@@ -42,6 +42,7 @@ extension MainServiceTests {
     private var fetchDataCep: Result<DataCep, Error>? {
         let (sut, serviceSpy, _) = makeSut()
         trackForMemoryLeaks(to: sut)
+        trackForMemoryLeaks(to: serviceSpy)
         
         let exp = expectation(
             description: "Wait for a completion loading."

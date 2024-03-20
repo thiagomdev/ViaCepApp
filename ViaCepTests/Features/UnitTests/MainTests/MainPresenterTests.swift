@@ -5,7 +5,7 @@ final class MainPresenterTests: XCTestCase {
     func test_presentCep_whenGetsAllOfInformationData_shouldReturnDataCep() {
         let dataObject: DataCep = .fixture()
         let (sut, viewControllerSpy) = makeSut()
-        
+         
         sut.presentCep(dataObject)
          
         XCTAssertTrue(viewControllerSpy.didPresentCepCalled)
