@@ -5,7 +5,6 @@ final class MainPresenterSpy: MainPresenting {
     enum Message: Hashable {
         case presentCep(_ cep: ViaCep.DataCep)
         case displayError(_ message: String)
-        case displayInvalidCepAlertMessage(_ data: ViaCep.DataCep)
     }
     
     private(set) var messages = Set<Message>()
@@ -22,11 +21,5 @@ final class MainPresenterSpy: MainPresenting {
     
     func displayError(_ message: String) {
         messages.insert(.displayError(message))
-    }
-    
-    func displayInvalidCepAlertMessage(_ data: ViaCep.DataCep) {
-        displayInvalidCepAlertMessageCalled = true
-        displayInvalidCepAlertMessageCounting += 1
-        messages.insert(.displayInvalidCepAlertMessage(data))
     }
 }

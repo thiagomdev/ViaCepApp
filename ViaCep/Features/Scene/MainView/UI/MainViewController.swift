@@ -3,7 +3,6 @@ import UIKit
 protocol MainViewControlling: AnyObject {
     func didPresentCep(_ cep: DataCep)
     func didShowErrorMessage(_ message: String)
-    func didDisplayInvalidCepMessage(_ message: String)
 }
 
 final class MainViewController: UIViewController {
@@ -51,7 +50,7 @@ final class MainViewController: UIViewController {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError()
     }
 }
 
@@ -83,22 +82,6 @@ extension MainViewController: MainViewControlling {
             
             didClearText()
             present(alert, animated: true)
-        }
-    }
-    
-    func didDisplayInvalidCepMessage(_ message: String) {
-        DispatchQueue.main.async { [weak self] in
-            let alert = UIAlertController(
-                title: "ALERT ⚠️",
-                message: "Este CEP não existe.",
-                preferredStyle: .alert
-            )
-            alert.addAction(
-                UIAlertAction(
-                    title: "FECHAR",
-                    style: .default)
-            )
-            self?.present(alert, animated: true)
         }
     }
 }

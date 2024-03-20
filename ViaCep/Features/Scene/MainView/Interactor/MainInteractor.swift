@@ -3,7 +3,6 @@ import Foundation
 protocol MainInteracting {
     func displayCep(_ cep: String)
     func clearText() -> String?
-    func displayInvalidCep(_ data: DataCep)
 }
 
 final class MainInteractor {
@@ -35,9 +34,5 @@ extension MainInteractor: MainInteracting {
     
     func clearText() -> String? {
         return nil
-    }
-    
-    func displayInvalidCep(_ data: DataCep) {
-        presenter?.displayInvalidCepAlertMessage(data)
     }
 }

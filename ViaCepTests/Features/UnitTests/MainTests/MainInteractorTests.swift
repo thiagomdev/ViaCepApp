@@ -41,20 +41,6 @@ final class MainInteractorTests: XCTestCase {
 
         XCTAssertEqual(doubles.presenterSpy.expected, expected)
     }
-    
-    func test_displayInvalidCep() {
-        let dataObject: DataCep = .fixture()
-        let (sut, doubles) = makeSut()
-        
-        sut.displayInvalidCep(dataObject)
-        
-        XCTAssertNotNil(dataObject)
-        XCTAssertTrue(doubles.presenterSpy.displayInvalidCepAlertMessageCalled)
-        XCTAssertEqual(doubles.presenterSpy.displayInvalidCepAlertMessageCounting, 1)
-        XCTAssertEqual(doubles.presenterSpy.messages, [
-            .displayInvalidCepAlertMessage(dataObject)]
-        )
-    }
 }
 
 extension MainInteractorTests {

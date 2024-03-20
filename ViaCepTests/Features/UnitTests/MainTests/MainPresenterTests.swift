@@ -25,20 +25,6 @@ final class MainPresenterTests: XCTestCase {
         XCTAssertTrue(viewControllerSpy.didShowErrorCalled)
         XCTAssertEqual(viewControllerSpy.messages, [.didShowError(message)])
     }
-    
-    func test_didDisplayInvalidCepMessage() {
-        let dataObject: DataCep = .fixture()
-        let (sut, viewControllerSpy) = makeSut()
-        
-        sut.displayInvalidCepAlertMessage(dataObject)
-        
-        XCTAssertTrue(viewControllerSpy.didDisplayInvalidCepMessageCalled)
-        XCTAssertEqual(
-            viewControllerSpy.messages, [
-                .didDisplayInvalidCepMessage(dataObject.cep)
-            ]
-        )
-    }
 }
 
 extension MainPresenterTests {

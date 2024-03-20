@@ -5,7 +5,6 @@ final class MainViewControllerSpy: MainViewControlling {
     enum Message: Hashable {
         case didShowCep(_ cep: ViaCep.DataCep)
         case didShowError(_ message: String)
-        case didDisplayInvalidCepMessage(_ message: String)
     }
     
     private(set) var messages = Set<Message>()
@@ -21,10 +20,5 @@ final class MainViewControllerSpy: MainViewControlling {
     func didShowErrorMessage(_ message: String) {
         didShowErrorCalled = true
         messages.insert(.didShowError(message))
-    }
-    
-    func didDisplayInvalidCepMessage(_ message: String) {
-        didDisplayInvalidCepMessageCalled = true
-        messages.insert(.didDisplayInvalidCepMessage(message))
     }
 }
