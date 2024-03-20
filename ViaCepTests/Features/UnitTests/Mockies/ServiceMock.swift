@@ -8,7 +8,7 @@ public enum HttpResponse {
 }
 
 final class ServiceMock: MainServicing {
-    var expexted: HttpResponse?
+    var expexted: HttpResponse = .success(.fixture())
     
     func fetchDataCep(
         _ cep: String,
@@ -19,8 +19,6 @@ final class ServiceMock: MainServicing {
             callback(.success(dataCep))
         case let .failure(error):
             callback(.failure(error))
-        case nil:
-            expexted = nil
         }
     }
 }

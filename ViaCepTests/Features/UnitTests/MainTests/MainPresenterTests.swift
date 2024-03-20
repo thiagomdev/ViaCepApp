@@ -8,6 +8,7 @@ final class MainPresenterTests: XCTestCase {
          
         sut.presentCep(dataObject)
          
+        XCTAssertNotNil(dataObject)
         XCTAssertTrue(viewControllerSpy.didPresentCepCalled)
         XCTAssertEqual(
             viewControllerSpy.messages, [
