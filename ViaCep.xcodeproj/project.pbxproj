@@ -37,7 +37,6 @@
 		AAF24B412A74E5A200787C38 /* MainPresenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF24B402A74E5A200787C38 /* MainPresenterSpy.swift */; };
 		AAF24B442A74E60100787C38 /* ServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF24B432A74E60100787C38 /* ServiceMock.swift */; };
 		AAF24B462A74E68A00787C38 /* MainViewControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF24B452A74E68A00787C38 /* MainViewControllerSpy.swift */; };
-		AAF5392A2A7F07CB002BB959 /* ServiceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF539292A7F07CB002BB959 /* ServiceStub.swift */; };
 		AAFDDE352B4B7539009D031D /* MainServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFDDE342B4B7539009D031D /* MainServiceTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -94,7 +93,6 @@
 		AAF24B402A74E5A200787C38 /* MainPresenterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenterSpy.swift; sourceTree = "<group>"; };
 		AAF24B432A74E60100787C38 /* ServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceMock.swift; sourceTree = "<group>"; };
 		AAF24B452A74E68A00787C38 /* MainViewControllerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerSpy.swift; sourceTree = "<group>"; };
-		AAF539292A7F07CB002BB959 /* ServiceStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceStub.swift; sourceTree = "<group>"; };
 		AAFDDE342B4B7539009D031D /* MainServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainServiceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -321,9 +319,8 @@
 			isa = PBXGroup;
 			children = (
 				AAA286C22B9ABECB0007EC2F /* Extension */,
-				AAF24B3F2A74E59100787C38 /* Spies */,
-				AAF539282A7F07B3002BB959 /* Stub */,
 				AAF24B422A74E5E900787C38 /* Mockies */,
+				AAF24B3F2A74E59100787C38 /* Spies */,
 				AA9FD4BF2A7326CB00CA1773 /* MainTests */,
 			);
 			path = UnitTests;
@@ -332,9 +329,9 @@
 		AA9FD4BF2A7326CB00CA1773 /* MainTests */ = {
 			isa = PBXGroup;
 			children = (
-				AAFDDE342B4B7539009D031D /* MainServiceTests.swift */,
 				AA7B05D32A72C3C600A5CECE /* MainInteractorTests.swift */,
 				AA9FD4B32A73046000CA1773 /* MainPresenterTests.swift */,
+				AAFDDE342B4B7539009D031D /* MainServiceTests.swift */,
 			);
 			path = MainTests;
 			sourceTree = "<group>";
@@ -372,14 +369,6 @@
 				AAF24B432A74E60100787C38 /* ServiceMock.swift */,
 			);
 			path = Mockies;
-			sourceTree = "<group>";
-		};
-		AAF539282A7F07B3002BB959 /* Stub */ = {
-			isa = PBXGroup;
-			children = (
-				AAF539292A7F07CB002BB959 /* ServiceStub.swift */,
-			);
-			path = Stub;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -552,7 +541,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AAF5392A2A7F07CB002BB959 /* ServiceStub.swift in Sources */,
 				AAA286C82B9AC98C0007EC2F /* MainServiceSpy.swift in Sources */,
 				AAA286C62B9AC9600007EC2F /* NetworkingSpy.swift in Sources */,
 				AAF24B412A74E5A200787C38 /* MainPresenterSpy.swift in Sources */,
