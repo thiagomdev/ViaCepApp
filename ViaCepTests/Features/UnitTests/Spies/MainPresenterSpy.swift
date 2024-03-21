@@ -9,13 +9,12 @@ final class MainPresenterSpy: MainPresenting {
     
     private(set) var messages = Set<Message>()
     private(set) var presentCepCalled: Bool = false
+    private(set) var presentCepCallCounting: Int = 0
     private(set) var expected: String?
-    
-    private(set) var displayInvalidCepAlertMessageCalled: Bool = false
-    private(set) var displayInvalidCepAlertMessageCounting: Int = 0
-    
+        
     func presentCep(_ cep: ViaCep.DataCep) {
         presentCepCalled = true
+        presentCepCallCounting += 1
         messages.insert(.presentCep(cep))
     }
     

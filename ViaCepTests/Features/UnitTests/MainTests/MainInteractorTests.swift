@@ -11,6 +11,7 @@ final class MainInteractorTests: XCTestCase {
         
         XCTAssertNotNil(dataObject)
         XCTAssertTrue(doubles.presenterSpy.presentCepCalled)
+        XCTAssertEqual(doubles.presenterSpy.presentCepCallCounting, 1)
         XCTAssertEqual(doubles.presenterSpy.messages, [.presentCep(dataObject)])
         
         XCTAssertEqual(dataObject.cep, "01150011")
@@ -22,13 +23,14 @@ final class MainInteractorTests: XCTestCase {
     func test_failure() {
         let dataObject: DataCep = .fixture()
         let (sut, doubles) = makeSut()
-        let error = NSError(domain: "", code: 0, userInfo: nil)
+        let error = NSError(domain: "", code: 400, userInfo: nil)
         doubles.serviceSpy.expexted = .failure(error)
         
         sut.displayCep(dataObject.cep)
         
         XCTAssertNotNil(dataObject)
         XCTAssertFalse(doubles.presenterSpy.presentCepCalled)
+        XCTAssertEqual(doubles.presenterSpy.presentCepCallCounting, 0)
         XCTAssertEqual(doubles.presenterSpy.messages, [
             .displayError(error.localizedDescription)]
         )
