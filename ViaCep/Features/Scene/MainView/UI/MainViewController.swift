@@ -17,7 +17,7 @@ final class MainViewController: UIViewController {
         return stack
     }()
     
-     lazy var inputedCepTextField: UITextField = {
+    private lazy var inputedCepTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Digite um cep válido"
         textField.borderStyle = .roundedRect
@@ -146,7 +146,8 @@ extension MainViewController {
             ),
             searchCepButton.heightAnchor.constraint(
                 equalToConstant: Layout.Size.height
-            )
+            ),
+            inputedCepTextField.heightAnchor.constraint(equalToConstant: 60)
         ])
     }
     
