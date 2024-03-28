@@ -23,8 +23,8 @@ final class MainInteractorTests: XCTestCase {
     func test_failure() {
         let dataObject: DataCep = .dummy()
         let (sut, doubles) = makeSut()
-        let error = NSError(domain: "", code: 400, userInfo: nil)
-        doubles.serviceSpy.expexted = .failure(error)
+        let err = NSError(domain: "", code: 400, userInfo: nil)
+        doubles.serviceSpy.expexted = .failure(err)
         
         sut.displayCep(dataObject.cep)
         
@@ -32,7 +32,7 @@ final class MainInteractorTests: XCTestCase {
         XCTAssertFalse(doubles.presenterSpy.presentCepCalled)
         XCTAssertEqual(doubles.presenterSpy.presentCepCallCounting, 0)
         XCTAssertEqual(doubles.presenterSpy.messages, [
-            .displayError(error.localizedDescription)]
+            .displayError(err.localizedDescription)]
         )
     }
     

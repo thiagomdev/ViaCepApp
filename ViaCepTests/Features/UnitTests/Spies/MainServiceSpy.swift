@@ -1,6 +1,11 @@
 import Foundation
 @testable import ViaCep
 
+public enum ShouldBeExpected {
+    case success(DataCep)
+    case failure(Error)
+}
+
 final class MainServiceSpy: MainServicing {
     var shouldBeExpected: (Result<DataCep, Error>)?
 
