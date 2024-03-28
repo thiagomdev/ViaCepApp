@@ -14,6 +14,7 @@ final class MainViewController: UIViewController {
         stack.axis = .vertical
         stack.spacing = 10
         stack.distribution = .fill
+        stack.setCustomSpacing(30, after: searchCepButton)
         return stack
     }()
     
@@ -21,6 +22,7 @@ final class MainViewController: UIViewController {
         let textField = UITextField()
         textField.placeholder = "Digite um cep válido"
         textField.borderStyle = .roundedRect
+        textField.keyboardType = .numberPad
         return textField
     }()
     
