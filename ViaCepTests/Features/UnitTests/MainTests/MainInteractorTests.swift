@@ -3,7 +3,7 @@ import XCTest
 
 final class MainInteractorTests: XCTestCase {
     func test_showCep_whenTheServiceSearchAValidCep_shouldReturnAValidCep() {
-        let dataObject: DataCep = .fixture()
+        let dataObject: DataCep = .dummy()
         let (sut, doubles) = makeSut()
         doubles.serviceSpy.expexted = .success(dataObject)
         
@@ -21,7 +21,7 @@ final class MainInteractorTests: XCTestCase {
     }
     
     func test_failure() {
-        let dataObject: DataCep = .fixture()
+        let dataObject: DataCep = .dummy()
         let (sut, doubles) = makeSut()
         let error = NSError(domain: "", code: 400, userInfo: nil)
         doubles.serviceSpy.expexted = .failure(error)

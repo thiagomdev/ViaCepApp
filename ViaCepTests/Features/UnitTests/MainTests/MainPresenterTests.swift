@@ -3,7 +3,7 @@ import XCTest
 
 final class MainPresenterTests: XCTestCase {
     func test_presentCep_whenGetsAllOfInformationData_shouldReturnDataCep() {
-        let dataObject: DataCep = .fixture()
+        let dataObject: DataCep = .dummy()
         let (sut, viewControllerSpy) = makeSut()
          
         sut.presentCep(dataObject)

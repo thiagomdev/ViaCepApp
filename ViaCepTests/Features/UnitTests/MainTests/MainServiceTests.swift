@@ -48,7 +48,7 @@ extension MainServiceTests {
             description: "Wait for a completion loading."
         )
         
-        let data: DataCep = .fixture(cep: "01226-010")
+        let data: DataCep = .dummy(cep: "01226-010")
         var expected = serviceSpy.shouldBeExpected
         
         sut.fetchDataCep(data.cep) { result in
