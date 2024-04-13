@@ -10,6 +10,7 @@ final class MainPresenterTests: XCTestCase {
          
         XCTAssertNotNil(dataObject)
         XCTAssertTrue(viewControllerSpy.didPresentCepCalled)
+        XCTAssertEqual(viewControllerSpy.didPresentCepCalledCounting, 1)
         XCTAssertEqual(
             viewControllerSpy.messages, [
                 .didShowCep(dataObject)
@@ -24,6 +25,7 @@ final class MainPresenterTests: XCTestCase {
         sut.displayError(message)
         
         XCTAssertTrue(viewControllerSpy.didShowErrorCalled)
+        XCTAssertEqual(viewControllerSpy.didShowErrorCalledCouting, 1)
         XCTAssertEqual(viewControllerSpy.messages, [.didShowError(message)])
     }
 }
@@ -39,8 +41,10 @@ extension MainPresenterTests {
         let viewControllerSpy = MainViewControllerSpy()
         let sut = MainPresenter()
         sut.viewController = viewControllerSpy
+        
         trackForMemoryLeaks(to: sut)
         trackForMemoryLeaks(to: viewControllerSpy)
+        
         return (sut, viewControllerSpy)
     }
 }

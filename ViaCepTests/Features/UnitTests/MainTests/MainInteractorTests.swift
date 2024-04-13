@@ -29,8 +29,8 @@ final class MainInteractorTests: XCTestCase {
         sut.displayCep(dataObject.cep)
         
         XCTAssertNotNil(dataObject)
-        XCTAssertFalse(doubles.presenterSpy.presentCepCalled)
-        XCTAssertEqual(doubles.presenterSpy.presentCepCallCounting, 0)
+        XCTAssertTrue(doubles.presenterSpy.displayErrorCalled)
+        XCTAssertEqual(doubles.presenterSpy.displayErrorCalledCouting, 1)
         XCTAssertEqual(doubles.presenterSpy.messages, [
             .displayError(err.localizedDescription)]
         )
@@ -53,8 +53,7 @@ extension MainInteractorTests {
 
     private func makeSut(
         file: StaticString = #file,
-        line: UInt = #line
-    ) -> (
+        line: UInt = #line) -> (
         sut: MainInteractor,
         doubles: Doubles
     ) {
@@ -64,9 +63,11 @@ extension MainInteractorTests {
             presenter: presenterSpy,
             service: serviceSpy
         )
-        trackForMemoryLeaks(to: sut)
-        trackForMemoryLeaks(to: presenterSpy)
-        trackForMemoryLeaks(to: serviceSpy)
+        
+        trackForMemoryLeaks(to: sut, file: file, line: line)
+        trackForMemoryLeaks(to: presenterSpy, file: file, line: line)
+        trackForMemoryLeaks(to: serviceSpy, file: file, line: line)
+        
         return (sut, (presenterSpy, serviceSpy))
     }
 }

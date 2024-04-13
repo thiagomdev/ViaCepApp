@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AA13648C2BA14E0900368B9F /* ViaCepUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA13648B2BA14E0900368B9F /* ViaCepUITests.swift */; };
-		AA13648E2BA14E0900368B9F /* ViaCepUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA13648D2BA14E0900368B9F /* ViaCepUITestsLaunchTests.swift */; };
 		AA5178A22AB1E04E00E3CFCA /* NetworkingLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5178A12AB1E04E00E3CFCA /* NetworkingLogger.swift */; };
 		AA77D4A62B4B5EB30024315B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA77D4A52B4B5EB30024315B /* GoogleService-Info.plist */; };
 		AA7B05852A7292F300A5CECE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7B05842A7292F300A5CECE /* AppDelegate.swift */; };
@@ -33,6 +31,8 @@
 		AAA286C42B9ABEE00007EC2F /* XCTestCase+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA286C32B9ABEE00007EC2F /* XCTestCase+Extension.swift */; };
 		AAA286C62B9AC9600007EC2F /* NetworkingSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA286C52B9AC9600007EC2F /* NetworkingSpy.swift */; };
 		AAA286C82B9AC98C0007EC2F /* MainServiceSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA286C72B9AC98C0007EC2F /* MainServiceSpy.swift */; };
+		AACC860A2BCA0DB5001E49B8 /* ViaCepUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACC86092BCA0DB5001E49B8 /* ViaCepUITestsLaunchTests.swift */; };
+		AACC86112BCA0EEF001E49B8 /* MainViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACC86102BCA0EEF001E49B8 /* MainViewUITests.swift */; };
 		AAF24B3E2A74D12A00787C38 /* NSLayout+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF24B3D2A74D12A00787C38 /* NSLayout+Extensions.swift */; };
 		AAF24B412A74E5A200787C38 /* MainPresenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF24B402A74E5A200787C38 /* MainPresenterSpy.swift */; };
 		AAF24B442A74E60100787C38 /* ServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF24B432A74E60100787C38 /* ServiceMock.swift */; };
@@ -41,14 +41,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		AA13648F2BA14E0900368B9F /* PBXContainerItemProxy */ = {
+		AA7B05CC2A72C39000A5CECE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AA7B05792A7292F300A5CECE /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = AA7B05802A7292F300A5CECE;
 			remoteInfo = ViaCep;
 		};
-		AA7B05CC2A72C39000A5CECE /* PBXContainerItemProxy */ = {
+		AACC860B2BCA0DB5001E49B8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AA7B05792A7292F300A5CECE /* Project object */;
 			proxyType = 1;
@@ -58,9 +58,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		AA1364892BA14E0900368B9F /* ViaCepUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ViaCepUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AA13648B2BA14E0900368B9F /* ViaCepUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViaCepUITests.swift; sourceTree = "<group>"; };
-		AA13648D2BA14E0900368B9F /* ViaCepUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViaCepUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		AA5178A12AB1E04E00E3CFCA /* NetworkingLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingLogger.swift; sourceTree = "<group>"; };
 		AA77D4A52B4B5EB30024315B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AA7B05812A7292F300A5CECE /* ViaCep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ViaCep.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,6 +86,9 @@
 		AAA286C32B9ABEE00007EC2F /* XCTestCase+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extension.swift"; sourceTree = "<group>"; };
 		AAA286C52B9AC9600007EC2F /* NetworkingSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingSpy.swift; sourceTree = "<group>"; };
 		AAA286C72B9AC98C0007EC2F /* MainServiceSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainServiceSpy.swift; sourceTree = "<group>"; };
+		AACC86052BCA0DB5001E49B8 /* ViaCepUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ViaCepUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AACC86092BCA0DB5001E49B8 /* ViaCepUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViaCepUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		AACC86102BCA0EEF001E49B8 /* MainViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewUITests.swift; sourceTree = "<group>"; };
 		AAF24B3D2A74D12A00787C38 /* NSLayout+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayout+Extensions.swift"; sourceTree = "<group>"; };
 		AAF24B402A74E5A200787C38 /* MainPresenterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenterSpy.swift; sourceTree = "<group>"; };
 		AAF24B432A74E60100787C38 /* ServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceMock.swift; sourceTree = "<group>"; };
@@ -97,13 +97,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		AA1364862BA14E0900368B9F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		AA7B057E2A7292F300A5CECE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -118,18 +111,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AACC86022BCA0DB5001E49B8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AA13648A2BA14E0900368B9F /* ViaCepUITests */ = {
-			isa = PBXGroup;
-			children = (
-				AA13648B2BA14E0900368B9F /* ViaCepUITests.swift */,
-				AA13648D2BA14E0900368B9F /* ViaCepUITestsLaunchTests.swift */,
-			);
-			path = ViaCepUITests;
-			sourceTree = "<group>";
-		};
 		AA5178A02AB1DF1100E3CFCA /* RequestLogger */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,7 +134,7 @@
 			children = (
 				AA7B05832A7292F300A5CECE /* ViaCep */,
 				AA7B05C92A72C39000A5CECE /* ViaCepTests */,
-				AA13648A2BA14E0900368B9F /* ViaCepUITests */,
+				AACC86062BCA0DB5001E49B8 /* ViaCepUITests */,
 				AA7B05822A7292F300A5CECE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -153,7 +144,7 @@
 			children = (
 				AA7B05812A7292F300A5CECE /* ViaCep.app */,
 				AA7B05C82A72C39000A5CECE /* ViaCepTests.xctest */,
-				AA1364892BA14E0900368B9F /* ViaCepUITests.xctest */,
+				AACC86052BCA0DB5001E49B8 /* ViaCepUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -344,6 +335,15 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		AACC86062BCA0DB5001E49B8 /* ViaCepUITests */ = {
+			isa = PBXGroup;
+			children = (
+				AACC86102BCA0EEF001E49B8 /* MainViewUITests.swift */,
+				AACC86092BCA0DB5001E49B8 /* ViaCepUITestsLaunchTests.swift */,
+			);
+			path = ViaCepUITests;
+			sourceTree = "<group>";
+		};
 		AAF24B3C2A74D0FE00787C38 /* NSLayout */ = {
 			isa = PBXGroup;
 			children = (
@@ -374,24 +374,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AA1364882BA14E0900368B9F /* ViaCepUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = AA1364912BA14E0900368B9F /* Build configuration list for PBXNativeTarget "ViaCepUITests" */;
-			buildPhases = (
-				AA1364852BA14E0900368B9F /* Sources */,
-				AA1364862BA14E0900368B9F /* Frameworks */,
-				AA1364872BA14E0900368B9F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				AA1364902BA14E0900368B9F /* PBXTargetDependency */,
-			);
-			name = ViaCepUITests;
-			productName = ViaCepUITests;
-			productReference = AA1364892BA14E0900368B9F /* ViaCepUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 		AA7B05802A7292F300A5CECE /* ViaCep */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = AA7B05952A7292F500A5CECE /* Build configuration list for PBXNativeTarget "ViaCep" */;
@@ -431,6 +413,24 @@
 			productReference = AA7B05C82A72C39000A5CECE /* ViaCepTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		AACC86042BCA0DB5001E49B8 /* ViaCepUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AACC860D2BCA0DB5001E49B8 /* Build configuration list for PBXNativeTarget "ViaCepUITests" */;
+			buildPhases = (
+				AACC86012BCA0DB5001E49B8 /* Sources */,
+				AACC86022BCA0DB5001E49B8 /* Frameworks */,
+				AACC86032BCA0DB5001E49B8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AACC860C2BCA0DB5001E49B8 /* PBXTargetDependency */,
+			);
+			name = ViaCepUITests;
+			productName = ViaCepUITests;
+			productReference = AACC86052BCA0DB5001E49B8 /* ViaCepUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -438,19 +438,19 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1430;
+				LastSwiftUpdateCheck = 1520;
 				LastUpgradeCheck = 1520;
 				TargetAttributes = {
-					AA1364882BA14E0900368B9F = {
-						CreatedOnToolsVersion = 14.3.1;
-						TestTargetID = AA7B05802A7292F300A5CECE;
-					};
 					AA7B05802A7292F300A5CECE = {
 						CreatedOnToolsVersion = 14.3.1;
 					};
 					AA7B05C72A72C39000A5CECE = {
 						CreatedOnToolsVersion = 14.3.1;
 						LastSwiftMigration = 1430;
+						TestTargetID = AA7B05802A7292F300A5CECE;
+					};
+					AACC86042BCA0DB5001E49B8 = {
+						CreatedOnToolsVersion = 15.2;
 						TestTargetID = AA7B05802A7292F300A5CECE;
 					};
 				};
@@ -472,19 +472,12 @@
 			targets = (
 				AA7B05802A7292F300A5CECE /* ViaCep */,
 				AA7B05C72A72C39000A5CECE /* ViaCepTests */,
-				AA1364882BA14E0900368B9F /* ViaCepUITests */,
+				AACC86042BCA0DB5001E49B8 /* ViaCepUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		AA1364872BA14E0900368B9F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		AA7B057F2A7292F300A5CECE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -502,18 +495,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
-		AA1364852BA14E0900368B9F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
+		AACC86032BCA0DB5001E49B8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA13648E2BA14E0900368B9F /* ViaCepUITestsLaunchTests.swift in Sources */,
-				AA13648C2BA14E0900368B9F /* ViaCepUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
 		AA7B057D2A7292F300A5CECE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -554,18 +545,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AACC86012BCA0DB5001E49B8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AACC860A2BCA0DB5001E49B8 /* ViaCepUITestsLaunchTests.swift in Sources */,
+				AACC86112BCA0EEF001E49B8 /* MainViewUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		AA1364902BA14E0900368B9F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = AA7B05802A7292F300A5CECE /* ViaCep */;
-			targetProxy = AA13648F2BA14E0900368B9F /* PBXContainerItemProxy */;
-		};
 		AA7B05CD2A72C39000A5CECE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = AA7B05802A7292F300A5CECE /* ViaCep */;
 			targetProxy = AA7B05CC2A72C39000A5CECE /* PBXContainerItemProxy */;
+		};
+		AACC860C2BCA0DB5001E49B8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AA7B05802A7292F300A5CECE /* ViaCep */;
+			targetProxy = AACC860B2BCA0DB5001E49B8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -581,40 +581,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		AA1364922BA14E0900368B9F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = L923PSABUA;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.thiagomonteiro.ViaCepUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = ViaCep;
-			};
-			name = Debug;
-		};
-		AA1364932BA14E0900368B9F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = L923PSABUA;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.thiagomonteiro.ViaCepUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = ViaCep;
-			};
-			name = Release;
-		};
 		AA7B05932A7292F500A5CECE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -666,7 +632,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -721,7 +687,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -842,18 +808,52 @@
 			};
 			name = Release;
 		};
+		AACC860E2BCA0DB5001E49B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = L923PSABUA;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thiagomonteiro.ViaCepUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ViaCep;
+			};
+			name = Debug;
+		};
+		AACC860F2BCA0DB5001E49B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = L923PSABUA;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thiagomonteiro.ViaCepUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ViaCep;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AA1364912BA14E0900368B9F /* Build configuration list for PBXNativeTarget "ViaCepUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AA1364922BA14E0900368B9F /* Debug */,
-				AA1364932BA14E0900368B9F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		AA7B057C2A7292F300A5CECE /* Build configuration list for PBXProject "ViaCep" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -877,6 +877,15 @@
 			buildConfigurations = (
 				AA7B05CF2A72C39000A5CECE /* Debug */,
 				AA7B05D02A72C39000A5CECE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AACC860D2BCA0DB5001E49B8 /* Build configuration list for PBXNativeTarget "ViaCepUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AACC860E2BCA0DB5001E49B8 /* Debug */,
+				AACC860F2BCA0DB5001E49B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

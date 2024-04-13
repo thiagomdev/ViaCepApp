@@ -7,11 +7,15 @@ final class MainPresenterSpy: MainPresenting {
         case displayError(_ message: String)
     }
     
-    private(set) var messages = Set<Message>()
-    private(set) var presentCepCalled: Bool = false
-    private(set) var presentCepCallCounting: Int = 0
-    private(set) var expected: String?
-        
+    private (set) var expected: String?
+    private (set) var messages = Set<Message>()
+    
+    private (set) var presentCepCalled: Bool = false
+    private (set) var presentCepCallCounting: Int = 0
+    
+    private (set) var displayErrorCalled: Bool = false
+    private (set) var displayErrorCalledCouting: Int = 0
+    
     func presentCep(_ cep: ViaCep.DataCep) {
         presentCepCalled = true
         presentCepCallCounting += 1
@@ -19,6 +23,8 @@ final class MainPresenterSpy: MainPresenting {
     }
     
     func displayError(_ message: String) {
+        displayErrorCalled = true
+        displayErrorCalledCouting += 1
         messages.insert(.displayError(message))
     }
 }

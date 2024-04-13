@@ -28,34 +28,43 @@ final class MainServiceTests: XCTestCase {
 }
 
 extension MainServiceTests {
-    private func makeSut() -> (
-        sut: MainService,
+    typealias Doubles = (
         serviceSpy: MainServiceSpy,
         networkingSpy: NetworkingSpy
+    )
+    
+    private func makeSut(file: StaticString = #file, line: UInt = #line) -> (
+        sut: MainService,
+        doubles: Doubles
     ) {
         let networkingSpy = NetworkingSpy()
         let serviceSpy = MainServiceSpy()
         let sut = MainService(networking: networkingSpy)
-        return (sut, serviceSpy, networkingSpy)
+        
+        trackForMemoryLeaks(to: sut, file: file, line: line)
+        trackForMemoryLeaks(to: serviceSpy, file: file, line: line)
+        trackForMemoryLeaks(to: networkingSpy, file: file, line: line)
+        
+        return (sut, (serviceSpy, networkingSpy))
     }
     
     private var fetchDataCep: Result<DataCep, Error>? {
-        let (sut, serviceSpy, _) = makeSut()
-        trackForMemoryLeaks(to: sut)
-        trackForMemoryLeaks(to: serviceSpy)
-        
+        let (sut, doubles) = makeSut()
+
         let exp = expectation(
             description: "Wait for a completion loading."
         )
         
         let data: DataCep = .dummy(cep: "01226-010")
-        var expected = serviceSpy.shouldBeExpected
+        var expected = doubles.serviceSpy.shouldBeExpected
         
         sut.fetchDataCep(data.cep) { result in
             expected = result
             exp.fulfill()
         }
+        
         wait(for: [exp], timeout: 10.0)
+        
         return expected
     }
 }

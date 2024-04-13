@@ -23,7 +23,7 @@
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AA1364882BA14E0900368B9F"
+               BlueprintIdentifier = "AACC86042BCA0DB5001E49B8"
                BuildableName = "ViaCepUITests.xctest"
                BlueprintName = "ViaCepUITests"
                ReferencedContainer = "container:ViaCep.xcodeproj">

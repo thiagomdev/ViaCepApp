@@ -23,6 +23,13 @@
         "identifier" : "AA7B05C72A72C39000A5CECE",
         "name" : "ViaCepTests"
       }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:ViaCep.xcodeproj",
+        "identifier" : "AACC86042BCA0DB5001E49B8",
+        "name" : "ViaCepUITests"
+      }
     }
   ],
   "version" : 1

@@ -162,5 +162,6 @@ private extension MainViewController.Layout {
     enum Size {
         static let constant: CGFloat = 16
         static let height: CGFloat = 40
+        static let colors: UIColor = .init(red: 210/255, green: 210/255, blue: 210/255, alpha: 1.0)
     }
 }
