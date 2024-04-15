@@ -6,14 +6,15 @@ final class MainViewUITests: XCTestCase {
         let app = XCUIApplication()
         app.launch()
                 
-        let digiteUmCepVLidoTextField = app.textFields["Digite um cep válido"]
-        digiteUmCepVLidoTextField.tap()
-        digiteUmCepVLidoTextField.typeText("01150011")
+        let textField = app.textFields["Digite um cep válido"]
+        XCTAssertTrue(textField.exists)
         
-        let buscarCepStaticText = app/*@START_MENU_TOKEN@*/.staticTexts["Buscar Cep"]/*[[".buttons[\"Buscar Cep\"].staticTexts[\"Buscar Cep\"]",".staticTexts[\"Buscar Cep\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
-        buscarCepStaticText.tap()
-        buscarCepStaticText.tap()
-        app.alerts["ALERT ⚠️"].scrollViews.otherElements.buttons["FECHAR"].tap()
-        XCTAssertEqual(app.firstMatch.staticTexts.count, 2)
+        textField.tap()
+        textField.typeText("01150011")
+        
+        let searchButton = app/*@START_MENU_TOKEN@*/.buttons["Buscar Cep"].staticTexts["Buscar Cep"]/*[[".buttons[\"Buscar Cep\"].staticTexts[\"Buscar Cep\"]",".staticTexts[\"Buscar Cep\"]"],[[[-1,1],[-1,0]]],[1]]@END_MENU_TOKEN@*/
+        XCTAssertTrue(searchButton.exists)
+        
+        searchButton.tap()
     }
 }

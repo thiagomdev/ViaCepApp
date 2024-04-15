@@ -33,8 +33,10 @@ extension MainServiceTests {
         networkingSpy: NetworkingSpy
     )
     
-    private func makeSut(file: StaticString = #file, line: UInt = #line) -> (
-        sut: MainService,
+    private func makeSut(
+        file: StaticString = #file,
+        line: UInt = #line) -> (
+        sut: MainServicing,
         doubles: Doubles
     ) {
         let networkingSpy = NetworkingSpy()

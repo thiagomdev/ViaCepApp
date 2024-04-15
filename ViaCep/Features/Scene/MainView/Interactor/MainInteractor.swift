@@ -19,7 +19,7 @@ final class MainInteractor {
 }
 
 extension MainInteractor: MainInteracting {
-    func displayCep(_ cep: String) {
+    fileprivate func display(_ cep: String) {
         service?.fetchDataCep(cep) { [weak self] result in
             switch result {
             case let .success(cep):
@@ -30,6 +30,10 @@ extension MainInteractor: MainInteracting {
                 )
             }
         }
+    }
+    
+    func displayCep(_ cep: String) {
+        display(cep)
     }
     
     func clearText() -> String? {

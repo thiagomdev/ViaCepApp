@@ -10,6 +10,9 @@ final class MainInteractorTests: XCTestCase {
         sut.displayCep(dataObject.cep)
         
         XCTAssertNotNil(dataObject)
+        XCTAssertTrue(doubles.serviceSpy.fetchDataCepCalled)
+        XCTAssertEqual(doubles.serviceSpy.fetchDataCepCalledCounting, 1)
+        
         XCTAssertTrue(doubles.presenterSpy.presentCepCalled)
         XCTAssertEqual(doubles.presenterSpy.presentCepCallCounting, 1)
         XCTAssertEqual(doubles.presenterSpy.messages, [.presentCep(dataObject)])
@@ -28,7 +31,10 @@ final class MainInteractorTests: XCTestCase {
         
         sut.displayCep(dataObject.cep)
         
+        XCTAssertTrue(doubles.serviceSpy.fetchDataCepCalled)
+        XCTAssertEqual(doubles.serviceSpy.fetchDataCepCalledCounting, 1)
         XCTAssertNotNil(dataObject)
+        
         XCTAssertTrue(doubles.presenterSpy.displayErrorCalled)
         XCTAssertEqual(doubles.presenterSpy.displayErrorCalledCouting, 1)
         XCTAssertEqual(doubles.presenterSpy.messages, [
@@ -54,7 +60,7 @@ extension MainInteractorTests {
     private func makeSut(
         file: StaticString = #file,
         line: UInt = #line) -> (
-        sut: MainInteractor,
+        sut: MainInteracting,
         doubles: Doubles
     ) {
         let serviceSpy = ServiceMock()
