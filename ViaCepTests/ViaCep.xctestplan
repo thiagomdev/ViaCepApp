@@ -25,6 +25,7 @@
       }
     },
     {
+      "parallelizable" : true,
       "target" : {
         "containerPath" : "container:ViaCep.xcodeproj",
         "identifier" : "AACC86042BCA0DB5001E49B8",
