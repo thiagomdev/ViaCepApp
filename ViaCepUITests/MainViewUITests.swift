@@ -1,11 +1,5 @@
 import XCTest
-import FBSnapshotTestCase
-
 @testable import ViaCep
-
-final class MainTests: FBSnapshotTestCase {
-    
-}
 
 final class MainViewUITests: XCTestCase {
     func test_mainViewController_launch() {
