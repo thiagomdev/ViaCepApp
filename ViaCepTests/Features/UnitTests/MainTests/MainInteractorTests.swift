@@ -43,11 +43,13 @@ final class MainInteractorTests: XCTestCase {
     }
     
     func test_clearText_whenNeedToClearText_shouldReturnNilToClearAllOfThen() {
-        let (sut, doubles) = makeSut()
+        let spy = MainPresenterSpy()
+        let serviceSpy = ServiceMock()
+        let sut = makeSut(presenterSpy: spy, serviceSpy: serviceSpy)
         
         let expected = sut.clearText()
 
-        XCTAssertEqual(doubles.presenterSpy.expected, expected)
+        XCTAssertEqual(spy.expected, expected)
     }
 }
 
@@ -60,20 +62,36 @@ extension MainInteractorTests {
     private func makeSut(
         file: StaticString = #file,
         line: UInt = #line) -> (
-        sut: MainInteracting,
+        sut: MainInteractor,
         doubles: Doubles
     ) {
+        
         let serviceSpy = ServiceMock()
         let presenterSpy = MainPresenterSpy()
         let sut = MainInteractor(
             presenter: presenterSpy,
-            service: serviceSpy
-        )
+            service: serviceSpy)
         
         trackForMemoryLeaks(to: sut, file: file, line: line)
         trackForMemoryLeaks(to: presenterSpy, file: file, line: line)
         trackForMemoryLeaks(to: serviceSpy, file: file, line: line)
         
         return (sut, (presenterSpy, serviceSpy))
+    }
+    
+    private func makeSut(
+        presenterSpy: MainPresenting = MainPresenterSpy(),
+        serviceSpy: MainServicing = ServiceMock(),
+        
+        file: StaticString = #file,
+        line: UInt = #line) -> MainInteractor {
+
+        let sut = MainInteractor(
+            presenter: presenterSpy,
+            service: serviceSpy)
+        
+        trackForMemoryLeaks(to: sut, file: file, line: line)
+            
+        return sut
     }
 }

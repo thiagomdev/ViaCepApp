@@ -2,6 +2,7 @@ import Foundation
 @testable import ViaCep
 
 final class NetworkingSpy: NetworkingProtocol {
+    //TODO: Refatorar
     func execute<T>(
         request: ViaCep.Request,
         responseType: T.Type,
