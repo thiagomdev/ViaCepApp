@@ -6,7 +6,7 @@ PODS:
     - iOSSnapshotTestCase/Core
 
 DEPENDENCIES:
-  - iOSSnapshotTestCase
+  - iOSSnapshotTestCase (~> 8.0.0)
 
 SPEC REPOS:
   trunk:
@@ -15,6 +15,6 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   iOSSnapshotTestCase: a670511f9ee3829c2b9c23e6e68f315fd7b6790f
 
-PODFILE CHECKSUM: 86ea326c259130fba5529b744ddc4c1a38356791
+PODFILE CHECKSUM: 45ab02b4be45c0cfad0d579227b2c58b7b220880
 
 COCOAPODS: 1.11.2

@@ -1,6 +1,6 @@
 import UIKit
 extension NSLayoutConstraint {
-    static func didActivePin(_ constraints: [NSLayoutConstraint]) {
+    static func pin(_ constraints: [NSLayoutConstraint]) {
         for constraint in constraints {
             let firstView = constraint.firstItem as? UIView
             if firstView?.superview != nil {

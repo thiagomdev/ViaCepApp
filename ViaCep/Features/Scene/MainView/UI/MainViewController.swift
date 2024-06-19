@@ -18,7 +18,7 @@ final class MainViewController: UIViewController {
         return stack
     }()
     
-    private lazy var inputedCepTextField: UITextField = {
+    lazy var inputedCepTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Digite um cep válido"
         textField.borderStyle = .roundedRect
@@ -27,7 +27,7 @@ final class MainViewController: UIViewController {
         return textField
     }()
     
-    private lazy var searchCepButton: UIButton = {
+    lazy var searchCepButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Buscar Cep", for: .normal)
         button.backgroundColor = .lightGray
@@ -37,9 +37,9 @@ final class MainViewController: UIViewController {
         return button
     }()
     
-    private lazy var logradouroLabel = makeLabel()
-    private lazy var bairroLabel = makeLabel()
-    private lazy var localidadeLabel = makeLabel()
+    lazy var logradouroLabel = makeLabel()
+    lazy var bairroLabel = makeLabel()
+    lazy var localidadeLabel = makeLabel()
 
     init(interactor: MainInteracting) {
         self.interactor = interactor
@@ -58,7 +58,7 @@ final class MainViewController: UIViewController {
     }
 }
 
-extension MainViewController {
+private extension MainViewController {
     @objc
     private func didSearchCep() {
         searchCep()
@@ -72,7 +72,7 @@ extension MainViewController: MainViewControlling {
     
     func didShowErrorMessage(_ message: String) {
         DispatchQueue.main.async { [weak self] in
-            guard let self = self else { return }
+            guard let self else { return }
             let alert = UIAlertController(
                 title: "ALERT ⚠️",
                 message: message,
@@ -90,7 +90,7 @@ extension MainViewController: MainViewControlling {
     }
 }
 
-extension MainViewController {
+private extension MainViewController {
     func didClearText() {
         logradouroLabel.text = interactor.clearText()
         bairroLabel.text = interactor.clearText()
@@ -120,7 +120,7 @@ extension MainViewController {
     }
 }
 
-extension MainViewController {
+private extension MainViewController {
     private func buildViews() {
         [inputedCepTextField,
          searchCepButton,
@@ -135,7 +135,7 @@ extension MainViewController {
     }
     
     private func pin() {
-        NSLayoutConstraint.didActivePin([
+        NSLayoutConstraint.pin([
             stackViewContainer.topAnchor.constraint(
                 equalTo: view.safeAreaLayoutGuide.topAnchor,
                 constant: Layout.Size.constant
@@ -164,6 +164,12 @@ private extension MainViewController.Layout {
     enum Size {
         static let constant: CGFloat = 16
         static let height: CGFloat = 40
-        static let colors: UIColor = .init(red: 210/255, green: 210/255, blue: 210/255, alpha: 1.0)
+        
+        static let colors: UIColor = .init(
+            red: 210/255,
+            green: 210/255,
+            blue: 210/255,
+            alpha: 1.0
+        )
     }
 }

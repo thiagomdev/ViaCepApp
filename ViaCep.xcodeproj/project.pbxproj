@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AA1698072BCF72CD003CB4E7 /* iOSSnapshotTestCase in Frameworks */ = {isa = PBXBuildFile; productRef = AA1698062BCF72CD003CB4E7 /* iOSSnapshotTestCase */; };
+		AA3B635B2BD0AF3A00FECE0F /* MainViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3B635A2BD0AF3A00FECE0F /* MainViewControllerTests.swift */; };
 		AA5178A22AB1E04E00E3CFCA /* NetworkingLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5178A12AB1E04E00E3CFCA /* NetworkingLogger.swift */; };
 		AA77D4A62B4B5EB30024315B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA77D4A52B4B5EB30024315B /* GoogleService-Info.plist */; };
 		AA7B05852A7292F300A5CECE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7B05842A7292F300A5CECE /* AppDelegate.swift */; };
@@ -34,6 +34,9 @@
 		AAA286C82B9AC98C0007EC2F /* MainServiceSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA286C72B9AC98C0007EC2F /* MainServiceSpy.swift */; };
 		AACC860A2BCA0DB5001E49B8 /* ViaCepUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACC86092BCA0DB5001E49B8 /* ViaCepUITestsLaunchTests.swift */; };
 		AACC86112BCA0EEF001E49B8 /* MainViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACC86102BCA0EEF001E49B8 /* MainViewUITests.swift */; };
+		AADE371C2BE50813002F5A61 /* MainPresenterSut.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADE371B2BE50813002F5A61 /* MainPresenterSut.swift */; };
+		AADE371E2BE50876002F5A61 /* MainInteractorSut.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADE371D2BE50876002F5A61 /* MainInteractorSut.swift */; };
+		AAE898952BE27551009E3C20 /* MainServiceSut.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE898942BE27551009E3C20 /* MainServiceSut.swift */; };
 		AAF24B3E2A74D12A00787C38 /* NSLayout+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF24B3D2A74D12A00787C38 /* NSLayout+Extensions.swift */; };
 		AAF24B412A74E5A200787C38 /* MainPresenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF24B402A74E5A200787C38 /* MainPresenterSpy.swift */; };
 		AAF24B442A74E60100787C38 /* ServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF24B432A74E60100787C38 /* ServiceMock.swift */; };
@@ -59,6 +62,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AA3B635A2BD0AF3A00FECE0F /* MainViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerTests.swift; sourceTree = "<group>"; };
 		AA5178A12AB1E04E00E3CFCA /* NetworkingLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingLogger.swift; sourceTree = "<group>"; };
 		AA77D4A52B4B5EB30024315B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AA7B05812A7292F300A5CECE /* ViaCep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ViaCep.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,6 +94,9 @@
 		AACC86052BCA0DB5001E49B8 /* ViaCepUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ViaCepUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AACC86092BCA0DB5001E49B8 /* ViaCepUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViaCepUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		AACC86102BCA0EEF001E49B8 /* MainViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewUITests.swift; sourceTree = "<group>"; };
+		AADE371B2BE50813002F5A61 /* MainPresenterSut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenterSut.swift; sourceTree = "<group>"; };
+		AADE371D2BE50876002F5A61 /* MainInteractorSut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractorSut.swift; sourceTree = "<group>"; };
+		AAE898942BE27551009E3C20 /* MainServiceSut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainServiceSut.swift; sourceTree = "<group>"; };
 		AAF24B3D2A74D12A00787C38 /* NSLayout+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayout+Extensions.swift"; sourceTree = "<group>"; };
 		AAF24B402A74E5A200787C38 /* MainPresenterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenterSpy.swift; sourceTree = "<group>"; };
 		AAF24B432A74E60100787C38 /* ServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceMock.swift; sourceTree = "<group>"; };
@@ -102,7 +109,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA1698072BCF72CD003CB4E7 /* iOSSnapshotTestCase in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,9 +208,9 @@
 			children = (
 				AA7B05A52A7294D900A5CECE /* Factory */,
 				AA7B05A02A7293E400A5CECE /* Domain */,
+				AA7B059F2A7293E100A5CECE /* Service */,
 				AA7B05A42A72949600A5CECE /* Interactor */,
 				AA7B059E2A7293DE00A5CECE /* Presenter */,
-				AA7B059F2A7293E100A5CECE /* Service */,
 				AA7B059D2A7293D900A5CECE /* UI */,
 			);
 			path = MainView;
@@ -322,9 +328,10 @@
 		AA9FD4BF2A7326CB00CA1773 /* MainTests */ = {
 			isa = PBXGroup;
 			children = (
-				AA7B05D32A72C3C600A5CECE /* MainInteractorTests.swift */,
-				AA9FD4B32A73046000CA1773 /* MainPresenterTests.swift */,
-				AAFDDE342B4B7539009D031D /* MainServiceTests.swift */,
+				AADE371A2BE50788002F5A61 /* ViewController */,
+				AADE37192BE50776002F5A61 /* Service */,
+				AADE37182BE50770002F5A61 /* Presenter */,
+				AADE37172BE50769002F5A61 /* Interactor */,
 			);
 			path = MainTests;
 			sourceTree = "<group>";
@@ -344,6 +351,41 @@
 				AACC86092BCA0DB5001E49B8 /* ViaCepUITestsLaunchTests.swift */,
 			);
 			path = ViaCepUITests;
+			sourceTree = "<group>";
+		};
+		AADE37172BE50769002F5A61 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				AADE371D2BE50876002F5A61 /* MainInteractorSut.swift */,
+				AA7B05D32A72C3C600A5CECE /* MainInteractorTests.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		AADE37182BE50770002F5A61 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				AADE371B2BE50813002F5A61 /* MainPresenterSut.swift */,
+				AA9FD4B32A73046000CA1773 /* MainPresenterTests.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		AADE37192BE50776002F5A61 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				AAE898942BE27551009E3C20 /* MainServiceSut.swift */,
+				AAFDDE342B4B7539009D031D /* MainServiceTests.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		AADE371A2BE50788002F5A61 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AA3B635A2BD0AF3A00FECE0F /* MainViewControllerTests.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		AAF24B3C2A74D0FE00787C38 /* NSLayout */ = {
@@ -389,9 +431,6 @@
 			dependencies = (
 			);
 			name = ViaCep;
-			packageProductDependencies = (
-				AA1698062BCF72CD003CB4E7 /* iOSSnapshotTestCase */,
-			);
 			productName = ViaCep;
 			productReference = AA7B05812A7292F300A5CECE /* ViaCep.app */;
 			productType = "com.apple.product-type.application";
@@ -466,7 +505,7 @@
 			);
 			mainGroup = AA7B05782A7292F300A5CECE;
 			packageReferences = (
-				AA1698052BCF72CD003CB4E7 /* XCRemoteSwiftPackageReference "ios-snapshot-test-case.git" */,
+				AA27BE092BEA4C77005EDCC8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = AA7B05822A7292F300A5CECE /* Products */;
 			projectDirPath = "";
@@ -534,13 +573,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA3B635B2BD0AF3A00FECE0F /* MainViewControllerTests.swift in Sources */,
 				AAA286C82B9AC98C0007EC2F /* MainServiceSpy.swift in Sources */,
 				AAA286C62B9AC9600007EC2F /* NetworkingSpy.swift in Sources */,
 				AAF24B412A74E5A200787C38 /* MainPresenterSpy.swift in Sources */,
+				AADE371E2BE50876002F5A61 /* MainInteractorSut.swift in Sources */,
 				AA7B05D72A72F39400A5CECE /* Dummy.swift in Sources */,
 				AA7B05D42A72C3C600A5CECE /* MainInteractorTests.swift in Sources */,
+				AADE371C2BE50813002F5A61 /* MainPresenterSut.swift in Sources */,
 				AAA286C42B9ABEE00007EC2F /* XCTestCase+Extension.swift in Sources */,
 				AAF24B442A74E60100787C38 /* ServiceMock.swift in Sources */,
+				AAE898952BE27551009E3C20 /* MainServiceSut.swift in Sources */,
 				AA9FD4B42A73046000CA1773 /* MainPresenterTests.swift in Sources */,
 				AAF24B462A74E68A00787C38 /* MainViewControllerSpy.swift in Sources */,
 				AAFDDE352B4B7539009D031D /* MainServiceTests.swift in Sources */,
@@ -634,7 +677,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -689,7 +732,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -777,8 +820,9 @@
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
-				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.thiagomonteiro.ViaCepTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -803,8 +847,9 @@
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
-				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.thiagomonteiro.ViaCepTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -829,15 +874,19 @@
 				DEVELOPMENT_TEAM = L923PSABUA;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.thiagomonteiro.ViaCepUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_TARGET_NAME = ViaCep;
 			};
 			name = Debug;
@@ -851,14 +900,18 @@
 				DEVELOPMENT_TEAM = L923PSABUA;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.thiagomonteiro.ViaCepUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_TARGET_NAME = ViaCep;
 			};
 			name = Release;
@@ -905,23 +958,15 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		AA1698052BCF72CD003CB4E7 /* XCRemoteSwiftPackageReference "ios-snapshot-test-case.git" */ = {
+		AA27BE092BEA4C77005EDCC8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/uber/ios-snapshot-test-case.git";
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 8.0.0;
+				minimumVersion = 10.25.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		AA1698062BCF72CD003CB4E7 /* iOSSnapshotTestCase */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = AA1698052BCF72CD003CB4E7 /* XCRemoteSwiftPackageReference "ios-snapshot-test-case.git" */;
-			productName = iOSSnapshotTestCase;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AA7B05792A7292F300A5CECE /* Project object */;
 }
