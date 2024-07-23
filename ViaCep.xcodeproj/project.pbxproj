@@ -198,12 +198,12 @@
 		AA7B059B2A72936800A5CECE /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				AA7B059C2A72937200A5CECE /* MainView */,
+				AA7B059C2A72937200A5CECE /* Main */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
 		};
-		AA7B059C2A72937200A5CECE /* MainView */ = {
+		AA7B059C2A72937200A5CECE /* Main */ = {
 			isa = PBXGroup;
 			children = (
 				AA7B05A52A7294D900A5CECE /* Factory */,
@@ -213,7 +213,7 @@
 				AA7B059E2A7293DE00A5CECE /* Presenter */,
 				AA7B059D2A7293D900A5CECE /* UI */,
 			);
-			path = MainView;
+			path = Main;
 			sourceTree = "<group>";
 		};
 		AA7B059D2A7293D900A5CECE /* UI */ = {
