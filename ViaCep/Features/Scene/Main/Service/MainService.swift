@@ -1,21 +1,21 @@
 import Foundation
 
-protocol MainServicing {
+public protocol MainServicing {
     typealias DataCepResponse = (Result<DataCep, Error>)
     func fetchDataCep(_ cep: String, callback: @escaping (DataCepResponse) -> Void)
 }
 
-final class MainService {
+public final class MainService {
     private var task: Task?
     private let networking: NetworkingProtocol
     
-    init(networking: NetworkingProtocol = Networking()) {
+    public init(networking: NetworkingProtocol) {
         self.networking = networking
     }
 }
 
 extension MainService: MainServicing {
-    func fetchDataCep(_ cep: String, callback: @escaping (DataCepResponse) -> Void) {
+    public func fetchDataCep(_ cep: String, callback: @escaping (DataCepResponse) -> Void) {
         task = networking.execute(
             request: MainAPIRequest.cep(cep),
             responseType: DataCep.self,

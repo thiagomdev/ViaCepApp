@@ -9,8 +9,8 @@ public enum ShouldBeExpected {
 final class MainServiceSpy: MainServicing {
     var shouldBeExpected: (Result<DataCep, Error>)?
 
-    private (set) var fetchDataCepCalled: Bool = false
-    private (set) var fetchDataCepCalledCounting: Int = 0
+    private(set) var fetchDataCepCalled: Bool = false
+    private(set) var fetchDataCepCalledCounting: Int = 0
     
     func fetchDataCep(
         _ cep: String,

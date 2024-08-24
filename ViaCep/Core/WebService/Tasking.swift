@@ -1,14 +1,14 @@
 import Foundation
 
-final class Tasking<T: Codable>: Task {
-    let request: Request
+public final class Tasking<T: Codable>: Task {
+    public let request: Request
     
     private let session = URLSession.shared
     private let callback: ((Result<T, Error>) -> Void)?
     private var task: URLSessionDataTask?
     private let responseType: T.Type
     
-    init(
+    public init(
         request: Request,
         callback: ((Result<T, Error>) -> Void)?,
         responseType: T.Type
@@ -18,7 +18,7 @@ final class Tasking<T: Codable>: Task {
         self.responseType = responseType
     }
     
-    func resume() {
+    public func resume() {
         guard let url = URL(string: request.url) else { return }
         
         var request = URLRequest(url: url)
@@ -66,7 +66,7 @@ final class Tasking<T: Codable>: Task {
         task?.resume()
     }
     
-    func cancel() {
+    public func cancel() {
         task?.cancel()
     }
 }

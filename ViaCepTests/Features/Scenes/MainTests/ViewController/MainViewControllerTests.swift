@@ -1,12 +1,11 @@
 import XCTest
-@testable import ViaCep
+import ViaCep
 
 final class MainViewControllerTests: XCTestCase {
     lazy var interactorSpy: MainInteractor = {
         let interac = MainInteractor(
             presenter: MainPresenterSpy(),
-            service: MainServiceSpy()
-        )
+            service: MainServiceSpy())
         return interac
     }()
     

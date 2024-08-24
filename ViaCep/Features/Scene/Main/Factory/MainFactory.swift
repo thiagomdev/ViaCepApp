@@ -1,8 +1,8 @@
 import UIKit
 
-enum MainFactory {
+public enum MainFactory {
     static func make() -> UIViewController {
-        let service = MainService()
+        let service = MainService(networking: Networking())
         let presenter = MainPresenter()
         let interactor = MainInteractor(presenter: presenter, service: service)
         let viewController = MainViewController(interactor: interactor)

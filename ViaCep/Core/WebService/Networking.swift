@@ -1,6 +1,6 @@
 import Foundation
 
-protocol NetworkingProtocol {
+public protocol NetworkingProtocol {
     func execute<T: Codable>(
         request: Request,
         responseType: T.Type,
@@ -8,8 +8,8 @@ protocol NetworkingProtocol {
     ) -> Task
 }
 
-final class Networking: NetworkingProtocol {
-    func execute<T>(
+public final class Networking: NetworkingProtocol {
+    public func execute<T>(
         request: Request,
         responseType: T.Type,
         callback: @escaping (Result<T, Error>) -> Void

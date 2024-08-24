@@ -32,27 +32,13 @@
 		AAA286C42B9ABEE00007EC2F /* XCTestCase+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA286C32B9ABEE00007EC2F /* XCTestCase+Extension.swift */; };
 		AAA286C62B9AC9600007EC2F /* NetworkingSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA286C52B9AC9600007EC2F /* NetworkingSpy.swift */; };
 		AAA286C82B9AC98C0007EC2F /* MainServiceSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA286C72B9AC98C0007EC2F /* MainServiceSpy.swift */; };
-		AACC860A2BCA0DB5001E49B8 /* ViaCepUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACC86092BCA0DB5001E49B8 /* ViaCepUITestsLaunchTests.swift */; };
-		AACC86112BCA0EEF001E49B8 /* MainViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACC86102BCA0EEF001E49B8 /* MainViewUITests.swift */; };
-		AADE371C2BE50813002F5A61 /* MainPresenterSut.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADE371B2BE50813002F5A61 /* MainPresenterSut.swift */; };
-		AADE371E2BE50876002F5A61 /* MainInteractorSut.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADE371D2BE50876002F5A61 /* MainInteractorSut.swift */; };
-		AAE898952BE27551009E3C20 /* MainServiceSut.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE898942BE27551009E3C20 /* MainServiceSut.swift */; };
 		AAF24B3E2A74D12A00787C38 /* NSLayout+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF24B3D2A74D12A00787C38 /* NSLayout+Extensions.swift */; };
 		AAF24B412A74E5A200787C38 /* MainPresenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF24B402A74E5A200787C38 /* MainPresenterSpy.swift */; };
-		AAF24B442A74E60100787C38 /* ServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF24B432A74E60100787C38 /* ServiceMock.swift */; };
-		AAF24B462A74E68A00787C38 /* MainViewControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF24B452A74E68A00787C38 /* MainViewControllerSpy.swift */; };
 		AAFDDE352B4B7539009D031D /* MainServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFDDE342B4B7539009D031D /* MainServiceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		AA7B05CC2A72C39000A5CECE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AA7B05792A7292F300A5CECE /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = AA7B05802A7292F300A5CECE;
-			remoteInfo = ViaCep;
-		};
-		AACC860B2BCA0DB5001E49B8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AA7B05792A7292F300A5CECE /* Project object */;
 			proxyType = 1;
@@ -91,16 +77,8 @@
 		AAA286C32B9ABEE00007EC2F /* XCTestCase+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extension.swift"; sourceTree = "<group>"; };
 		AAA286C52B9AC9600007EC2F /* NetworkingSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingSpy.swift; sourceTree = "<group>"; };
 		AAA286C72B9AC98C0007EC2F /* MainServiceSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainServiceSpy.swift; sourceTree = "<group>"; };
-		AACC86052BCA0DB5001E49B8 /* ViaCepUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ViaCepUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AACC86092BCA0DB5001E49B8 /* ViaCepUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViaCepUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		AACC86102BCA0EEF001E49B8 /* MainViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewUITests.swift; sourceTree = "<group>"; };
-		AADE371B2BE50813002F5A61 /* MainPresenterSut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenterSut.swift; sourceTree = "<group>"; };
-		AADE371D2BE50876002F5A61 /* MainInteractorSut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractorSut.swift; sourceTree = "<group>"; };
-		AAE898942BE27551009E3C20 /* MainServiceSut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainServiceSut.swift; sourceTree = "<group>"; };
 		AAF24B3D2A74D12A00787C38 /* NSLayout+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayout+Extensions.swift"; sourceTree = "<group>"; };
 		AAF24B402A74E5A200787C38 /* MainPresenterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenterSpy.swift; sourceTree = "<group>"; };
-		AAF24B432A74E60100787C38 /* ServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceMock.swift; sourceTree = "<group>"; };
-		AAF24B452A74E68A00787C38 /* MainViewControllerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerSpy.swift; sourceTree = "<group>"; };
 		AAFDDE342B4B7539009D031D /* MainServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainServiceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,13 +91,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		AA7B05C52A72C39000A5CECE /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AACC86022BCA0DB5001E49B8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -142,7 +113,6 @@
 			children = (
 				AA7B05832A7292F300A5CECE /* ViaCep */,
 				AA7B05C92A72C39000A5CECE /* ViaCepTests */,
-				AACC86062BCA0DB5001E49B8 /* ViaCepUITests */,
 				AA7B05822A7292F300A5CECE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -152,7 +122,6 @@
 			children = (
 				AA7B05812A7292F300A5CECE /* ViaCep.app */,
 				AA7B05C82A72C39000A5CECE /* ViaCepTests.xctest */,
-				AACC86052BCA0DB5001E49B8 /* ViaCepUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -309,20 +278,9 @@
 		AA9FD4BD2A7326B900CA1773 /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				AA9FD4BE2A7326C600CA1773 /* UnitTests */,
+				AAD2C0D32C4F5ED60010B39C /* Scenes */,
 			);
 			path = Features;
-			sourceTree = "<group>";
-		};
-		AA9FD4BE2A7326C600CA1773 /* UnitTests */ = {
-			isa = PBXGroup;
-			children = (
-				AAA286C22B9ABECB0007EC2F /* Extension */,
-				AAF24B422A74E5E900787C38 /* Mockies */,
-				AAF24B3F2A74E59100787C38 /* Spies */,
-				AA9FD4BF2A7326CB00CA1773 /* MainTests */,
-			);
-			path = UnitTests;
 			sourceTree = "<group>";
 		};
 		AA9FD4BF2A7326CB00CA1773 /* MainTests */ = {
@@ -344,19 +302,27 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		AACC86062BCA0DB5001E49B8 /* ViaCepUITests */ = {
+		AAD2C0D32C4F5ED60010B39C /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				AACC86102BCA0EEF001E49B8 /* MainViewUITests.swift */,
-				AACC86092BCA0DB5001E49B8 /* ViaCepUITestsLaunchTests.swift */,
+				AAD2C0D42C4F5EE50010B39C /* Helpers */,
+				AA9FD4BF2A7326CB00CA1773 /* MainTests */,
 			);
-			path = ViaCepUITests;
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		AAD2C0D42C4F5EE50010B39C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				AAA286C22B9ABECB0007EC2F /* Extension */,
+				AAF24B3F2A74E59100787C38 /* Spies */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		AADE37172BE50769002F5A61 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
-				AADE371D2BE50876002F5A61 /* MainInteractorSut.swift */,
 				AA7B05D32A72C3C600A5CECE /* MainInteractorTests.swift */,
 			);
 			path = Interactor;
@@ -365,7 +331,6 @@
 		AADE37182BE50770002F5A61 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				AADE371B2BE50813002F5A61 /* MainPresenterSut.swift */,
 				AA9FD4B32A73046000CA1773 /* MainPresenterTests.swift */,
 			);
 			path = Presenter;
@@ -374,7 +339,6 @@
 		AADE37192BE50776002F5A61 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				AAE898942BE27551009E3C20 /* MainServiceSut.swift */,
 				AAFDDE342B4B7539009D031D /* MainServiceTests.swift */,
 			);
 			path = Service;
@@ -400,19 +364,10 @@
 			isa = PBXGroup;
 			children = (
 				AAF24B402A74E5A200787C38 /* MainPresenterSpy.swift */,
-				AAF24B452A74E68A00787C38 /* MainViewControllerSpy.swift */,
 				AAA286C52B9AC9600007EC2F /* NetworkingSpy.swift */,
 				AAA286C72B9AC98C0007EC2F /* MainServiceSpy.swift */,
 			);
 			path = Spies;
-			sourceTree = "<group>";
-		};
-		AAF24B422A74E5E900787C38 /* Mockies */ = {
-			isa = PBXGroup;
-			children = (
-				AAF24B432A74E60100787C38 /* ServiceMock.swift */,
-			);
-			path = Mockies;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -453,24 +408,6 @@
 			productReference = AA7B05C82A72C39000A5CECE /* ViaCepTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		AACC86042BCA0DB5001E49B8 /* ViaCepUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = AACC860D2BCA0DB5001E49B8 /* Build configuration list for PBXNativeTarget "ViaCepUITests" */;
-			buildPhases = (
-				AACC86012BCA0DB5001E49B8 /* Sources */,
-				AACC86022BCA0DB5001E49B8 /* Frameworks */,
-				AACC86032BCA0DB5001E49B8 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				AACC860C2BCA0DB5001E49B8 /* PBXTargetDependency */,
-			);
-			name = ViaCepUITests;
-			productName = ViaCepUITests;
-			productReference = AACC86052BCA0DB5001E49B8 /* ViaCepUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -487,10 +424,6 @@
 					AA7B05C72A72C39000A5CECE = {
 						CreatedOnToolsVersion = 14.3.1;
 						LastSwiftMigration = 1430;
-						TestTargetID = AA7B05802A7292F300A5CECE;
-					};
-					AACC86042BCA0DB5001E49B8 = {
-						CreatedOnToolsVersion = 15.2;
 						TestTargetID = AA7B05802A7292F300A5CECE;
 					};
 				};
@@ -512,7 +445,6 @@
 			targets = (
 				AA7B05802A7292F300A5CECE /* ViaCep */,
 				AA7B05C72A72C39000A5CECE /* ViaCepTests */,
-				AACC86042BCA0DB5001E49B8 /* ViaCepUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -529,13 +461,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		AA7B05C62A72C39000A5CECE /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AACC86032BCA0DB5001E49B8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -576,25 +501,11 @@
 				AAA286C82B9AC98C0007EC2F /* MainServiceSpy.swift in Sources */,
 				AAA286C62B9AC9600007EC2F /* NetworkingSpy.swift in Sources */,
 				AAF24B412A74E5A200787C38 /* MainPresenterSpy.swift in Sources */,
-				AADE371E2BE50876002F5A61 /* MainInteractorSut.swift in Sources */,
 				AA7B05D72A72F39400A5CECE /* Dummy.swift in Sources */,
 				AA7B05D42A72C3C600A5CECE /* MainInteractorTests.swift in Sources */,
-				AADE371C2BE50813002F5A61 /* MainPresenterSut.swift in Sources */,
 				AAA286C42B9ABEE00007EC2F /* XCTestCase+Extension.swift in Sources */,
-				AAF24B442A74E60100787C38 /* ServiceMock.swift in Sources */,
-				AAE898952BE27551009E3C20 /* MainServiceSut.swift in Sources */,
 				AA9FD4B42A73046000CA1773 /* MainPresenterTests.swift in Sources */,
-				AAF24B462A74E68A00787C38 /* MainViewControllerSpy.swift in Sources */,
 				AAFDDE352B4B7539009D031D /* MainServiceTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AACC86012BCA0DB5001E49B8 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AACC860A2BCA0DB5001E49B8 /* ViaCepUITestsLaunchTests.swift in Sources */,
-				AACC86112BCA0EEF001E49B8 /* MainViewUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -605,11 +516,6 @@
 			isa = PBXTargetDependency;
 			target = AA7B05802A7292F300A5CECE /* ViaCep */;
 			targetProxy = AA7B05CC2A72C39000A5CECE /* PBXContainerItemProxy */;
-		};
-		AACC860C2BCA0DB5001E49B8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = AA7B05802A7292F300A5CECE /* ViaCep */;
-			targetProxy = AACC860B2BCA0DB5001E49B8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -747,7 +653,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
@@ -782,7 +688,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
@@ -864,57 +770,6 @@
 			};
 			name = Release;
 		};
-		AACC860E2BCA0DB5001E49B8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = L923PSABUA;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.thiagomonteiro.ViaCepUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				TEST_TARGET_NAME = ViaCep;
-			};
-			name = Debug;
-		};
-		AACC860F2BCA0DB5001E49B8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = L923PSABUA;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.thiagomonteiro.ViaCepUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				TEST_TARGET_NAME = ViaCep;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -941,15 +796,6 @@
 			buildConfigurations = (
 				AA7B05CF2A72C39000A5CECE /* Debug */,
 				AA7B05D02A72C39000A5CECE /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		AACC860D2BCA0DB5001E49B8 /* Build configuration list for PBXNativeTarget "ViaCepUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AACC860E2BCA0DB5001E49B8 /* Debug */,
-				AACC860F2BCA0DB5001E49B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -1,31 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1520"
+   LastUpgradeVersion = "1600"
    version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
-      buildImplicitDependencies = "YES">
+      buildImplicitDependencies = "YES"
+      buildArchitectures = "Automatic">
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
-      <TestPlans>
-         <TestPlanReference
-            reference = "container:ViaCepTests/ViaCep.xctestplan"
-            default = "YES">
-         </TestPlanReference>
-      </TestPlans>
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      shouldAutocreateTestPlan = "YES">
       <Testables>
          <TestableReference
             skipped = "NO"
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AACC86042BCA0DB5001E49B8"
-               BuildableName = "ViaCepUITests.xctest"
-               BlueprintName = "ViaCepUITests"
+               BlueprintIdentifier = "AA7B05C72A72C39000A5CECE"
+               BuildableName = "ViaCepTests.xctest"
+               BlueprintName = "ViaCepTests"
                ReferencedContainer = "container:ViaCep.xcodeproj">
             </BuildableReference>
          </TestableReference>

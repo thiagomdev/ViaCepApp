@@ -1,6 +1,6 @@
 import Foundation
 
-enum HttpMethod {
+public enum HttpMethod {
     case get
     
     var description: String {

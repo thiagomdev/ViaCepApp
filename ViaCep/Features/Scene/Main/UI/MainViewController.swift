@@ -1,11 +1,11 @@
 import UIKit
 
-protocol MainViewControlling: AnyObject {
+public protocol MainViewControlling: AnyObject {
     func didPresentCep(_ cep: DataCep)
     func didShowErrorMessage(_ message: String)
 }
 
-final class MainViewController: UIViewController {
+public final class MainViewController: UIViewController {
     public enum Layout { }
     private let interactor: MainInteracting
     
@@ -18,7 +18,7 @@ final class MainViewController: UIViewController {
         return stack
     }()
     
-    lazy var inputedCepTextField: UITextField = {
+    public lazy var inputedCepTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Digite um cep válido"
         textField.borderStyle = .roundedRect
@@ -27,7 +27,7 @@ final class MainViewController: UIViewController {
         return textField
     }()
     
-    lazy var searchCepButton: UIButton = {
+    public lazy var searchCepButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Buscar Cep", for: .normal)
         button.backgroundColor = .lightGray
@@ -41,24 +41,22 @@ final class MainViewController: UIViewController {
     lazy var bairroLabel = makeLabel()
     lazy var localidadeLabel = makeLabel()
 
-    init(interactor: MainInteracting) {
+    public init(interactor: MainInteracting) {
         self.interactor = interactor
         super.init(nibName: nil, bundle: nil)
     }
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         buildViews()
         pin()
         extraConfig()
     }
     
-    required init?(coder: NSCoder) {
-        fatalError()
-    }
+    required init?(coder: NSCoder) { nil }
 }
 
-private extension MainViewController {
+extension MainViewController {
     @objc
     private func didSearchCep() {
         searchCep()
@@ -66,11 +64,11 @@ private extension MainViewController {
 }
 
 extension MainViewController: MainViewControlling {
-    func didPresentCep(_ cep: DataCep) {
+    public func didPresentCep(_ cep: DataCep) {
         didDisplayCep(cep)
     }
     
-    func didShowErrorMessage(_ message: String) {
+    public func didShowErrorMessage(_ message: String) {
         DispatchQueue.main.async { [weak self] in
             guard let self else { return }
             let alert = UIAlertController(
@@ -90,8 +88,8 @@ extension MainViewController: MainViewControlling {
     }
 }
 
-private extension MainViewController {
-    func didClearText() {
+extension MainViewController {
+    public func didClearText() {
         logradouroLabel.text = interactor.clearText()
         bairroLabel.text = interactor.clearText()
         localidadeLabel.text = interactor.clearText()

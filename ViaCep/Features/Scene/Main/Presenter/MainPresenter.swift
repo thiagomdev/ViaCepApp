@@ -1,20 +1,22 @@
 import UIKit
 
-protocol MainPresenting {
+public protocol MainPresenting {
     func presentCep(_ cep: DataCep)
     func displayError(_ message: String)
 }
 
-final class MainPresenter {
-    weak var viewController: MainViewControlling?
+public final class MainPresenter {
+    public weak var viewController: MainViewControlling?
+    
+    public init() {}
 }
 
 extension MainPresenter: MainPresenting {
-    func presentCep(_ cep: DataCep) {
+    public func presentCep(_ cep: DataCep) {
         viewController?.didPresentCep(cep)
     }
     
-    func displayError(_ message: String) {
+    public func displayError(_ message: String) {
         viewController?.didShowErrorMessage(message)
     }
 }

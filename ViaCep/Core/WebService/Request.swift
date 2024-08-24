@@ -1,6 +1,6 @@
 import Foundation
 
-protocol Request {
+public protocol Request {
     var baseUrl: String { get }
     var endpoint: String { get }
     var method: HttpMethod { get }
@@ -10,18 +10,18 @@ protocol Request {
     var body: Data? { get }
 }
 
-protocol Task {
+public protocol Task {
     var request: Request { get }
     func resume()
     func cancel()
 }
 
 extension Request {
-    var baseUrl: String {
+    public var baseUrl: String {
         "https://viacep.com.br/ws"
     }
     
-    var url: String {
+    public var url: String {
         var components = URLComponents()
         if let parameters = parameters {
             var queryItems: [URLQueryItem] = []

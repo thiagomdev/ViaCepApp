@@ -1,4 +1,4 @@
-@testable import ViaCep
+import ViaCep
 
 extension DataCep {
     static func dummy(

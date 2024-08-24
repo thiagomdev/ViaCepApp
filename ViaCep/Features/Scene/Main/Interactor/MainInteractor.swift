@@ -1,15 +1,15 @@
 import Foundation
 
-protocol MainInteracting {
+public protocol MainInteracting {
     func displayCep(_ cep: String)
     func clearText() -> String?
 }
 
-final class MainInteractor {
+public final class MainInteractor {
     private let presenter: MainPresenting?
     private let service: MainServicing?
     
-    init(
+    public init(
         presenter: MainPresenting,
         service: MainServicing
     ) {
@@ -19,7 +19,7 @@ final class MainInteractor {
 }
 
 extension MainInteractor: MainInteracting {
-    func displayCep(_ cep: String) {
+    public func displayCep(_ cep: String) {
         service?.fetchDataCep(cep) { [weak self] result in
             switch result {
             case let .success(cep):
@@ -32,7 +32,7 @@ extension MainInteractor: MainInteracting {
         }
     }
     
-    func clearText() -> String? {
+    public func clearText() -> String? {
         return nil
     }
 }
