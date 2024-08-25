@@ -4,7 +4,11 @@
       "id" : "99AF3C2C-1372-4A68-B720-F33247A1A854",
       "name" : "Test Scheme Action",
       "options" : {
-
+        "targetForVariableExpansion" : {
+          "containerPath" : "container:ViaCep.xcodeproj",
+          "identifier" : "AA7B05802A7292F300A5CECE",
+          "name" : "ViaCep"
+        }
       }
     }
   ],
@@ -17,6 +21,7 @@
   },
   "testTargets" : [
     {
+      "parallelizable" : true,
       "target" : {
         "containerPath" : "container:ViaCep.xcodeproj",
         "identifier" : "AA7B05C72A72C39000A5CECE",
