@@ -5,22 +5,22 @@ final class MainPresenterTests: XCTestCase {
     func test_presentCep_whenGetsAllOfInformationData_shouldReturnDataCep() {
         let (sut, viewControllerSpy) = makeSut()
                 
-        expectSuccess(sut, toCompleteWith: .dummy(cep: "01150012")) {
+        expectSuccess(sut, toCompleteWith: .dummy(cep: "01150012"), when: {
             XCTAssertFalse(viewControllerSpy.failure.isEmpty)
             XCTAssertFalse(viewControllerSpy.responseDataCep.isEmpty)
             XCTAssertEqual(viewControllerSpy.responseDataCep, [.dummy(cep: "01150012")])
-        }
+        })
     }
     
     func test_did_show_error() {
         let (sut, viewControllerSpy) = makeSut()
         let message: String = "Something was wrong..."
         
-        expectFailure(sut, onCompleteWith: message) {
+        expectFailure(sut, onCompleteWith: message, when: {
             XCTAssertTrue(viewControllerSpy.didShowErrorCalled)
             XCTAssertEqual(viewControllerSpy.didShowErrorCalledCouting, 1)
             XCTAssertEqual(viewControllerSpy.messages, [.didShowError(message)])
-        }
+        })
     }
 }
 
