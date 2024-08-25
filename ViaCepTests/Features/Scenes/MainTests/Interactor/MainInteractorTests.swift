@@ -18,7 +18,7 @@ final class MainInteractorTests: XCTestCase {
         let samples = [199, 201, 300, 400, 500].enumerated()
         
         samples.forEach { index, code in
-            let err = NSError(domain: "test_display_cep_failure", code: code)
+            let err = NSError(domain: "Wainting for a conclusion of the request", code: code)
             
             doubles.serviceSpy.expectedResponse = .failure(err)
             doubles.presenterSpy.message = [.dummy()]

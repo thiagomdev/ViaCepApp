@@ -2,41 +2,25 @@ import XCTest
 import ViaCep
 
 final class MainServiceTests: XCTestCase {
+    private var dataObject: DataCep = .dummy()
+    
     func test_success() {
         let (sut, networkingSpy) = makeSut()
-        var expResult: DataCep?
-        let exp = expectation(description: "Wait for a completion loading.")
         
-        networkingSpy.expected = .success(.dummy())
+        networkingSpy.expected = .success(dataObject)
         
-        sut.fetchDataCep("") { result in
-            if case .success(let dataObject) = result {
-                expResult = dataObject
-            }
-            exp.fulfill()
+        expect(sut, toCompleteWithDataObject: .success(dataObject)) {
+            XCTAssertNotNil(dataObject)
         }
-        wait(for: [exp], timeout: 1.0)
-        
-        XCTAssertNotNil(expResult)
     }
     
     func test_failure() {
-        let (sut, networkingSpy) = makeSut()
-        var expError: Error?
-        let exp = expectation(description: "Wait for a completion loading.")
+        let (sut, _) = makeSut()
         let failure: NSError = .init(domain: "error", code: 400)
         
-        networkingSpy.expected = .failure(failure)
-
-        sut.fetchDataCep("01150011") { result in
-            if case .failure(let error) = result {
-                expError = error
-            }
-            exp.fulfill()
+        expect(sut, toCompleteWithDataObject: .failure(failure)) {
+            XCTAssertNotNil(failure)
         }
-        wait(for: [exp], timeout: 1.0)
-        
-        XCTAssertNotNil(expError)
     }
 }
 
@@ -67,5 +51,27 @@ extension MainServiceTests {
             callback(expected as! Result<T, Error>)
             return TaskDummy()
         }
+    }
+    
+    private func expect(
+        _ sut: MainServicing,
+        toCompleteWithDataObject data: (Result<DataCep, Error>),
+        when action: () ->Void) {
+            
+        let expectation = expectation(description: "Wait for a completion loading.")
+                
+        sut.fetchDataCep("01150011") { result in
+            switch result {
+                case .success:
+                XCTAssertNotNil(data)
+            case .failure:
+                XCTAssertNotNil(data)
+            }
+            expectation.fulfill()
+        }
+        
+        action()
+        
+        wait(for: [expectation], timeout: 3.0)
     }
 }

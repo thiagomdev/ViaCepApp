@@ -64,7 +64,6 @@ extension MainPresenterTests {
         
         func didPresentCep(_ cep: ViaCep.DataCep) {
             message.append((cep, NSError()))
-//            messages.insert(.didShowCep(cep))
         }
         
         func didShowErrorMessage(_ message: String) {
