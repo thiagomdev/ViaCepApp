@@ -6,27 +6,26 @@ final class MainInteractorTests: XCTestCase {
     
     func test_display_cep_success() {
         let (sut, doubles) = makeSut()
+        
         doubles.serviceSpy.expectedResponse = .success(.dummy())
         
-        sut.displayCep(dataObject.cep)
-
-        XCTAssertEqual(doubles.presenterSpy.message, [.dummy()])
+        expect(sut, onCompleteWith: .success(.dummy())) {
+            XCTAssertEqual(doubles.presenterSpy.message, [.dummy()])
+        }
     }
     
     func test_display_cep_failure() {
         let (sut, doubles) = makeSut()
         let samples = [199, 201, 300, 400, 500].enumerated()
-        
-        samples.forEach { index, code in
-            let err = NSError(domain: "Wainting for a conclusion of the request", code: code)
-            
-            doubles.serviceSpy.expectedResponse = .failure(err)
-            doubles.presenterSpy.message = [.dummy()]
-            
-            sut.displayCep(dataObject.cep)
-            
-            XCTAssertFalse(doubles.presenterSpy.message.isEmpty)
-            XCTAssertEqual(doubles.presenterSpy.message, [.dummy()])
+        let err = NSError(domain: "Wainting for a conclusion of the request", code: samples.underestimatedCount)
+        doubles.serviceSpy.expectedResponse = .failure(err)
+        doubles.presenterSpy.message = [.dummy()]
+
+        samples.forEach { _, _ in
+            expect(sut, onCompleteWith: .failure(err)) {
+                XCTAssertFalse(doubles.presenterSpy.message.isEmpty)
+                XCTAssertEqual(doubles.presenterSpy.message, [.dummy()])
+            }
         }
     }
 }
@@ -78,5 +77,28 @@ extension MainInteractorTests {
                 }
             }
         }
+    }
+    
+    private func expect(
+        _ sut: MainInteractor,
+        onCompleteWith result: FetchDataResult,
+        when action: () -> Void) {
+            
+        let expectation = expectation(description: "Wait for a completion loading.")
+            
+        sut.displayCep("01150011")
+       
+        switch result {
+        case let .success(dataCep):
+            XCTAssertNotNil(dataCep)
+        case let .failure(error):
+            XCTAssertNotNil(error)
+        }
+        
+        expectation.fulfill()
+            
+        action()
+
+        wait(for: [expectation], timeout: 3.0)
     }
 }
