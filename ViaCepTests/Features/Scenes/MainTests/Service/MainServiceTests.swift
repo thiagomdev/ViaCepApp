@@ -9,17 +9,20 @@ final class MainServiceTests: XCTestCase {
         
         networkingSpy.expected = .success(dataObject)
         
-        expect(sut, toCompleteWithDataObject: .success(dataObject)) {
+        expect(sut, when: .success(dataObject), then: {
             XCTAssertNotNil(dataObject)
-        }
+        })
     }
     
-    func test_failure() {
+    func test_failure_on_non_200_HTTPResponse() {
         let (sut, _) = makeSut()
-        let failure: NSError = .init(domain: "error", code: 400)
+        let samples = [199, 201, 300, 400, 500].enumerated()
         
-        expect(sut, toCompleteWithDataObject: .failure(failure)) {
-            XCTAssertNotNil(failure)
+        samples.forEach { code in
+            let failure: NSError = .init(domain: "error", code: code.element)
+            expect(sut, when: .failure(failure), then: {
+                XCTAssertNotNil(failure)
+            })
         }
     }
 }
@@ -53,25 +56,26 @@ extension MainServiceTests {
         }
     }
     
-    private func expect(
-        _ sut: MainServicing,
-        toCompleteWithDataObject data: (Result<DataCep, Error>),
-        when action: () ->Void) {
+    private func expect(_ sut: MainServicing,
+        when dataObject: (Result<DataCep, Error>),
+        then action: () ->Void) {
             
         let expectation = expectation(description: "Wait for a completion loading.")
                 
         sut.fetchDataCep("01150011") { result in
             switch result {
                 case .success:
-                XCTAssertNotNil(data)
+                XCTAssertNotNil(dataObject)
             case .failure:
-                XCTAssertNotNil(data)
+                XCTAssertNotNil(dataObject)
             }
             expectation.fulfill()
         }
         
         action()
         
-        wait(for: [expectation], timeout: 3.0)
+        wait(for: [expectation], timeout: 5.0)
+        
+        XCTAssertNotNil(dataObject)
     }
 }

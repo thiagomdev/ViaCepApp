@@ -7,14 +7,14 @@ public enum ShouldBeExpected {
 }
 
 final class MainServiceSpy: MainServicing {
-    var shouldBeExpected: (Result<DataCep, Error>)?
+    var shouldBeExpected: (DataCepResponse)?
 
     private(set) var fetchDataCepCalled: Bool = false
     private(set) var fetchDataCepCalledCounting: Int = 0
     
     func fetchDataCep(
         _ cep: String,
-        callback: @escaping (Result<DataCep, Error>) -> Void
+        callback: @escaping (DataCepResponse) -> Void
     ) {
         fetchDataCepCalled = true
         fetchDataCepCalledCounting += 1
