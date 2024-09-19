@@ -13,6 +13,15 @@
     }
   ],
   "defaultOptions" : {
+    "codeCoverage" : {
+      "targets" : [
+        {
+          "containerPath" : "container:ViaCep.xcodeproj",
+          "identifier" : "AA7B05C72A72C39000A5CECE",
+          "name" : "ViaCepTests"
+        }
+      ]
+    },
     "targetForVariableExpansion" : {
       "containerPath" : "container:ViaCep.xcodeproj",
       "identifier" : "AA7B05802A7292F300A5CECE",
