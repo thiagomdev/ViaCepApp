@@ -138,18 +138,24 @@ private extension MainViewController {
                 equalTo: view.safeAreaLayoutGuide.topAnchor,
                 constant: Layout.Size.constant
             ),
+            
             stackViewContainer.leadingAnchor.constraint(
                 equalTo: view.safeAreaLayoutGuide.leadingAnchor,
                 constant: Layout.Size.constant
             ),
+            
             stackViewContainer.trailingAnchor.constraint(
                 equalTo: view.safeAreaLayoutGuide.trailingAnchor,
                 constant: -Layout.Size.constant
             ),
+            
             searchCepButton.heightAnchor.constraint(
                 equalToConstant: Layout.Size.height
             ),
-            inputedCepTextField.heightAnchor.constraint(equalToConstant: 60)
+            
+            inputedCepTextField.heightAnchor.constraint(
+                equalToConstant: Layout.Size.textFieldHeight
+            )
         ])
     }
     
@@ -162,6 +168,7 @@ private extension MainViewController.Layout {
     enum Size {
         static let constant: CGFloat = 16
         static let height: CGFloat = 40
+        static let textFieldHeight: CGFloat = 60
         
         static let colors: UIColor = .init(
             red: 210/255,

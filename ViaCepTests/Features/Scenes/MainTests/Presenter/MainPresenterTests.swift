@@ -5,7 +5,7 @@ final class MainPresenterTests: XCTestCase {
     func test_presentCep_whenGetsAllOfInformationData_shouldReturnDataCep() {
         let (sut, viewControllerSpy) = makeSut()
                 
-        expectSuccess(sut, toCompleteWith: .dummy(cep: "01150012"), when: {
+        expectSuccess(sut, when: .dummy(cep: "01150012"), then: {
             XCTAssertFalse(viewControllerSpy.failure.isEmpty)
             XCTAssertFalse(viewControllerSpy.responseDataCep.isEmpty)
             XCTAssertEqual(viewControllerSpy.responseDataCep, [.dummy(cep: "01150012")])
@@ -16,7 +16,7 @@ final class MainPresenterTests: XCTestCase {
         let (sut, viewControllerSpy) = makeSut()
         let message: String = "Something was wrong..."
         
-        expectFailure(sut, onCompleteWith: message, when: {
+        expectFailure(sut, when: message, then: {
             XCTAssertTrue(viewControllerSpy.didShowErrorCalled)
             XCTAssertEqual(viewControllerSpy.didShowErrorCalledCouting, 1)
             XCTAssertEqual(viewControllerSpy.messages, [.didShowError(message)])
@@ -75,8 +75,8 @@ extension MainPresenterTests {
     
     private func expectSuccess(
         _ sut: MainPresenting,
-        toCompleteWith dataCep: DataCep,
-        when action: () -> Void,
+        when dataCep: DataCep,
+        then action: () -> Void,
         file: StaticString = #file,
         line: UInt = #line) {
             
@@ -89,8 +89,8 @@ extension MainPresenterTests {
     
     private func expectFailure(
         _ sut: MainPresenting,
-        onCompleteWith message: String,
-        when action: () -> Void,
+        when message: String,
+        then action: () -> Void,
         file: StaticString = #file,
         line: UInt = #line) {
             
