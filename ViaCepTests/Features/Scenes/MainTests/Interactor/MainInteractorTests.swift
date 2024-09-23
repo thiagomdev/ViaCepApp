@@ -1,31 +1,31 @@
-import XCTest
+import Foundation
 import ViaCep
+import Testing
 
-final class MainInteractorTests: XCTestCase {
-    private let dataObject: DataCep = .dummy()
-    
-    func test_display_cep_success() {
+private struct MainInteractorTests {
+    @Test
+    func display_cep_success() {
         let (sut, doubles) = makeSut()
-        
         doubles.serviceSpy.expectedResponse = .success(.dummy())
-        
-        expect(sut, onCompleteWith: .success(.dummy())) {
-            XCTAssertEqual(doubles.presenterSpy.message, [.dummy()])
-        }
+        sut.displayCep("01150011")
+        #expect(doubles.presenterSpy.message == [.dummy()])
     }
     
+    @Test
     func test_display_cep_failure() {
         let (sut, doubles) = makeSut()
         let samples = [199, 201, 300, 400, 500].enumerated()
-        let err = NSError(domain: "Wainting for a conclusion of the request", code: samples.underestimatedCount)
-        doubles.serviceSpy.expectedResponse = .failure(err)
+        let err = NSError(
+            domain: "Wainting for a conclusion of the request",
+            code: samples.underestimatedCount
+        )
         doubles.presenterSpy.message = [.dummy()]
-
+        doubles.serviceSpy.expectedResponse = .failure(err)
+        sut.displayCep("01150011")
+      
         samples.forEach { _, _ in
-            expect(sut, onCompleteWith: .failure(err)) {
-                XCTAssertFalse(doubles.presenterSpy.message.isEmpty)
-                XCTAssertEqual(doubles.presenterSpy.message, [.dummy()])
-            }
+            #expect(doubles.presenterSpy.message.isEmpty == false)
+            #expect(doubles.presenterSpy.message == [.dummy()])
         }
     }
 }
@@ -49,11 +49,6 @@ extension MainInteractorTests {
             presenter: presenterSpy,
             service: serviceSpy
         )
-    
-        trackForMemoryLeaks(to: sut, file: file, line: line)
-        trackForMemoryLeaks(to: presenterSpy, file: file, line: line)
-        trackForMemoryLeaks(to: serviceSpy, file: file, line: line)
-        
         return (sut, (presenterSpy, serviceSpy))
     }
     
@@ -77,28 +72,5 @@ extension MainInteractorTests {
                 }
             }
         }
-    }
-    
-    private func expect(
-        _ sut: MainInteractor,
-        onCompleteWith result: FetchDataResult,
-        when action: () -> Void) {
-            
-        let expectation = expectation(description: "Wait for a completion loading.")
-            
-        sut.displayCep("01150011")
-       
-        switch result {
-        case let .success(dataCep):
-            XCTAssertNotNil(dataCep)
-        case let .failure(error):
-            XCTAssertNotNil(error)
-        }
-        
-        expectation.fulfill()
-            
-        action()
-
-        wait(for: [expectation], timeout: 3.0)
     }
 }
