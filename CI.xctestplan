@@ -1,0 +1,42 @@
+{
+  "configurations" : [
+    {
+      "id" : "EDE3DAAB-9882-443D-8B8A-A1D79FCA9D53",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : {
+      "targets" : [
+        {
+          "containerPath" : "container:ViaCep.xcodeproj",
+          "identifier" : "AA7B05C72A72C39000A5CECE",
+          "name" : "ViaCepTests"
+        },
+        {
+          "containerPath" : "container:ViaCep.xcodeproj",
+          "identifier" : "AA7B05802A7292F300A5CECE",
+          "name" : "ViaCep"
+        }
+      ]
+    },
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:ViaCep.xcodeproj",
+      "identifier" : "AA7B05802A7292F300A5CECE",
+      "name" : "ViaCep"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:ViaCep.xcodeproj",
+        "identifier" : "AA7B05C72A72C39000A5CECE",
+        "name" : "ViaCepTests"
+      }
+    }
+  ],
+  "version" : 1
+}
