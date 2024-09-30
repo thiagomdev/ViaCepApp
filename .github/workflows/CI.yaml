@@ -18,4 +18,4 @@ jobs:
       run: sudo xcode-select -switch /Applications/Xcode_16.0.app
 
     - name: Build and test
-      run: xcodebuild clean build test -workspace Projects/Apps/ViaCepApp/ViaCep/ViaCep.xcodeproj -scheme "CI"  
+      run: xcodebuild clean build test -workspace Projects/Apps/ViaCepApp/ViaCep.xcodeproj -scheme "CI"  
