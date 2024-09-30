@@ -21,12 +21,7 @@ jobs:
 
     - name: Xcode version
       run: /usr/bin/xcodebuild -version
-
-    - name: Install dependencies
-      run: |
-        brew install cocoapods
-        pod install --project-directory=Projects/Apps/ViaCepApp/
-
+      
     - name: Build and Test MacOS CI
       run: xcodebuild clean build test -project Projects/Apps/ViaCepApp/ViaCep.xcodeproj -scheme "ViaCep" -testPlan "ViaCep" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
    
