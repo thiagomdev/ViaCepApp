@@ -8,7 +8,7 @@ public protocol MainPresenting {
 public final class MainPresenter {
     public weak var viewController: MainViewControlling?
     
-    public init() { /* Intentionallty empty*/ }
+    public init() { /* Intentionally empty*/ }
 }
 
 extension MainPresenter: MainPresenting {
