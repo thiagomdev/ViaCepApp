@@ -17,8 +17,8 @@ jobs:
     - name: Checkout repository  
       uses: actions/checkout@v2
 
-    - name: List files in Projects/Apps/ViaCepApp
-      run: ls -al Projects/Apps/ViaCepApp
+    - name: List files in Projects/Apps/ViaCepApp/
+      run: ls -al Projects/Apps/ViaCepApp/
 
     - name: List available schemes
       run: xcodebuild -list -project Projects/Apps/ViaCepApp/ViaCep.xcodeproj
