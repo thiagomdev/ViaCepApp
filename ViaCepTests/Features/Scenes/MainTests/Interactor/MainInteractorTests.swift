@@ -51,25 +51,13 @@ extension MainInteractorTests {
         )
         return (sut, (presenterSpy, serviceSpy))
     }
-    
-    public enum FetchDataResult {
-        case success(DataCep)
-        case failure(Error)
-    }
-    
+
     final class ServiceMock: MainServicing {
-        private var messages = [(cep: String, callback: (FetchDataResult) -> Void)]()
-        
-        var expectedResponse: (FetchDataResult)?
+        var expectedResponse: (Result<ViaCep.DataCep, Error>)?
                 
         func fetchDataCep(_ cep: String, callback: @escaping (Result<ViaCep.DataCep, Error>) -> Void) {
-            if let expectedResponse {
-                switch expectedResponse {
-                case .success(let success):
-                    callback(.success(success))
-                case .failure(let failure):
-                    callback(.failure(failure))
-                }
+            if let result = expectedResponse {
+                callback(result)
             }
         }
     }

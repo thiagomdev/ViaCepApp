@@ -2,14 +2,16 @@ import XCTest
 import ViaCep
 
 final class MainViewControllerTests: XCTestCase {
-    lazy var interactorSpy: MainInteractor = {
+    private lazy var presenterSpy = MainPresenterSpy()
+    private lazy var serviceSpy = MainServiceSpy()
+    private lazy var interactorSpy: MainInteractor = {
         let interac = MainInteractor(
-            presenter: MainPresenterSpy(),
-            service: MainServiceSpy())
+            presenter: presenterSpy,
+            service: serviceSpy)
         return interac
     }()
     
-    lazy var sut: MainViewController = {
+    private lazy var sut: MainViewController = {
         let viewController = MainViewController(
             interactor: interactorSpy
         )

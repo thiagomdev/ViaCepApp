@@ -17,8 +17,8 @@ jobs:
     - name: Checkout repository  
       uses: actions/checkout@v2
 
-    - name: List files in Projects/Apps/ViaCepApp/
-      run: ls -al Projects/Apps/ViaCepApp/
+    - name: List files in Projects/Apps/ViaCepApp
+      run: ls -al Projects/Apps/ViaCepApp
 
     - name: List available schemes
       run: xcodebuild -list -project Projects/Apps/ViaCepApp/ViaCep.xcodeproj
@@ -30,5 +30,5 @@ jobs:
       run: /usr/bin/xcodebuild -version
 
     - name: Build and Test MacOS CI
-      run: xcodebuild clean build test -project Projects/Apps/ViaCepApp/ViaCep.xcodeproj -scheme "ViaCep" -testPlan "ViaCep" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
+      run: xcodebuild clean build test -project Projects/Apps/ViaCepApp/ViaCep.xcodeproj -scheme "ViaCep" -testPlan "CI" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
    
