@@ -12,7 +12,15 @@ final class MainInteractorTests {
         
         sut.displayCep("01150011")
         
-        #expect(doubles.presenterSpy.message == [.dummy()])
+        #expect(doubles.presenterSpy.presentCepCalled == true)
+        #expect(doubles.presenterSpy.presentCepCouting == 1)
+        
+        #expect(doubles.presenterSpy.messages == [
+            .presentCep(cep: .dummy(cep: "01150011"))
+        ], "Should be returned all the correct object model")
+        
+        #expect(doubles.presenterSpy.displayErrorCalled == false)
+        #expect(doubles.presenterSpy.displayErrorCalledCouting == 0)
     }
     
     @Test("displayCep_failure")
@@ -24,14 +32,16 @@ final class MainInteractorTests {
             code: samples.underestimatedCount
         )
         
-        doubles.presenterSpy.message = [.dummy()]
         doubles.serviceSpy.expectedResponse = .failure(err)
         
         sut.displayCep("01150011")
       
         samples.forEach { _, _ in
-            #expect(doubles.presenterSpy.message.isEmpty == false)
-            #expect(doubles.presenterSpy.message == [.dummy()])
+            #expect(doubles.presenterSpy.presentCepCalled == false)
+            #expect(doubles.presenterSpy.presentCepCouting == 0)
+            
+            #expect(doubles.presenterSpy.displayErrorCalled == true)
+            #expect(doubles.presenterSpy.displayErrorCalledCouting == 1)
         }
     }
     

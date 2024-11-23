@@ -60,7 +60,7 @@ extension MainServiceTests {
         when dataObject: (Result<DataCep, Error>),
         then action: () ->Void) {
             
-        let expectation = expectation(description: "Wait for a completion loading.")
+        let exp = expectation(description: "Wait for a completion loading.")
                 
         sut.fetchDataCep("01150011") { result in
             switch result {
@@ -69,12 +69,12 @@ extension MainServiceTests {
             case .failure:
                 XCTAssertNotNil(dataObject)
             }
-            expectation.fulfill()
+            exp.fulfill()
         }
         
         action()
         
-        wait(for: [expectation], timeout: 5.0)
+        wait(for: [exp], timeout: 5.0)
         
         XCTAssertNotNil(dataObject)
     }
