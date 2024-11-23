@@ -1,33 +1,48 @@
-import XCTest
+import Testing
+import Foundation
 import ViaCep
 
-final class MainServiceTests: XCTestCase {
-    private var dataObject: DataCep = .dummy()
-    
+@Suite("MainServiceTests", .serialized, .tags(.main))
+final class MainServiceTests {
+    // MARK: - Tests
+    @Test("fetch_DataCep_whenTypeSomeCep_thenShouldReturnedValidDataCep")
     func test_fetchData_whenTypeSomeCep_thenShouldReturnedValidDataCep() {
         let (sut, networkingSpy) = makeSut()
+        var dataObject: DataCep = .dummy()
         
-        networkingSpy.expected = .success(dataObject)
+        networkingSpy.expected = .success(.dummy(cep: "01150011"))
         
-        expect(sut, when: .success(dataObject), then: {
-            XCTAssertNotNil(dataObject)
-        })
-    }
-    
-    func test_failure_on_non_200_HTTPResponse() {
-        let (sut, _) = makeSut()
-        let samples = [199, 201, 300, 400, 500].enumerated()
-        
-        samples.forEach { code in
-            let failure: NSError = .init(domain: "error", code: code.element)
-            expect(sut, when: .failure(failure), then: {
-                XCTAssertNotNil(failure)
-            })
+        sut.fetchDataCep("01150011") { result in
+            if case let .success(receivedObject) = result {
+                dataObject = receivedObject
+                #expect(dataObject == receivedObject)
+                #expect(dataObject == .dummy())
+                #expect(dataObject.cep == "01150011")
+                #expect(networkingSpy.executeCalled == true)
+                #expect(networkingSpy.executeCount == 1)
+            }
         }
     }
-}
-
-extension MainServiceTests {
+    
+    @Test("test_failure_on_non_200_HTTPResponse")
+    func test_failure_on_non_200_HTTPResponse() {
+        let (sut, networkingSpy) = makeSut()
+        let failure: NSError = .init(domain: "expected error", code: -999)
+        networkingSpy.expected = .failure(failure)
+        
+        var expectedFailure: Error?
+       
+        sut.fetchDataCep("01150011") { result in
+            if case let .failure(receivedError) = result {
+                expectedFailure = receivedError
+                #expect(networkingSpy.executeCalled == true)
+                #expect(networkingSpy.executeCount == 1)
+                #expect(expectedFailure != nil)
+            }
+        }
+    }
+    
+    // MARK: - Helpers
     private func makeSut(
         file: StaticString = #file,
         line: UInt = #line) -> (
@@ -36,46 +51,27 @@ extension MainServiceTests {
             
         let networkingSpy = NetworkingSpy()
         let sut = MainService(networking: networkingSpy)
-        
-        trackForMemoryLeaks(to: sut, file: file, line: line)
-        trackForMemoryLeaks(to: networkingSpy, file: file, line: line)
-        
+
         return (sut, networkingSpy)
     }
     
-    private final class NetworkingSpy: NetworkingProtocol {        
+    private final class NetworkingSpy: NetworkingProtocol {
         var expected: (Result<DataCep, Error>) = .failure(NetworkingError.unknown)
+        
+        private(set) var executeCalled: Bool = false
+        private(set) var executeCount: Int = 0
         
         func execute<T>(
             request: ViaCep.Request,
             responseType: T.Type,
             callback: @escaping (Result<T, Error>
             ) -> Void) -> ViaCep.Task where T : Decodable, T : Encodable {
+            executeCalled = true
+            executeCount += 1
+            
             callback(expected as! Result<T, Error>)
+            
             return TaskDummy()
         }
-    }
-    
-    private func expect(_ sut: MainServicing,
-        when dataObject: (Result<DataCep, Error>),
-        then action: () ->Void) {
-            
-        let exp = expectation(description: "Wait for a completion loading.")
-                
-        sut.fetchDataCep("01150011") { result in
-            switch result {
-                case .success:
-                XCTAssertNotNil(dataObject)
-            case .failure:
-                XCTAssertNotNil(dataObject)
-            }
-            exp.fulfill()
-        }
-        
-        action()
-        
-        wait(for: [exp], timeout: 5.0)
-        
-        XCTAssertNotNil(dataObject)
     }
 }
