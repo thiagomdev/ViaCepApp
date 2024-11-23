@@ -3,7 +3,7 @@ import ViaCep
 import Testing
 
 @Suite("MainInteractorTests", .serialized, .tags(.main))
-final class MainInteractorTests {
+private final class MainInteractorTests {
     // MARK: - Tests
     @Test("displayCep_success")
     func display_cep_success() {

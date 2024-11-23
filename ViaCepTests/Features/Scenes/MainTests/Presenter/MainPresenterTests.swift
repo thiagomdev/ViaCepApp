@@ -3,7 +3,7 @@ import Testing
 import ViaCep
 
 @Suite("MainPresenterTests", .serialized, .tags(.main))
-final class MainPresenterTests {
+private final class MainPresenterTests {
     // MARK: - Tests
     @Test("presentCep")
     func test_presentCep_whenGetsAllOfInformationData_shouldReturnDataCep() {

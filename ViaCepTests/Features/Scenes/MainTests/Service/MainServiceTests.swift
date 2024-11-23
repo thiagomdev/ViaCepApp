@@ -3,7 +3,7 @@ import Foundation
 import ViaCep
 
 @Suite("MainServiceTests", .serialized, .tags(.main))
-final class MainServiceTests {
+private final class MainServiceTests {
     // MARK: - Tests
     @Test("fetch_DataCep_whenTypeSomeCep_thenShouldReturnedValidDataCep")
     func test_fetchData_whenTypeSomeCep_thenShouldReturnedValidDataCep() {
