@@ -2,7 +2,7 @@ import Foundation
 import ViaCep
 import Testing
 
-@Suite("MainInteractorTests", .serialized, .tags(.mainInteractor))
+@Suite("MainInteractorTests", .serialized, .tags(.main))
 final class MainInteractorTests {
     // MARK: - Tests
     @Test("displayCep_success")

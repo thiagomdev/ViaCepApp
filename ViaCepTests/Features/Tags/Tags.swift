@@ -8,5 +8,5 @@
 import Testing
 extension Tag {
     @Tag
-    static var mainInteractor: Self
+    static var main: Self
 }

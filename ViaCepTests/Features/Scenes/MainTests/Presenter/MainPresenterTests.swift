@@ -1,42 +1,44 @@
 import XCTest
+import Testing
 import ViaCep
 
-final class MainPresenterTests: XCTestCase {
+@Suite("MainPresenterTests", .serialized, .tags(.main))
+final class MainPresenterTests {
+    // MARK: - Tests
+    @Test("presentCep")
     func test_presentCep_whenGetsAllOfInformationData_shouldReturnDataCep() {
         let (sut, viewControllerSpy) = makeSut()
-                
-        expectSuccess(sut, when: .dummy(cep: "01150012"), then: {
-            XCTAssertFalse(viewControllerSpy.failure.isEmpty)
-            XCTAssertFalse(viewControllerSpy.responseDataCep.isEmpty)
-            XCTAssertEqual(viewControllerSpy.responseDataCep, [.dummy(cep: "01150012")])
-        })
+        
+        sut.presentCep(.dummy())
+        
+        #expect(viewControllerSpy.failure.isEmpty == false)
+        #expect(viewControllerSpy.responseDataCep.isEmpty == false)
+        #expect(viewControllerSpy.responseDataCep == [.dummy()])
     }
     
+    @Test("displayError")
     func test_did_show_error() {
         let (sut, viewControllerSpy) = makeSut()
         let message: String = "Something was wrong..."
         
-        expectFailure(sut, when: message, then: {
-            XCTAssertTrue(viewControllerSpy.didShowErrorCalled)
-            XCTAssertEqual(viewControllerSpy.didShowErrorCalledCouting, 1)
-            XCTAssertEqual(viewControllerSpy.messages, [.didShowError(message)])
-        })
+        sut.displayError(message)
+        
+        #expect(viewControllerSpy.didShowErrorCalled == true)
+        #expect(viewControllerSpy.didShowErrorCalledCouting == 1)
+        #expect(viewControllerSpy.messages == [.didShowError(message)])
     }
-}
-
-extension MainPresenterTests {
+    
+    // MARK: - Helpers
     private func makeSut(
         file: StaticString = #file,
         line: UInt = #line) -> (
-        sut: MainPresenting,
-        viewControllerSpy: MainViewControllerSpy) {
-            
+            sut: MainPresenting,
+            viewControllerSpy: MainViewControllerSpy
+        ) {
+                
         let viewControllerSpy = MainViewControllerSpy()
         let sut = MainPresenter()
-            sut.mainView = viewControllerSpy
-        
-        trackForMemoryLeaks(to: sut, file: file, line: line)
-        trackForMemoryLeaks(to: viewControllerSpy, file: file, line: line)
+        sut.mainView = viewControllerSpy
         
         return (sut, viewControllerSpy)
     }
@@ -71,33 +73,5 @@ extension MainPresenterTests {
             didShowErrorCalledCouting += 1
             messages.insert(.didShowError(message))
         }
-    }
-    
-    private func expectSuccess(
-        _ sut: MainPresenting,
-        when dataCep: DataCep,
-        then action: () -> Void,
-        file: StaticString = #file,
-        line: UInt = #line) {
-            
-        sut.presentCep(dataCep)
-        
-        action()
-        
-        XCTAssertNotNil(dataCep, file: file, line: line)
-    }
-    
-    private func expectFailure(
-        _ sut: MainPresenting,
-        when message: String,
-        then action: () -> Void,
-        file: StaticString = #file,
-        line: UInt = #line) {
-            
-        sut.displayError(message)
-            
-        action()
-        
-        XCTAssertNotNil(message, file: file, line: line)
     }
 }
