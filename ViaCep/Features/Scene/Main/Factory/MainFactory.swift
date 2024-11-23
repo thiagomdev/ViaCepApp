@@ -5,8 +5,9 @@ public enum MainFactory {
         let service = MainService(networking: Networking())
         let presenter = MainPresenter()
         let interactor = MainInteractor(presenter: presenter, service: service)
-        let viewController = MainViewController(interactor: interactor)
-        presenter.viewController = viewController
+        let mainView = MainView(interactor)
+        let viewController = MainViewController(mainView)
+        presenter.mainView = mainView
         return viewController
     }
 }

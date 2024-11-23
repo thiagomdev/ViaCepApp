@@ -6,17 +6,17 @@ public protocol MainPresenting {
 }
 
 public final class MainPresenter {
-    public weak var viewController: MainViewControlling?
+    public weak var mainView: MainViewProtocol?
     
-    public init() { /* Intentionally empty*/ }
+    public init() {}
 }
 
 extension MainPresenter: MainPresenting {
     public func presentCep(_ cep: DataCep) {
-        viewController?.didPresentCep(cep)
+        mainView?.didPresentCep(cep)
     }
     
     public func displayError(_ message: String) {
-        viewController?.didShowErrorMessage(message)
+        mainView?.didShowErrorMessage(message)
     }
 }

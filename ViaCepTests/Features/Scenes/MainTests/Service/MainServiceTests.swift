@@ -4,7 +4,7 @@ import ViaCep
 final class MainServiceTests: XCTestCase {
     private var dataObject: DataCep = .dummy()
     
-    func test_success() {
+    func test_fetchData_whenTypeSomeCep_thenShouldReturnedValidDataCep() {
         let (sut, networkingSpy) = makeSut()
         
         networkingSpy.expected = .success(dataObject)

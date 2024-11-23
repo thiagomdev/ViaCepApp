@@ -2,16 +2,20 @@ import Foundation
 import ViaCep
 import Testing
 
-private struct MainInteractorTests {
-    @Test
+@Suite("MainInteractorTests", .serialized, .tags(.mainInteractor))
+final class MainInteractorTests {
+    // MARK: - Tests
+    @Test("displayCep_success")
     func display_cep_success() {
         let (sut, doubles) = makeSut()
         doubles.serviceSpy.expectedResponse = .success(.dummy())
+        
         sut.displayCep("01150011")
+        
         #expect(doubles.presenterSpy.message == [.dummy()])
     }
     
-    @Test
+    @Test("displayCep_failure")
     func test_display_cep_failure() {
         let (sut, doubles) = makeSut()
         let samples = [199, 201, 300, 400, 500].enumerated()
@@ -19,8 +23,10 @@ private struct MainInteractorTests {
             domain: "Wainting for a conclusion of the request",
             code: samples.underestimatedCount
         )
+        
         doubles.presenterSpy.message = [.dummy()]
         doubles.serviceSpy.expectedResponse = .failure(err)
+        
         sut.displayCep("01150011")
       
         samples.forEach { _, _ in
@@ -28,11 +34,30 @@ private struct MainInteractorTests {
             #expect(doubles.presenterSpy.message == [.dummy()])
         }
     }
-}
-
-extension MainInteractorTests {
+    
+    @Test("clear_text")
+    func test_clearText() {
+        let (sut, _) = makeSut()
+        
+        let clearString = sut.clearText()
+        
+        #expect(clearString == nil)
+    }
+    
     // MARK: - Helpers
-    typealias Doubles = (
+    private final class ServiceMock: MainServicing {
+        var expectedResponse: (Result<ViaCep.DataCep, Error>)?
+                
+        func fetchDataCep(
+            _ cep: String,
+            callback: @escaping (Result<ViaCep.DataCep, Error>) -> Void) {
+            if let result = expectedResponse {
+                callback(result)
+            }
+        }
+    }
+    
+    private typealias Doubles = (
         presenterSpy: MainPresenterSpy,
         serviceSpy: ServiceMock
     )
@@ -50,15 +75,5 @@ extension MainInteractorTests {
             service: serviceSpy
         )
         return (sut, (presenterSpy, serviceSpy))
-    }
-
-    final class ServiceMock: MainServicing {
-        var expectedResponse: (Result<ViaCep.DataCep, Error>)?
-                
-        func fetchDataCep(_ cep: String, callback: @escaping (Result<ViaCep.DataCep, Error>) -> Void) {
-            if let result = expectedResponse {
-                callback(result)
-            }
-        }
     }
 }

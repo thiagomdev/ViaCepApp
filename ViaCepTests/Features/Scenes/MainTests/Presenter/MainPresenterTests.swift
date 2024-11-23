@@ -33,7 +33,7 @@ extension MainPresenterTests {
             
         let viewControllerSpy = MainViewControllerSpy()
         let sut = MainPresenter()
-        sut.viewController = viewControllerSpy
+            sut.mainView = viewControllerSpy
         
         trackForMemoryLeaks(to: sut, file: file, line: line)
         trackForMemoryLeaks(to: viewControllerSpy, file: file, line: line)
@@ -41,7 +41,7 @@ extension MainPresenterTests {
         return (sut, viewControllerSpy)
     }
     
-    private final class MainViewControllerSpy: MainViewControlling {
+    private final class MainViewControllerSpy: MainViewProtocol {
         enum Message: Hashable {
             case didShowCep(_ cep: ViaCep.DataCep)
             case didShowError(_ message: String)
