@@ -12,15 +12,15 @@ private final class MainInteractorTests {
         
         sut.displayCep("01150011")
         
-        #expect(doubles.presenterSpy.presentCepCalled == true)
-        #expect(doubles.presenterSpy.presentCepCouting == 1)
+        #expect(doubles.presenterSpy.presentCepCalled == true, "Should be called")
+        #expect(doubles.presenterSpy.presentCepCouting == 1, "Should be called once")
         
         #expect(doubles.presenterSpy.messages == [
             .presentCep(cep: .dummy(cep: "01150011"))
         ], "Should be returned all the correct object model")
         
-        #expect(doubles.presenterSpy.displayErrorCalled == false)
-        #expect(doubles.presenterSpy.displayErrorCalledCouting == 0)
+        #expect(doubles.presenterSpy.displayErrorCalled == false, "Should not be called")
+        #expect(doubles.presenterSpy.displayErrorCalledCouting == 0, "Shound not be called once")
     }
     
     @Test("displayCep_failure")
@@ -37,11 +37,11 @@ private final class MainInteractorTests {
         sut.displayCep("01150011")
       
         samples.forEach { _, _ in
-            #expect(doubles.presenterSpy.presentCepCalled == false)
-            #expect(doubles.presenterSpy.presentCepCouting == 0)
+            #expect(doubles.presenterSpy.presentCepCalled == false, "Should not be called")
+            #expect(doubles.presenterSpy.presentCepCouting == 0, "Should not be called once")
             
-            #expect(doubles.presenterSpy.displayErrorCalled == true)
-            #expect(doubles.presenterSpy.displayErrorCalledCouting == 1)
+            #expect(doubles.presenterSpy.displayErrorCalled == true, "Should be called")
+            #expect(doubles.presenterSpy.displayErrorCalledCouting == 1, "Should be called once")
         }
     }
     
