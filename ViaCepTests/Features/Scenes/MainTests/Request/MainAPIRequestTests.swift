@@ -25,7 +25,7 @@ final class MainAPIRequestTests: XCTestCase {
         XCTAssertEqual(expectedHttpMethod, .get)
     }
     
-    func test_1() {
+    func test_parameters() {
         let (sut, _) = makeSut()
         
         let expectedParameters: [String: String]? = nil
@@ -33,7 +33,7 @@ final class MainAPIRequestTests: XCTestCase {
         XCTAssertEqual(expectedParameters, sut.parameters)
     }
     
-    func test_2() {
+    func test_body() {
         let (sut, _) = makeSut()
         
         let data: Data? = nil
@@ -41,7 +41,7 @@ final class MainAPIRequestTests: XCTestCase {
         XCTAssertEqual(data, sut.body)
     }
     
-    func test_() {
+    func test_headers() {
         let (sut, _) = makeSut()
         
         let headers: [String : String]? = nil
