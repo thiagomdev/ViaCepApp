@@ -1,10 +1,3 @@
-//
-//  MainAPIRequestTests.swift
-//  ViaCepTests
-//
-//  Created by Thiago Monteiro on 30/11/24.
-//
-
 import XCTest
 import ViaCep
 
@@ -25,7 +18,7 @@ final class MainAPIRequestTests: XCTestCase {
         XCTAssertEqual(expectedHttpMethod, .get)
     }
     
-    func test_parameters() {
+    func test_parameters_when_expect_nil() {
         let (sut, _) = makeSut()
         
         let expectedParameters: [String: String]? = nil
@@ -33,7 +26,7 @@ final class MainAPIRequestTests: XCTestCase {
         XCTAssertEqual(expectedParameters, sut.parameters)
     }
     
-    func test_body() {
+    func test_data_body_when_expect_nil() {
         let (sut, _) = makeSut()
         
         let data: Data? = nil
@@ -41,7 +34,7 @@ final class MainAPIRequestTests: XCTestCase {
         XCTAssertEqual(data, sut.body)
     }
     
-    func test_headers() {
+    func test_headers_when_expect_nil() {
         let (sut, _) = makeSut()
         
         let headers: [String : String]? = nil
@@ -49,9 +42,10 @@ final class MainAPIRequestTests: XCTestCase {
         XCTAssertEqual(headers, sut.headers)
     }
     
-    private func makeSut() -> (sut: MainAPIRequest, spy: MainRequestSpy) {
+    private func makeSut(file: StaticString = #file, line: UInt = #line) -> (sut: MainAPIRequest, spy: MainRequestSpy) {
         let spy = MainRequestSpy()
         let sut = MainAPIRequest.cep("01150011")
+        trackForMemoryLeaks(to: spy, file: file, line: line)
         return (sut, spy)
     }
     
