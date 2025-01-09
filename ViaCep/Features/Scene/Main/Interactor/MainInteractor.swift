@@ -6,13 +6,13 @@ public protocol MainInteracting {
 }
 
 public final class MainInteractor {
+    
     private let presenter: MainPresenting?
     private let service: MainServicing?
     
     public init(
         presenter: MainPresenting,
-        service: MainServicing
-    ) {
+        service: MainServicing) {
         self.presenter = presenter
         self.service = service
     }
