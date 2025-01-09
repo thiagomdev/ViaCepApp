@@ -8,6 +8,7 @@ public protocol MainViewProtocol: AnyObject {
 public final class MainView: UIView {
     public enum Layout {}
     private var interactor: MainInteracting
+    public var alert: ((String) -> Void)?
     
     private lazy var stackViewContainer: UIStackView = {
         let stack = UIStackView()
@@ -97,19 +98,8 @@ extension MainView: MainViewProtocol {
     public func didShowErrorMessage(_ message: String) {
         DispatchQueue.main.async { [weak self] in
             guard let self else { return }
-            let alert = UIAlertController(
-                title: "ALERT ⚠️",
-                message: message,
-                preferredStyle: .alert
-            )
-            alert.addAction(
-                UIAlertAction(
-                    title: "FECHAR",
-                    style: .default)
-            )
-            
             didClearText()
-        //present(alert, animated: true)
+            self.alert?(message)
         }
     }
 }
