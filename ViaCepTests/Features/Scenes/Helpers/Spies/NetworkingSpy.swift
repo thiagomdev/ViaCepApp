@@ -8,13 +8,9 @@ enum NetworkingError: Error {
 final class TaskDummy: Task {
     var request: ViaCep.Request = RequestDummy()
     
-    func resume() {
-        
-    }
+    func resume() {}
     
-    func cancel() {
-        
-    }
+    func cancel() {}
 }
 
 final class RequestDummy: Request {

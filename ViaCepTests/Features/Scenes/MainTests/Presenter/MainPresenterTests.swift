@@ -1,5 +1,5 @@
-import XCTest
 import Testing
+import Foundation
 import ViaCep
 
 @Suite("MainPresenterTests", .serialized, .tags(.main))

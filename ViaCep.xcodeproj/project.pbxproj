@@ -32,7 +32,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		AA2D82392CEAABE300A25C2E /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+		AA29084D2D4C5B1E0083D095 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				ViaCep.xctestplan,
@@ -42,7 +42,7 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		AA2D822F2CEAABE300A25C2E /* ViaCepTests */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (AA2D82392CEAABE300A25C2E /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = ViaCepTests; sourceTree = "<group>"; };
+		AA2908412D4C5B1E0083D095 /* ViaCepTests */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (AA29084D2D4C5B1E0083D095 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = ViaCepTests; sourceTree = "<group>"; };
 		AA2D826E2CEAABFD00A25C2E /* Start */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Start; sourceTree = "<group>"; };
 		AA2D82802CEAABFD00A25C2E /* Features */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Features; sourceTree = "<group>"; };
 		AA2D82962CEAABFD00A25C2E /* Shared */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Shared; sourceTree = "<group>"; };
@@ -70,7 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				AA7B05832A7292F300A5CECE /* ViaCep */,
-				AA2D822F2CEAABE300A25C2E /* ViaCepTests */,
+				AA2908412D4C5B1E0083D095 /* ViaCepTests */,
 				AA7B05822A7292F300A5CECE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -145,7 +145,7 @@
 				AA7B05CD2A72C39000A5CECE /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				AA2D822F2CEAABE300A25C2E /* ViaCepTests */,
+				AA2908412D4C5B1E0083D095 /* ViaCepTests */,
 			);
 			name = ViaCepTests;
 			productName = ViaCepTests;
@@ -160,7 +160,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1520;
-				LastUpgradeCheck = 1600;
+				LastUpgradeCheck = 1620;
 				TargetAttributes = {
 					AA7B05802A7292F300A5CECE = {
 						CreatedOnToolsVersion = 14.3.1;
@@ -254,6 +254,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -315,6 +316,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";

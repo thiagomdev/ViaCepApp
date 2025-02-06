@@ -1,6 +1,7 @@
-import Foundation
 import ViaCep
 import Testing
+import XCTest
+import Foundation
 
 @Suite("MainInteractorTests", .serialized, .tags(.main))
 private final class MainInteractorTests {
