@@ -5,7 +5,6 @@ import Foundation
 
 @Suite("MainInteractorTests", .serialized, .tags(.main))
 private final class MainInteractorTests {
-    // MARK: - Tests
     @Test("displayCep_success")
     func display_cep_success() {
         let (sut, doubles) = makeSut()
@@ -58,12 +57,12 @@ private final class MainInteractorTests {
     // MARK: - Helpers
     private final class ServiceMock: MainServicing {
         var expectedResponse: (Result<ViaCep.DataCep, Error>)?
-                
+  
         func fetchDataCep(
             _ cep: String,
             callback: @escaping (Result<ViaCep.DataCep, Error>) -> Void) {
-            if let result = expectedResponse {
-                callback(result)
+            if let expectedResponse {
+                callback(expectedResponse)
             }
         }
     }
