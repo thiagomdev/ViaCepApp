@@ -28,7 +28,7 @@ public final class MainViewController: UIViewController {
             guard let self else { return }
             let alert = UIAlertController(
                 title: "Olá, tudo bem?",
-                message: "Este CEP não existe ou é um CEP invádo. Por favor corrija e tente novamente!",
+                message: "Este CEP não existe ou é um CEP invádo. Por favor, tente novamente!",
                 preferredStyle: .alert
             )
             alert.addAction(UIAlertAction(title: "FECHAR", style: .default))
