@@ -12,7 +12,7 @@ private final class MainServiceTests {
         
         networkingSpy.expected = .success(dataObject)
         
-        sut.fetchDataCep("") { result in
+        sut.fetchDataCep(dataObject.cep) { result in
             if case let .success(receivedObject) = result {
                 dataObject = receivedObject
                 #expect(dataObject == receivedObject)
