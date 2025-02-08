@@ -4,7 +4,6 @@ import ViaCep
 
 @Suite("MainServiceTests", .serialized, .tags(.main))
 private final class MainServiceTests {
-    // MARK: - Tests
     @Test("fetch_DataCep_whenTypeSomeCep_thenShouldReturnedValidDataCep")
     func test_fetchData_whenTypeSomeCep_thenShouldReturnedValidDataCep() {
         let (sut, networkingSpy) = makeSut()
@@ -41,8 +40,9 @@ private final class MainServiceTests {
             }
         }
     }
-    
-    // MARK: - Helpers
+}
+
+extension MainServiceTests {
     private func makeSut(
         file: StaticString = #file,
         line: UInt = #line) -> (
@@ -53,25 +53,5 @@ private final class MainServiceTests {
         let sut = MainService(networking: networkingSpy)
 
         return (sut, networkingSpy)
-    }
-    
-    private final class NetworkingSpy: NetworkingProtocol {
-        var expected: (Result<DataCep, Error>) = .failure(NetworkingError.unknown)
-        
-        private(set) var executeCalled: Bool = false
-        private(set) var executeCount: Int = 0
-        
-        func execute<T>(
-            request: ViaCep.Request,
-            responseType: T.Type,
-            callback: @escaping (Result<T, Error>
-            ) -> Void) -> ViaCep.Task where T : Decodable, T : Encodable {
-            executeCalled = true
-            executeCount += 1
-            
-            callback(expected as! Result<T, Error>)
-            
-            return TaskDummy()
-        }
     }
 }

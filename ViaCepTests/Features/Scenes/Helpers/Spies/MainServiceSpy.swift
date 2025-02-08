@@ -14,8 +14,8 @@ final class MainServiceSpy: MainServicing {
     
     func fetchDataCep(
         _ cep: String,
-        callback: @escaping (DataCepResponse) -> Void
-    ) {
+        callback: @escaping (DataCepResponse) -> Void) {
+            
         fetchDataCepCalled = true
         fetchDataCepCalledCounting += 1
         if let shouldBeExpected {

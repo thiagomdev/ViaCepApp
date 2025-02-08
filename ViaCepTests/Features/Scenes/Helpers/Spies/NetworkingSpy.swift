@@ -5,22 +5,22 @@ enum NetworkingError: Error {
     case unknown
 }
 
-final class TaskDummy: Task {
-    var request: ViaCep.Request = RequestDummy()
+final class NetworkingSpy: NetworkingProtocol {
+    var expected: (Result<DataCep, Error>) = .failure(NetworkingError.unknown)
     
-    func resume() {}
+    private(set) var executeCalled: Bool = false
+    private(set) var executeCount: Int = 0
     
-    func cancel() {}
-}
-
-final class RequestDummy: Request {
-    var endpoint: String = ""
-    
-    var method: ViaCep.HttpMethod = .get
-    
-    var parameters: [String : String]?
-    
-    var headers: [String : String]?
-    
-    var body: Data?
+    func execute<T>(
+        request: ViaCep.Request,
+        responseType: T.Type,
+        callback: @escaping (Result<T, Error>
+        ) -> Void) -> ViaCep.Task where T : Decodable, T : Encodable {
+        executeCalled = true
+        executeCount += 1
+        
+        callback(expected as! Result<T, Error>)
+        
+        return TaskDummy()
+    }
 }
