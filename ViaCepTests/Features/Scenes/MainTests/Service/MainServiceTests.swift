@@ -10,9 +10,9 @@ private final class MainServiceTests {
         let (sut, networkingSpy) = makeSut()
         var dataObject: DataCep = .fixture()
         
-        networkingSpy.expected = .success(.fixture(cep: "01150011"))
+        networkingSpy.expected = .success(dataObject)
         
-        sut.fetchDataCep("01150011") { result in
+        sut.fetchDataCep("") { result in
             if case let .success(receivedObject) = result {
                 dataObject = receivedObject
                 #expect(dataObject == receivedObject)
