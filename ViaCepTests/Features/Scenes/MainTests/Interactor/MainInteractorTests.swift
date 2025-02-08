@@ -8,7 +8,7 @@ private final class MainInteractorTests {
     @Test("displayCep_success")
     func display_cep_success() {
         let (sut, doubles) = makeSut()
-        doubles.serviceSpy.expectedResponse = .success(.dummy())
+        doubles.serviceSpy.expectedResponse = .success(.fixture())
         
         sut.displayCep("01150011")
         
@@ -16,7 +16,7 @@ private final class MainInteractorTests {
         #expect(doubles.presenterSpy.presentCepCouting == 1, "Should be called once")
         
         #expect(doubles.presenterSpy.messages == [
-            .presentCep(cep: .dummy(cep: "01150011"))
+            .presentCep(cep: .fixture(cep: "01150011"))
         ], "Should be returned all the correct object model")
         
         #expect(doubles.presenterSpy.displayErrorCalled == false, "Should not be called")

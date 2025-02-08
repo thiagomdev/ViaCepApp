@@ -9,13 +9,13 @@ private final class MainPresenterTests {
     func test_presentCep_whenGetsAllOfInformationData_shouldReturnDataCep() {
         let (sut, viewControllerSpy) = makeSut()
         
-        sut.presentCep(.dummy())
+        sut.presentCep(.fixture())
         
         #expect(viewControllerSpy.didPresentCepCalled == true, "Should be didPresentCepCalled true")
         #expect(viewControllerSpy.didPresentCepCalledCounting == 1, "Should be didPresentCepCalledCounting 1")
         #expect(viewControllerSpy.failure.isEmpty == false, "Should be failure false")
         #expect(viewControllerSpy.responseDataCep.isEmpty == false, "Should be responseDataCep false")
-        #expect(viewControllerSpy.responseDataCep == [.dummy()], "The data object should be equal")
+        #expect(viewControllerSpy.responseDataCep == [.fixture()], "The data object should be equal")
     }
     
     @Test("test_displayError_whenCalled_shouldDisplayError")

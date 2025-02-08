@@ -8,15 +8,15 @@ private final class MainServiceTests {
     @Test("fetch_DataCep_whenTypeSomeCep_thenShouldReturnedValidDataCep")
     func test_fetchData_whenTypeSomeCep_thenShouldReturnedValidDataCep() {
         let (sut, networkingSpy) = makeSut()
-        var dataObject: DataCep = .dummy()
+        var dataObject: DataCep = .fixture()
         
-        networkingSpy.expected = .success(.dummy(cep: "01150011"))
+        networkingSpy.expected = .success(.fixture(cep: "01150011"))
         
         sut.fetchDataCep("01150011") { result in
             if case let .success(receivedObject) = result {
                 dataObject = receivedObject
                 #expect(dataObject == receivedObject)
-                #expect(dataObject == .dummy())
+                #expect(dataObject == .fixture())
                 #expect(dataObject.cep == "01150011")
                 #expect(networkingSpy.executeCalled == true)
                 #expect(networkingSpy.executeCount == 1)
