@@ -17,9 +17,7 @@ public protocol Task {
 }
 
 extension Request {
-    public var baseUrl: String {
-        "https://viacep.com.br/ws"
-    }
+    public var baseUrl: String {"https://viacep.com.br/ws" }
     
     public var url: String {
         var components = URLComponents()

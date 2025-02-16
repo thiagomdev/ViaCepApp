@@ -26,23 +26,24 @@ public final class Tasking<T: Codable>: Task {
         request.httpMethod = self.request.method.description
         request.httpBody = self.request.body
         
-        task = URLSession.shared.dataTask(
+        task = session.dataTask(
             with: request,
             completionHandler: { [weak self] data, response, error in
-            NetworkingLogger.log(
-                request: request,
-                response: response,
-                data: data,
-                error: error
-            )
-            if let error = error {
+                self?.logger(request: request, response: response, data: data, error: error)
+            if let error {
                 self?.callback?(.failure(error))
                 return
             }
             
-            guard let httpResponse = response as? HTTPURLResponse else { return }
-            
-            if (200..<300).contains(httpResponse.statusCode), let data = data {
+                if let error {
+                    self?.callback?(.failure(error))
+                }
+                
+                guard let data,
+                    let httpResponse = response as? HTTPURLResponse else {
+                    return
+                }
+                
                 if self?.responseType is EmptyResponse.Type, let decoded = EmptyResponse() as? T {
                     self?.callback?(.success(decoded))
                 } else {
@@ -50,23 +51,25 @@ public final class Tasking<T: Codable>: Task {
                         let decoded = try JSONDecoder().decode(T.self, from: data)
                         self?.callback?(.success(decoded))
                         
-                    } catch let error {
-                        self?.callback?(.failure(error))
+                    } catch {
+                        self?.callback?(
+                            .failure(
+                                NetworkError.responseError(
+                                    data, httpResponse.statusCode
+                                )
+                            )
+                        )
                     }
                 }
-            } else {
-                self?.callback?(
-                    .failure(
-                        NetworkError.responseError(
-                            data, httpResponse.statusCode))
-                )
-            }
-        })
-                                          
+            })
         task?.resume()
     }
     
     public func cancel() {
         task?.cancel()
+    }
+    
+    private func logger(request: URLRequest?, response: URLResponse?, data: Data?, error: Error?) {
+        NetworkingLogger.log(request: request, response: response, data: data, error: error, verbose: true)
     }
 }
