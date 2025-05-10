@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		150EF8FC286D5A2268F71D91 /* Pods_ViaCep.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEFE4AE8A3C77BA9D63B461B /* Pods_ViaCep.framework */; };
+		AA28FF222DCFF4200081C69F /* MemoryLeakTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA28FF212DCFF41F0081C69F /* MemoryLeakTracker.swift */; };
+		AA28FF282DCFF5460081C69F /* ServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA28FF272DCFF5450081C69F /* ServiceMock.swift */; };
+		AA28FF2A2DCFF5B20081C69F /* MainViewControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA28FF292DCFF5B00081C69F /* MainViewControllerSpy.swift */; };
 		AA7271FB2D5D1F1C00835958 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7271F92D5D1F1C00835958 /* AppDelegate.swift */; };
 		AA72720D2D5D1F1C00835958 /* DataCep.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7271FC2D5D1F1C00835958 /* DataCep.swift */; };
 		AA72720E2D5D1F1C00835958 /* MainFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7271FE2D5D1F1C00835958 /* MainFactory.swift */; };
@@ -40,6 +44,7 @@
 		AA77D4A62B4B5EB30024315B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA77D4A52B4B5EB30024315B /* GoogleService-Info.plist */; };
 		AA7B058E2A7292F500A5CECE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA7B058D2A7292F500A5CECE /* Assets.xcassets */; };
 		AA7B05912A7292F500A5CECE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA7B058F2A7292F500A5CECE /* LaunchScreen.storyboard */; };
+		CEE90FB88A10346CCE107F1C /* Pods_ViaCepTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B61AE57138EA1F2C9234460A /* Pods_ViaCepTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +58,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1E2BEC912C76325F6936F844 /* Pods-ViaCep.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViaCep.debug.xcconfig"; path = "Target Support Files/Pods-ViaCep/Pods-ViaCep.debug.xcconfig"; sourceTree = "<group>"; };
+		2DE833A5FF0F90DC279BFBA6 /* Pods-ViaCep.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViaCep.release.xcconfig"; path = "Target Support Files/Pods-ViaCep/Pods-ViaCep.release.xcconfig"; sourceTree = "<group>"; };
+		80E28FCAAFB5CE5CF292C381 /* Pods-ViaCepTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViaCepTests.release.xcconfig"; path = "Target Support Files/Pods-ViaCepTests/Pods-ViaCepTests.release.xcconfig"; sourceTree = "<group>"; };
+		A275710F298237CC13492090 /* Pods-ViaCepTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViaCepTests.debug.xcconfig"; path = "Target Support Files/Pods-ViaCepTests/Pods-ViaCepTests.debug.xcconfig"; sourceTree = "<group>"; };
+		AA28FF212DCFF41F0081C69F /* MemoryLeakTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryLeakTracker.swift; sourceTree = "<group>"; };
+		AA28FF272DCFF5450081C69F /* ServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceMock.swift; sourceTree = "<group>"; };
+		AA28FF292DCFF5B00081C69F /* MainViewControllerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerSpy.swift; sourceTree = "<group>"; };
 		AA7271F92D5D1F1C00835958 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA7271FC2D5D1F1C00835958 /* DataCep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCep.swift; sourceTree = "<group>"; };
 		AA7271FE2D5D1F1C00835958 /* MainFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFactory.swift; sourceTree = "<group>"; };
@@ -90,6 +102,8 @@
 		AA7B05902A7292F500A5CECE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA7B05922A7292F500A5CECE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA7B05C82A72C39000A5CECE /* ViaCepTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ViaCepTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B61AE57138EA1F2C9234460A /* Pods_ViaCepTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ViaCepTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEFE4AE8A3C77BA9D63B461B /* Pods_ViaCep.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ViaCep.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				150EF8FC286D5A2268F71D91 /* Pods_ViaCep.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,12 +119,70 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEE90FB88A10346CCE107F1C /* Pods_ViaCepTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8A37642C05C393B95E83BD40 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1E2BEC912C76325F6936F844 /* Pods-ViaCep.debug.xcconfig */,
+				2DE833A5FF0F90DC279BFBA6 /* Pods-ViaCep.release.xcconfig */,
+				A275710F298237CC13492090 /* Pods-ViaCepTests.debug.xcconfig */,
+				80E28FCAAFB5CE5CF292C381 /* Pods-ViaCepTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		8BE2E1BD38741ABAF8F12104 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FEFE4AE8A3C77BA9D63B461B /* Pods_ViaCep.framework */,
+				B61AE57138EA1F2C9234460A /* Pods_ViaCepTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AA28FF202DCFF4170081C69F /* MemoryLeakTracker */ = {
+			isa = PBXGroup;
+			children = (
+				AA28FF212DCFF41F0081C69F /* MemoryLeakTracker.swift */,
+			);
+			path = MemoryLeakTracker;
+			sourceTree = "<group>";
+		};
+		AA28FF242DCFF4FA0081C69F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				AA7272302D5D1F1C00835958 /* Dummies */,
+				AA28FF262DCFF5130081C69F /* Spies */,
+				AA28FF252DCFF5030081C69F /* Mockies */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		AA28FF252DCFF5030081C69F /* Mockies */ = {
+			isa = PBXGroup;
+			children = (
+				AA28FF272DCFF5450081C69F /* ServiceMock.swift */,
+			);
+			path = Mockies;
+			sourceTree = "<group>";
+		};
+		AA28FF262DCFF5130081C69F /* Spies */ = {
+			isa = PBXGroup;
+			children = (
+				AA28FF292DCFF5B00081C69F /* MainViewControllerSpy.swift */,
+				AA7272332D5D1F1C00835958 /* MainPresenterSpy.swift */,
+				AA7272342D5D1F1C00835958 /* MainServiceSpy.swift */,
+				AA7272352D5D1F1C00835958 /* NetworkingSpy.swift */,
+			);
+			path = Spies;
+			sourceTree = "<group>";
+		};
 		AA7271FA2D5D1F1C00835958 /* Start */ = {
 			isa = PBXGroup;
 			children = (
@@ -270,22 +343,12 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		AA7272362D5D1F1C00835958 /* Spies */ = {
-			isa = PBXGroup;
-			children = (
-				AA7272332D5D1F1C00835958 /* MainPresenterSpy.swift */,
-				AA7272342D5D1F1C00835958 /* MainServiceSpy.swift */,
-				AA7272352D5D1F1C00835958 /* NetworkingSpy.swift */,
-			);
-			path = Spies;
-			sourceTree = "<group>";
-		};
 		AA7272372D5D1F1C00835958 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				AA7272302D5D1F1C00835958 /* Dummies */,
+				AA7272442D5D1F1C00835958 /* Tags */,
+				AA28FF202DCFF4170081C69F /* MemoryLeakTracker */,
 				AA7272322D5D1F1C00835958 /* Extension */,
-				AA7272362D5D1F1C00835958 /* Spies */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -325,6 +388,7 @@
 		AA7272402D5D1F1C00835958 /* MainTests */ = {
 			isa = PBXGroup;
 			children = (
+				AA28FF242DCFF4FA0081C69F /* Helpers */,
 				AA7272392D5D1F1C00835958 /* Interactor */,
 				AA72723B2D5D1F1C00835958 /* Presenter */,
 				AA72723D2D5D1F1C00835958 /* Request */,
@@ -363,7 +427,6 @@
 			children = (
 				AA72722D2D5D1F1C00835958 /* Dummy */,
 				AA7272422D5D1F1C00835958 /* Features */,
-				AA7272442D5D1F1C00835958 /* Tags */,
 				AA7272452D5D1F1C00835958 /* ViaCep.xctestplan */,
 			);
 			path = ViaCepTests;
@@ -375,6 +438,8 @@
 				AA7B05832A7292F300A5CECE /* ViaCep */,
 				AA7272462D5D1F1C00835958 /* ViaCepTests */,
 				AA7B05822A7292F300A5CECE /* Products */,
+				8A37642C05C393B95E83BD40 /* Pods */,
+				8BE2E1BD38741ABAF8F12104 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -416,6 +481,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AA7B05952A7292F500A5CECE /* Build configuration list for PBXNativeTarget "ViaCep" */;
 			buildPhases = (
+				A6FB1EB55115BDBCE63A4BA4 /* [CP] Check Pods Manifest.lock */,
 				AA7B057D2A7292F300A5CECE /* Sources */,
 				AA7B057E2A7292F300A5CECE /* Frameworks */,
 				AA7B057F2A7292F300A5CECE /* Resources */,
@@ -433,9 +499,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AA7B05CE2A72C39000A5CECE /* Build configuration list for PBXNativeTarget "ViaCepTests" */;
 			buildPhases = (
+				D48B5B2652B212B9240D23AB /* [CP] Check Pods Manifest.lock */,
 				AA7B05C42A72C39000A5CECE /* Sources */,
 				AA7B05C52A72C39000A5CECE /* Frameworks */,
 				AA7B05C62A72C39000A5CECE /* Resources */,
+				F70888B4D9DFC7025DFC9260 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -476,8 +544,6 @@
 				Base,
 			);
 			mainGroup = AA7B05782A7292F300A5CECE;
-			packageReferences = (
-			);
 			productRefGroup = AA7B05822A7292F300A5CECE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -507,6 +573,70 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A6FB1EB55115BDBCE63A4BA4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ViaCep-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D48B5B2652B212B9240D23AB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ViaCepTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F70888B4D9DFC7025DFC9260 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ViaCepTests/Pods-ViaCepTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ViaCepTests/Pods-ViaCepTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ViaCepTests/Pods-ViaCepTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AA7B057D2A7292F300A5CECE /* Sources */ = {
@@ -538,10 +668,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA28FF222DCFF4200081C69F /* MemoryLeakTracker.swift in Sources */,
 				AA7272472D5D1F1C00835958 /* Dummy.swift in Sources */,
 				AA7272482D5D1F1C00835958 /* RequestDummy.swift in Sources */,
 				AA7272492D5D1F1C00835958 /* TaskDummy.swift in Sources */,
 				AA72724A2D5D1F1C00835958 /* XCTestCase+Extension.swift in Sources */,
+				AA28FF2A2DCFF5B20081C69F /* MainViewControllerSpy.swift in Sources */,
+				AA28FF282DCFF5460081C69F /* ServiceMock.swift in Sources */,
 				AA72724B2D5D1F1C00835958 /* MainPresenterSpy.swift in Sources */,
 				AA72724C2D5D1F1C00835958 /* MainServiceSpy.swift in Sources */,
 				AA72724D2D5D1F1C00835958 /* NetworkingSpy.swift in Sources */,
@@ -612,7 +745,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -674,7 +807,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -695,6 +828,7 @@
 		};
 		AA7B05962A7292F500A5CECE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E2BEC912C76325F6936F844 /* Pods-ViaCep.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -730,6 +864,7 @@
 		};
 		AA7B05972A7292F500A5CECE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2DE833A5FF0F90DC279BFBA6 /* Pods-ViaCep.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -765,13 +900,14 @@
 		};
 		AA7B05CF2A72C39000A5CECE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A275710F298237CC13492090 /* Pods-ViaCepTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				MARKETING_VERSION = 1.0;
@@ -792,13 +928,14 @@
 		};
 		AA7B05D02A72C39000A5CECE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80E28FCAAFB5CE5CF292C381 /* Pods-ViaCepTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				MARKETING_VERSION = 1.0;

@@ -3,9 +3,13 @@ import Foundation
 import ViaCep
 
 @Suite("MainServiceTests", .serialized, .tags(.main))
-private final class MainServiceTests {
-    @Test("fetch_DataCep_whenTypeSomeCep_thenShouldReturnedValidDataCep")
-    func test_fetchData_whenTypeSomeCep_thenShouldReturnedValidDataCep() {
+final class MainServiceTests {
+    
+    private var sutTracker: MemoryLeakTracker<MainService>?
+    private var networkingSpyTracker: MemoryLeakTracker<NetworkingSpy>?
+    
+    @Test
+    func fetch_data_cep_success() {
         let (sut, networkingSpy) = makeSut()
         var dataObject: DataCep = .fixture()
         
@@ -23,8 +27,8 @@ private final class MainServiceTests {
         }
     }
     
-    @Test("test_failure_on_non_200_HTTPResponse")
-    func test_failure_on_non_200_HTTPResponse() {
+    @Test
+    func fetch_data_cep_failure() {
         let (sut, networkingSpy) = makeSut()
         let failure: NSError = .init(domain: "expected error", code: -999)
         networkingSpy.expected = .failure(failure)
@@ -40,18 +44,23 @@ private final class MainServiceTests {
             }
         }
     }
+    
+    deinit {
+        sutTracker?.verify()
+        networkingSpyTracker?.verify()
+    }
 }
 
 extension MainServiceTests {
-    private func makeSut(
-        file: StaticString = #file,
-        line: UInt = #line) -> (
-        sut: MainServicing,
-        networkingSpy: NetworkingSpy) {
+    private func makeSut(file: String = #file, line: Int = #line, column: Int = #column) -> (sut: MainService, networkingSpy: NetworkingSpy) {
             
         let networkingSpy = NetworkingSpy()
         let sut = MainService(networking: networkingSpy)
 
+        let sourceLocation = SourceLocation(fileID: #fileID, filePath: file, line: line, column: column)
+        sutTracker = .init(object: sut, sourceLocation: sourceLocation)
+        networkingSpyTracker = .init(object: networkingSpy, sourceLocation: sourceLocation)
+        
         return (sut, networkingSpy)
     }
 }

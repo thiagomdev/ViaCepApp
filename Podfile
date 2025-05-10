@@ -9,11 +9,6 @@ target 'ViaCep' do
     
   target 'ViaCepTests' do
     inherit! :search_paths
-    # Pods for testing
+      pod 'iOSSnapshotTestCase' 
   end
-
-  target 'ViaCepUITests' do
-    # Pods for testing
-  end
-
 end

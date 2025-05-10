@@ -7,8 +7,8 @@ public protocol MainInteracting {
 
 public final class MainInteractor {
     
-    private let presenter: MainPresenting?
-    private let service: MainServicing?
+    private let presenter: MainPresenting
+    private let service: MainServicing
     
     public init(presenter: MainPresenting, service: MainServicing) {
         self.presenter = presenter
@@ -18,12 +18,12 @@ public final class MainInteractor {
 
 extension MainInteractor: MainInteracting {
     public func displayCep(_ cep: String) {
-        service?.fetchDataCep(cep) { [weak self] result in
+        service.fetchDataCep(cep) { [weak self] result in
             switch result {
             case let .success(cep):
-                self?.presenter?.presentCep(cep)
+                self?.presenter.presentCep(cep)
             case let .failure(error):
-                self?.presenter?.displayError(
+                self?.presenter.displayError(
                     error.localizedDescription
                 )
             }

@@ -4,8 +4,13 @@ import XCTest
 import Foundation
 
 @Suite("MainInteractorTests", .serialized, .tags(.main))
-private final class MainInteractorTests {
-    @Test("displayCep_success")
+final class MainInteractorTests {
+    
+    private var sutTracker: MemoryLeakTracker<MainInteractor>?
+    private var presenterSpyTracker: MemoryLeakTracker<MainPresenterSpy>?
+    private var serviceSpyTracker: MemoryLeakTracker<ServiceMock>?
+    
+    @Test
     func display_cep_success() {
         let (sut, doubles) = makeSut()
         doubles.serviceSpy.expectedResponse = .success(.fixture())
@@ -14,17 +19,13 @@ private final class MainInteractorTests {
         
         #expect(doubles.presenterSpy.presentCepCalled == true, "Should be called")
         #expect(doubles.presenterSpy.presentCepCouting == 1, "Should be called once")
-        
-        #expect(doubles.presenterSpy.messages == [
-            .presentCep(cep: .fixture(cep: "01150011"))
-        ], "Should be returned all the correct object model")
-        
-        #expect(doubles.presenterSpy.displayErrorCalled == false, "Should not be called")
-        #expect(doubles.presenterSpy.displayErrorCalledCouting == 0, "Shound not be called once")
+        #expect(doubles.presenterSpy.messages == [.presentCep(cep: .fixture(cep: "01150011"))])
+        #expect(doubles.presenterSpy.displayErrorCalled == false)
+        #expect(doubles.presenterSpy.displayErrorCalledCouting == 0)
     }
     
-    @Test("displayCep_failure")
-    func test_display_cep_failure() {
+    @Test
+    func display_cep_failure() {
         let (sut, doubles) = makeSut()
         let samples = [199, 201, 300, 400, 500].enumerated()
         let err = NSError(
@@ -37,44 +38,41 @@ private final class MainInteractorTests {
         sut.displayCep("01150011")
       
         samples.forEach { _, _ in
-            #expect(doubles.presenterSpy.presentCepCalled == false, "Should not be called")
-            #expect(doubles.presenterSpy.presentCepCouting == 0, "Should not be called once")
+            #expect(doubles.presenterSpy.presentCepCalled == false)
+            #expect(doubles.presenterSpy.presentCepCouting == 0)
             
-            #expect(doubles.presenterSpy.displayErrorCalled == true, "Should be called")
-            #expect(doubles.presenterSpy.displayErrorCalledCouting == 1, "Should be called once")
+            #expect(doubles.presenterSpy.displayErrorCalled == true)
+            #expect(doubles.presenterSpy.displayErrorCalledCouting == 1)
         }
     }
     
-    @Test("clear_text")
-    func test_clearText() {
+    @Test
+    func clear_text() {
         let (sut, _) = makeSut()
         
         let clearString = sut.clearText()
         
-        #expect(clearString == nil)
+        #expect(clearString == nil, "Should be nil")
     }
     
-    // MARK: - Helpers
-    private final class ServiceMock: MainServicing {
-        var expectedResponse: (Result<ViaCep.DataCep, Error>)?
-  
-        func fetchDataCep(
-            _ cep: String,
-            callback: @escaping (Result<ViaCep.DataCep, Error>) -> Void) {
-            if let expectedResponse {
-                callback(expectedResponse)
-            }
-        }
+    deinit {
+        sutTracker?.verify()
+        presenterSpyTracker?.verify()
+        serviceSpyTracker?.verify()
     }
-    
+}
+
+extension MainInteractorTests {
     private typealias Doubles = (
         presenterSpy: MainPresenterSpy,
         serviceSpy: ServiceMock
     )
-
+    
     private func makeSut(
-        file: StaticString = #file,
-        line: UInt = #line) -> (
+        file: String = #file,
+        line: Int = #line,
+        column: Int = #column) -> (
+            
         sut: MainInteractor,
         doubles: Doubles) {
         
@@ -84,6 +82,13 @@ private final class MainInteractorTests {
             presenter: presenterSpy,
             service: serviceSpy
         )
+            
+        let sourceLocation = SourceLocation(fileID: #fileID, filePath: file, line: line, column: column)
+            
+        sutTracker = .init(object: sut, sourceLocation: sourceLocation)
+        presenterSpyTracker = .init(object: presenterSpy, sourceLocation: sourceLocation)
+        serviceSpyTracker = .init(object: serviceSpy, sourceLocation: sourceLocation)
+            
         return (sut, (presenterSpy, serviceSpy))
     }
 }

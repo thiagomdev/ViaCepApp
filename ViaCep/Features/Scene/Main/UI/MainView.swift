@@ -121,8 +121,8 @@ extension MainView {
     private func pin() {
         NSLayoutConstraint.pin([
             stackViewContainer.topAnchor.constraint(
-                equalTo: safeAreaLayoutGuide.topAnchor,
-                constant: Layout.Size.constant
+                equalToSystemSpacingBelow: safeAreaLayoutGuide.topAnchor,
+                multiplier: 1.0
             ),
             
             stackViewContainer.leadingAnchor.constraint(
