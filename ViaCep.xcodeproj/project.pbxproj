@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		150EF8FC286D5A2268F71D91 /* Pods_ViaCep.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEFE4AE8A3C77BA9D63B461B /* Pods_ViaCep.framework */; };
-		AA28FF222DCFF4200081C69F /* MemoryLeakTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA28FF212DCFF41F0081C69F /* MemoryLeakTracker.swift */; };
+		AA28FF222DCFF4200081C69F /* MemoryLeakDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA28FF212DCFF41F0081C69F /* MemoryLeakDetection.swift */; };
 		AA28FF282DCFF5460081C69F /* ServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA28FF272DCFF5450081C69F /* ServiceMock.swift */; };
 		AA28FF2A2DCFF5B20081C69F /* MainViewControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA28FF292DCFF5B00081C69F /* MainViewControllerSpy.swift */; };
 		AA7271FB2D5D1F1C00835958 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7271F92D5D1F1C00835958 /* AppDelegate.swift */; };
@@ -62,7 +62,7 @@
 		2DE833A5FF0F90DC279BFBA6 /* Pods-ViaCep.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViaCep.release.xcconfig"; path = "Target Support Files/Pods-ViaCep/Pods-ViaCep.release.xcconfig"; sourceTree = "<group>"; };
 		80E28FCAAFB5CE5CF292C381 /* Pods-ViaCepTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViaCepTests.release.xcconfig"; path = "Target Support Files/Pods-ViaCepTests/Pods-ViaCepTests.release.xcconfig"; sourceTree = "<group>"; };
 		A275710F298237CC13492090 /* Pods-ViaCepTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViaCepTests.debug.xcconfig"; path = "Target Support Files/Pods-ViaCepTests/Pods-ViaCepTests.debug.xcconfig"; sourceTree = "<group>"; };
-		AA28FF212DCFF41F0081C69F /* MemoryLeakTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryLeakTracker.swift; sourceTree = "<group>"; };
+		AA28FF212DCFF41F0081C69F /* MemoryLeakDetection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryLeakDetection.swift; sourceTree = "<group>"; };
 		AA28FF272DCFF5450081C69F /* ServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceMock.swift; sourceTree = "<group>"; };
 		AA28FF292DCFF5B00081C69F /* MainViewControllerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerSpy.swift; sourceTree = "<group>"; };
 		AA7271F92D5D1F1C00835958 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -149,7 +149,7 @@
 		AA28FF202DCFF4170081C69F /* MemoryLeakTracker */ = {
 			isa = PBXGroup;
 			children = (
-				AA28FF212DCFF41F0081C69F /* MemoryLeakTracker.swift */,
+				AA28FF212DCFF41F0081C69F /* MemoryLeakDetection.swift */,
 			);
 			path = MemoryLeakTracker;
 			sourceTree = "<group>";
@@ -668,7 +668,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA28FF222DCFF4200081C69F /* MemoryLeakTracker.swift in Sources */,
+				AA28FF222DCFF4200081C69F /* MemoryLeakDetection.swift in Sources */,
 				AA7272472D5D1F1C00835958 /* Dummy.swift in Sources */,
 				AA7272482D5D1F1C00835958 /* RequestDummy.swift in Sources */,
 				AA7272492D5D1F1C00835958 /* TaskDummy.swift in Sources */,

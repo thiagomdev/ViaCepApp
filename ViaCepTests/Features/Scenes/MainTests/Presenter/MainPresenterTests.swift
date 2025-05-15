@@ -2,11 +2,11 @@ import Testing
 import Foundation
 import ViaCep
 
-@Suite("MainPresenterTests", .serialized, .tags(.main))
+@Suite(.serialized, .tags(.main))
 final class MainPresenterTests {
     
-    private var sutTracker: MemoryLeakTracker<MainPresenter>?
-    private var viewControllerSpyTracker: MemoryLeakTracker<MainViewControllerSpy>?
+    private var sutTracker: MemoryLeakDetection<MainPresenter>?
+    private var viewControllerSpyTracker: MemoryLeakDetection<MainViewControllerSpy>?
     
     @Test
     func present_cep() {

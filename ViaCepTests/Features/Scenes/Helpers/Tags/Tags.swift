@@ -1,6 +1,5 @@
 import Testing
 
 extension Tag {
-    @Tag
-    static var main: Self
+    @Tag static var main: Self
 }

@@ -1,14 +1,13 @@
 import ViaCep
 import Testing
-import XCTest
 import Foundation
 
-@Suite("MainInteractorTests", .serialized, .tags(.main))
+@Suite(.serialized, .tags(.main))
 final class MainInteractorTests {
     
-    private var sutTracker: MemoryLeakTracker<MainInteractor>?
-    private var presenterSpyTracker: MemoryLeakTracker<MainPresenterSpy>?
-    private var serviceSpyTracker: MemoryLeakTracker<ServiceMock>?
+    private var sutTracker: MemoryLeakDetection<MainInteractor>?
+    private var presenterSpyTracker: MemoryLeakDetection<MainPresenterSpy>?
+    private var serviceSpyTracker: MemoryLeakDetection<ServiceMock>?
     
     @Test
     func display_cep_success() {
@@ -17,8 +16,8 @@ final class MainInteractorTests {
         
         sut.displayCep("01150011")
         
-        #expect(doubles.presenterSpy.presentCepCalled == true, "Should be called")
-        #expect(doubles.presenterSpy.presentCepCouting == 1, "Should be called once")
+        #expect(doubles.presenterSpy.presentCepCalled == true)
+        #expect(doubles.presenterSpy.presentCepCouting == 1)
         #expect(doubles.presenterSpy.messages == [.presentCep(cep: .fixture(cep: "01150011"))])
         #expect(doubles.presenterSpy.displayErrorCalled == false)
         #expect(doubles.presenterSpy.displayErrorCalledCouting == 0)
@@ -29,7 +28,7 @@ final class MainInteractorTests {
         let (sut, doubles) = makeSut()
         let samples = [199, 201, 300, 400, 500].enumerated()
         let err = NSError(
-            domain: "Wainting for a conclusion of the request",
+            domain: "Wainting for a request conclusion",
             code: samples.underestimatedCount
         )
         
@@ -52,7 +51,7 @@ final class MainInteractorTests {
         
         let clearString = sut.clearText()
         
-        #expect(clearString == nil, "Should be nil")
+        #expect(clearString == nil)
     }
     
     deinit {
