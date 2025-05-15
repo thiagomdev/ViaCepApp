@@ -15,7 +15,7 @@ final class MainServiceTests {
         
         do {
             let result = try await withCheckedThrowingContinuation { continuation in
-                sut.fetchDataCep("") { result in
+                sut.fetchDataCep("0000-000") { result in
                     switch result {
                     case let .success(cep):
                         continuation.resume(returning: cep)

@@ -2,10 +2,10 @@ import ViaCep
 
 extension DataCep {
     static func fixture(
-        cep: String = "01150011",
-        logradouro: String = "Praça Marechal Deodoro",
-        bairro: String = "Santa Cecília",
-        localidade: String = "São Paulo"
+        cep: String = "0000-000",
+        logradouro: String = "logradouro",
+        bairro: String = "bairro",
+        localidade: String = "localidade"
     ) -> Self {
         
         .init(

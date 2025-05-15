@@ -14,11 +14,11 @@ final class MainInteractorTests {
         let (sut, doubles) = makeSut()
         doubles.serviceSpy.expectedResponse = .success(.fixture())
         
-        sut.displayCep("01150011")
+        sut.displayCep("0000-000")
         
         #expect(doubles.presenterSpy.presentCepCalled == true)
         #expect(doubles.presenterSpy.presentCepCouting == 1)
-        #expect(doubles.presenterSpy.messages == [.presentCep(cep: .fixture(cep: "01150011"))])
+        #expect(doubles.presenterSpy.messages == [.presentCep(cep: .fixture(cep: "0000-000"))])
         #expect(doubles.presenterSpy.displayErrorCalled == false)
         #expect(doubles.presenterSpy.displayErrorCalledCouting == 0)
     }
