@@ -2,7 +2,7 @@ import Testing
 import Foundation
 import ViaCep
 
-@Suite(.serialized, .tags(.main))
+@Suite(.serialized, .tags(.mainService))
 final class MainServiceTests {
     
     private var sutTracker: MemoryLeakDetection<MainService>?
@@ -25,11 +25,10 @@ final class MainServiceTests {
                 }
             }
             
-            #expect(result != nil)
-            #expect(result == .fixture())
             #expect(networkingSpy.executeCalled == true)
             #expect(networkingSpy.executeCount == 1)
-           
+            #expect(result == .fixture())
+            
         } catch {
             Issue.record("Expected to succeed, but failed due to error: \(error)")
         }

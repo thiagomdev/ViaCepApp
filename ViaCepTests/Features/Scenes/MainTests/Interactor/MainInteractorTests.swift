@@ -2,7 +2,7 @@ import ViaCep
 import Testing
 import Foundation
 
-@Suite(.serialized, .tags(.main))
+@Suite(.serialized, .tags(.mainInteractor))
 final class MainInteractorTests {
     
     private var sutTracker: MemoryLeakDetection<MainInteractor>?
