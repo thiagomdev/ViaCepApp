@@ -66,7 +66,7 @@
 		42D7319B96A6CD585AFB71B8BAE0E8C1 /* iOSSnapshotTestCase.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = iOSSnapshotTestCase.modulemap; sourceTree = "<group>"; };
 		44F1DA6C995F918C8160102F54BB5E9F /* Pods-ViaCep-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ViaCep-acknowledgements.plist"; sourceTree = "<group>"; };
 		47BF58CEDA660C143A84218D51183632 /* Pods-ViaCepTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ViaCepTests-umbrella.h"; sourceTree = "<group>"; };
-		523421FC0F532359C6B148F258B6E842 /* Pods-ViaCep */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-ViaCep"; path = Pods_ViaCep.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		523421FC0F532359C6B148F258B6E842 /* Pods_ViaCep.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ViaCep.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C2DBEBDB9DB28EBA4E88B735A1BA22C /* iOSSnapshotTestCase-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "iOSSnapshotTestCase-umbrella.h"; sourceTree = "<group>"; };
 		5E6B5E773973965C73BC40D4388B4C07 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		605C352B4A290154E398392D07849A23 /* UIApplication+KeyWindow.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIApplication+KeyWindow.h"; path = "src/iOSSnapshotTestCaseCore/Categories/UIApplication+KeyWindow.h"; sourceTree = "<group>"; };
@@ -78,13 +78,13 @@
 		90EEB641E82A54849EB1DC5527E26E99 /* Pods-ViaCepTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ViaCepTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		9629A72BD2DB5BB715D3EC41AE89D621 /* UIImage+Snapshot.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Snapshot.m"; path = "src/iOSSnapshotTestCaseCore/Categories/UIImage+Snapshot.m"; sourceTree = "<group>"; };
 		969E4E539A7A200054BE8D3D60B43836 /* Pods-ViaCep-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ViaCep-Info.plist"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A570E9F886109DF3216431997D8B7E9A /* iOSSnapshotTestCase-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "iOSSnapshotTestCase-prefix.pch"; sourceTree = "<group>"; };
 		AC48E972FC6D39CBE744F0DB50C5FA4A /* UIImage+Diff.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+Diff.h"; path = "src/iOSSnapshotTestCaseCore/Categories/UIImage+Diff.h"; sourceTree = "<group>"; };
 		AF2C8AC0E8A06F993AA14A0A0B06C91F /* Pods-ViaCep.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ViaCep.modulemap"; sourceTree = "<group>"; };
 		B4345D7CA9E107541D51126DECECCBBB /* FBSnapshotTestCasePlatform.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSnapshotTestCasePlatform.h; path = src/iOSSnapshotTestCaseCore/Public/FBSnapshotTestCasePlatform.h; sourceTree = "<group>"; };
 		B8892BEC35F565994A661B18739AD709 /* Pods-ViaCep.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ViaCep.release.xcconfig"; sourceTree = "<group>"; };
-		B91B00F8BE943329D633234BD67AE0AC /* iOSSnapshotTestCase */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = iOSSnapshotTestCase; path = FBSnapshotTestCase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B91B00F8BE943329D633234BD67AE0AC /* FBSnapshotTestCase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FBSnapshotTestCase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C15E8ADEE1DC84FB7C1509E7C740C80F /* Pods-ViaCepTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ViaCepTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		CAB44CC0F57E2815CBD7937E47FBE1B8 /* iOSSnapshotTestCase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = iOSSnapshotTestCase.debug.xcconfig; sourceTree = "<group>"; };
 		D1EC50906BD05F00906C70ECE1C0EB72 /* Pods-ViaCep-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ViaCep-dummy.m"; sourceTree = "<group>"; };
@@ -94,7 +94,7 @@
 		E8C5C19BF9747E9AF75007568AD5410A /* Pods-ViaCepTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ViaCepTests-frameworks.sh"; sourceTree = "<group>"; };
 		EA3EBE582D5BC37114FCFF6CE041E2DC /* FBSnapshotTestController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSnapshotTestController.m; path = src/iOSSnapshotTestCaseCore/FBSnapshotTestController.m; sourceTree = "<group>"; };
 		EAAA23D61D917ACF73D3F5F50FA009F4 /* Pods-ViaCepTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ViaCepTests-dummy.m"; sourceTree = "<group>"; };
-		EE8EE440AD153FC4C08DAC6811AFA3AF /* Pods-ViaCepTests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-ViaCepTests"; path = Pods_ViaCepTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE8EE440AD153FC4C08DAC6811AFA3AF /* Pods_ViaCepTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ViaCepTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFC6E7632B98F850CD3B664837F9F997 /* UIApplication+KeyWindow.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIApplication+KeyWindow.m"; path = "src/iOSSnapshotTestCaseCore/Categories/UIApplication+KeyWindow.m"; sourceTree = "<group>"; };
 		F07560080BFDF82EF5F2D370D2E62329 /* UIImage+Compare.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+Compare.h"; path = "src/iOSSnapshotTestCaseCore/Categories/UIImage+Compare.h"; sourceTree = "<group>"; };
 		F28E842FB59C4DCA02A03388EB2505D3 /* iOSSnapshotTestCase-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "iOSSnapshotTestCase-dummy.m"; sourceTree = "<group>"; };
@@ -191,7 +191,6 @@
 				D233498900F2A2AACEDA392E8C854F83 /* Support Files */,
 				DA93A9E1DA2A8AA578138A47322DE9FA /* SwiftSupport */,
 			);
-			name = iOSSnapshotTestCase;
 			path = iOSSnapshotTestCase;
 			sourceTree = "<group>";
 		};
@@ -238,9 +237,9 @@
 		C10C903FDF818CF467FF126AF1702F4E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B91B00F8BE943329D633234BD67AE0AC /* iOSSnapshotTestCase */,
-				523421FC0F532359C6B148F258B6E842 /* Pods-ViaCep */,
-				EE8EE440AD153FC4C08DAC6811AFA3AF /* Pods-ViaCepTests */,
+				B91B00F8BE943329D633234BD67AE0AC /* FBSnapshotTestCase.framework */,
+				523421FC0F532359C6B148F258B6E842 /* Pods_ViaCep.framework */,
+				EE8EE440AD153FC4C08DAC6811AFA3AF /* Pods_ViaCepTests.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -331,7 +330,7 @@
 			);
 			name = "Pods-ViaCep";
 			productName = Pods_ViaCep;
-			productReference = 523421FC0F532359C6B148F258B6E842 /* Pods-ViaCep */;
+			productReference = 523421FC0F532359C6B148F258B6E842 /* Pods_ViaCep.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		C393038B0BEF088C1B93E6528005862D /* iOSSnapshotTestCase */ = {
@@ -349,7 +348,7 @@
 			);
 			name = iOSSnapshotTestCase;
 			productName = FBSnapshotTestCase;
-			productReference = B91B00F8BE943329D633234BD67AE0AC /* iOSSnapshotTestCase */;
+			productReference = B91B00F8BE943329D633234BD67AE0AC /* FBSnapshotTestCase.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		D9C6C9367833D0190C80E3BE0395FB69 /* Pods-ViaCepTests */ = {
@@ -369,7 +368,7 @@
 			);
 			name = "Pods-ViaCepTests";
 			productName = Pods_ViaCepTests;
-			productReference = EE8EE440AD153FC4C08DAC6811AFA3AF /* Pods-ViaCepTests */;
+			productReference = EE8EE440AD153FC4C08DAC6811AFA3AF /* Pods_ViaCepTests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -390,8 +389,6 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			minimizedProjectReferenceProxies = 0;
-			preferredProjectObjectVersion = 77;
 			productRefGroup = C10C903FDF818CF467FF126AF1702F4E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -537,7 +534,7 @@
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = "Target Support Files/iOSSnapshotTestCase/iOSSnapshotTestCase-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -616,7 +613,7 @@
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = "Target Support Files/iOSSnapshotTestCase/iOSSnapshotTestCase-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
