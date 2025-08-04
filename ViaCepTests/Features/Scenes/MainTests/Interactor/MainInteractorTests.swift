@@ -3,11 +3,7 @@ import Testing
 import Foundation
 
 @Suite(.serialized, .tags(.mainInteractor))
-final class MainInteractorTests {
-    
-    private var sutTracker: MemoryLeakDetection<MainInteractor>?
-    private var presenterSpyTracker: MemoryLeakDetection<MainPresenterSpy>?
-    private var serviceSpyTracker: MemoryLeakDetection<ServiceMock>?
+final class MainInteractorTests: LeakTrackerSuite {
     
     @Test
     func display_cep_success() {
@@ -53,12 +49,6 @@ final class MainInteractorTests {
         
         #expect(clearString == nil)
     }
-    
-    deinit {
-        sutTracker?.verify()
-        presenterSpyTracker?.verify()
-        serviceSpyTracker?.verify()
-    }
 }
 
 extension MainInteractorTests {
@@ -68,12 +58,7 @@ extension MainInteractorTests {
     )
     
     private func makeSut(
-        file: String = #file,
-        line: Int = #line,
-        column: Int = #column) -> (
-            
-        sut: MainInteractor,
-        doubles: Doubles) {
+        source: SourceLocation = #_sourceLocation) -> (sut: MainInteractor, doubles: Doubles) {
         
         let serviceSpy = ServiceMock()
         let presenterSpy = MainPresenterSpy()
@@ -82,11 +67,9 @@ extension MainInteractorTests {
             service: serviceSpy
         )
             
-        let sourceLocation = SourceLocation(fileID: #fileID, filePath: file, line: line, column: column)
-            
-        sutTracker = .init(object: sut, sourceLocation: sourceLocation)
-        presenterSpyTracker = .init(object: presenterSpy, sourceLocation: sourceLocation)
-        serviceSpyTracker = .init(object: serviceSpy, sourceLocation: sourceLocation)
+        track(sut, source: source)
+        track(presenterSpy, source: source)
+        track(serviceSpy, source: source)
             
         return (sut, (presenterSpy, serviceSpy))
     }

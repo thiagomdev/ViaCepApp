@@ -3,11 +3,8 @@ import Foundation
 import ViaCep
 
 @Suite(.serialized, .tags(.mainService))
-final class MainServiceTests {
-    
-    private var sutTracker: MemoryLeakDetection<MainService>?
-    private var networkingSpyTracker: MemoryLeakDetection<NetworkingSpy>?
-    
+final class MainServiceTests: LeakTrackerSuite {
+
     @Test(arguments: [DataCep.fixture()])
     func fetch_data_cep_success(fixture: DataCep) async throws {
         let (sut, networkingSpy) = makeSut()
@@ -33,22 +30,16 @@ final class MainServiceTests {
             Issue.record("Expected to succeed, but failed due to error: \(error)")
         }
     }
-    
-    deinit {
-        sutTracker?.verify()
-        networkingSpyTracker?.verify()
-    }
 }
 
 extension MainServiceTests {
-    private func makeSut(file: String = #file, line: Int = #line, column: Int = #column) -> (sut: MainService, networkingSpy: NetworkingSpy) {
+    private func makeSut(source: SourceLocation = #_sourceLocation) -> (sut: MainService, networkingSpy: NetworkingSpy) {
             
         let networkingSpy = NetworkingSpy()
         let sut = MainService(networking: networkingSpy)
-
-        let sourceLocation = SourceLocation(fileID: #fileID, filePath: file, line: line, column: column)
-        sutTracker = .init(object: sut, sourceLocation: sourceLocation)
-        networkingSpyTracker = .init(object: networkingSpy, sourceLocation: sourceLocation)
+        
+        track(sut, source: source)
+        track(networkingSpy, source: source)
         
         return (sut, networkingSpy)
     }

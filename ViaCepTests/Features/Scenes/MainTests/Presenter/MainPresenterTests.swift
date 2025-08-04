@@ -3,11 +3,8 @@ import Foundation
 import ViaCep
 
 @Suite(.serialized, .tags(.mainPresenter))
-final class MainPresenterTests {
-    
-    private var sutTracker: MemoryLeakDetection<MainPresenter>?
-    private var viewControllerSpyTracker: MemoryLeakDetection<MainViewControllerSpy>?
-    
+final class MainPresenterTests: LeakTrackerSuite {
+
     @Test
     func present_cep() {
         let (sut, viewControllerSpy) = makeSut()
@@ -34,25 +31,18 @@ final class MainPresenterTests {
         #expect(viewControllerSpy.didShowErrorCalledCouting == 1)
         #expect(viewControllerSpy.messages == [.didShowError(message)])
     }
-    
-    deinit {
-        sutTracker?.verify()
-        viewControllerSpyTracker?.verify()
-    }
 }
 
 extension MainPresenterTests {
-    private func makeSut(file: String = #file, line: Int = #line, column: Int = #column) -> (sut: MainPresenter, viewControllerSpy: MainViewControllerSpy) {
+    private func makeSut(source: SourceLocation = #_sourceLocation) -> (sut: MainPresenter, viewControllerSpy: MainViewControllerSpy) {
                 
         let viewControllerSpy = MainViewControllerSpy()
         let sut = MainPresenter()
         sut.mainView = viewControllerSpy
         
-        let sourceLocation = SourceLocation(fileID: #fileID, filePath: file, line: line, column: column)
-        
-        sutTracker = .init(object: sut, sourceLocation: sourceLocation)
-        viewControllerSpyTracker = .init(object: viewControllerSpy, sourceLocation: sourceLocation)
-        
+        track(sut, source: source)
+        track(viewControllerSpy, source: source)
+
         return (sut, viewControllerSpy)
     }
 }
