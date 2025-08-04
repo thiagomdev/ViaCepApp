@@ -2,7 +2,7 @@ import ViaCep
 import Testing
 import Foundation
 
-@Suite(.serialized, .tags(.mainInteractor))
+@Suite(.serialized)
 final class MainInteractorTests: LeakTrackerSuite {
     
     @Test

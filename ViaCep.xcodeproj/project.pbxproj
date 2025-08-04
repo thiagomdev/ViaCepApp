@@ -40,7 +40,6 @@
 		AA72724F2D5D1F1C00835958 /* MainPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA72723A2D5D1F1C00835958 /* MainPresenterTests.swift */; };
 		AA7272502D5D1F1C00835958 /* MainAPIRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA72723C2D5D1F1C00835958 /* MainAPIRequestTests.swift */; };
 		AA7272512D5D1F1C00835958 /* MainServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA72723E2D5D1F1C00835958 /* MainServiceTests.swift */; };
-		AA7272522D5D1F1C00835958 /* Tags.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7272432D5D1F1C00835958 /* Tags.swift */; };
 		AA77D4A62B4B5EB30024315B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA77D4A52B4B5EB30024315B /* GoogleService-Info.plist */; };
 		AA7B058E2A7292F500A5CECE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA7B058D2A7292F500A5CECE /* Assets.xcassets */; };
 		AA7B05912A7292F500A5CECE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA7B058F2A7292F500A5CECE /* LaunchScreen.storyboard */; };
@@ -94,7 +93,6 @@
 		AA72723A2D5D1F1C00835958 /* MainPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenterTests.swift; sourceTree = "<group>"; };
 		AA72723C2D5D1F1C00835958 /* MainAPIRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAPIRequestTests.swift; sourceTree = "<group>"; };
 		AA72723E2D5D1F1C00835958 /* MainServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainServiceTests.swift; sourceTree = "<group>"; };
-		AA7272432D5D1F1C00835958 /* Tags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tags.swift; sourceTree = "<group>"; };
 		AA7272452D5D1F1C00835958 /* ViaCep.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = ViaCep.xctestplan; sourceTree = "<group>"; };
 		AA77D4A52B4B5EB30024315B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AA7B05812A7292F300A5CECE /* ViaCep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ViaCep.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -346,7 +344,6 @@
 		AA7272372D5D1F1C00835958 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				AA7272442D5D1F1C00835958 /* Tags */,
 				AA28FF202DCFF4170081C69F /* MemoryLeakTracker */,
 				AA7272322D5D1F1C00835958 /* Extension */,
 			);
@@ -412,14 +409,6 @@
 				AA7272412D5D1F1C00835958 /* Scenes */,
 			);
 			path = Features;
-			sourceTree = "<group>";
-		};
-		AA7272442D5D1F1C00835958 /* Tags */ = {
-			isa = PBXGroup;
-			children = (
-				AA7272432D5D1F1C00835958 /* Tags.swift */,
-			);
-			path = Tags;
 			sourceTree = "<group>";
 		};
 		AA7272462D5D1F1C00835958 /* ViaCepTests */ = {
@@ -627,9 +616,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-ViaCepTests/Pods-ViaCepTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-ViaCepTests/Pods-ViaCepTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -682,7 +675,6 @@
 				AA72724F2D5D1F1C00835958 /* MainPresenterTests.swift in Sources */,
 				AA7272502D5D1F1C00835958 /* MainAPIRequestTests.swift in Sources */,
 				AA7272512D5D1F1C00835958 /* MainServiceTests.swift in Sources */,
-				AA7272522D5D1F1C00835958 /* Tags.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

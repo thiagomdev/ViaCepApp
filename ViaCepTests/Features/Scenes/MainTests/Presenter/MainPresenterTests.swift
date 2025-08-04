@@ -2,7 +2,7 @@ import Testing
 import Foundation
 import ViaCep
 
-@Suite(.serialized, .tags(.mainPresenter))
+@Suite(.serialized)
 final class MainPresenterTests: LeakTrackerSuite {
 
     @Test

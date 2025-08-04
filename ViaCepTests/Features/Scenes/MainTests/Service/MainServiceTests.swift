@@ -2,7 +2,7 @@ import Testing
 import Foundation
 import ViaCep
 
-@Suite(.serialized, .tags(.mainService))
+@Suite(.serialized)
 final class MainServiceTests: LeakTrackerSuite {
 
     @Test(arguments: [DataCep.fixture()])
