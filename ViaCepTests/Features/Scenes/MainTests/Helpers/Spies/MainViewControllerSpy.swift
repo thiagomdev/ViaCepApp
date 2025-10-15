@@ -13,30 +13,13 @@ final class MainViewControllerSpy: MainViewProtocol {
         case didShowError(_ message: String)
     }
     
-    private var message = [(cep: DataCep, error: Error)]()
-    
-    var responseDataCep: [DataCep] { message.map { $0.cep } }
-    var failure: [Error] { message.map { $0.error } }
-    
-    private(set) var messages = Set<Message>()
-    
-    private(set) var didPresentCepCalled: Bool = false
-    private(set) var didPresentCepCalledCounting: Int = 0
-    
-    private(set) var didShowErrorCalled: Bool = false
-    private(set) var didShowErrorCalledCouting: Int = 0
-    
-    private(set) var didDisplayInvalidCepMessageCalled: Bool = false
-    
+    private(set) var messages = [Message]()
+        
     func didPresentCep(_ cep: ViaCep.DataCep) {
-        didPresentCepCalled = true
-        didPresentCepCalledCounting += 1
-        message.append((cep, NSError()))
+        messages.append(.didShowCep(cep))
     }
     
     func didShowErrorMessage(_ message: String) {
-        didShowErrorCalled = true
-        didShowErrorCalledCouting += 1
-        messages.insert(.didShowError(message))
+        messages.append(.didShowError(message))
     }
 }

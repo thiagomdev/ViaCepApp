@@ -11,33 +11,25 @@ final class MainInteractorTests: LeakTrackerSuite {
         doubles.serviceSpy.expectedResponse = .success(.fixture())
         
         sut.displayCep("0000-000")
-        
-        #expect(doubles.presenterSpy.presentCepCalled == true)
-        #expect(doubles.presenterSpy.presentCepCouting == 1)
+
         #expect(doubles.presenterSpy.messages == [.presentCep(cep: .fixture(cep: "0000-000"))])
-        #expect(doubles.presenterSpy.displayErrorCalled == false)
-        #expect(doubles.presenterSpy.displayErrorCalledCouting == 0)
     }
     
     @Test
     func display_cep_failure() {
         let (sut, doubles) = makeSut()
         let samples = [199, 201, 300, 400, 500].enumerated()
-        let err = NSError(
+        let error = NSError(
             domain: "Wainting for a request conclusion",
             code: samples.underestimatedCount
         )
         
-        doubles.serviceSpy.expectedResponse = .failure(err)
+        doubles.serviceSpy.expectedResponse = .failure(error)
         
         sut.displayCep("01150011")
       
         samples.forEach { _, _ in
-            #expect(doubles.presenterSpy.presentCepCalled == false)
-            #expect(doubles.presenterSpy.presentCepCouting == 0)
-            
-            #expect(doubles.presenterSpy.displayErrorCalled == true)
-            #expect(doubles.presenterSpy.displayErrorCalledCouting == 1)
+            #expect(doubles.presenterSpy.messages == [.displayError(message: error.localizedDescription)])
         }
     }
     

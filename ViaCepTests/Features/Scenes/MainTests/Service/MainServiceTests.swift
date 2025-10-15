@@ -33,8 +33,8 @@ final class MainServiceTests: LeakTrackerSuite {
 }
 
 extension MainServiceTests {
-    private func makeSut(source: SourceLocation = #_sourceLocation) -> (sut: MainService, networkingSpy: NetworkingSpy) {
-            
+    private func makeSut(
+        source: SourceLocation = #_sourceLocation) -> (sut: MainService, networkingSpy: NetworkingSpy) {
         let networkingSpy = NetworkingSpy()
         let sut = MainService(networking: networkingSpy)
         
